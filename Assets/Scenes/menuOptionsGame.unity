@@ -1946,7 +1946,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c01fb351fd27e6c4c9c3292fdd576590, type: 3}
+  m_Texture: {fileID: 2800000, guid: de9265dc7e240d849957e49087646979, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3165,6 +3165,7 @@ GameObject:
   - component: {fileID: 907234494}
   - component: {fileID: 907234496}
   - component: {fileID: 907234495}
+  - component: {fileID: 907234497}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3231,6 +3232,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907234493}
   m_CullTransparentMesh: 0
+--- !u!114 &907234497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907234493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05650e872a87f6345b09c9b05ca13e51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texto: {fileID: 907234495}
+  textoIngles: CONTINUE
+  textoEspanol: CONTINUAR
 --- !u!1 &920481029
 GameObject:
   m_ObjectHideFlags: 0

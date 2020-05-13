@@ -165,10 +165,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8071600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a32fd25fb87e0449a293d382974e32, type: 3}
+  m_Script: {fileID: 11500000, guid: 787b1cbbde7ae0e46ac250bdf47b7c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textureImage: {fileID: 2800000, guid: 54f60f705d96bc1489de235ffdc7684d, type: 3}
+  textureImage: {fileID: 2800000, guid: ebee6a388b7abd146add612de31a932d, type: 3}
 --- !u!1001 &14255471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 82b957c4005bc9749afab894be639b9b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 82b957c4005bc9749afab894be639b9b,
         type: 3}
@@ -365,7 +365,6 @@ GameObject:
   - component: {fileID: 189743908}
   - component: {fileID: 189743907}
   - component: {fileID: 189743909}
-  - component: {fileID: 189743910}
   m_Layer: 5
   m_Name: BtnQuitEsc
   m_TagString: Untagged
@@ -437,7 +436,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 189743910}
+      - m_Target: {fileID: 189743907}
         m_MethodName: ChangeSceneVirus
         m_Mode: 5
         m_Arguments:
@@ -445,7 +444,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: StartScene
+          m_StringArgument: menuOptionsGame
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &189743905
@@ -493,10 +492,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 189743902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b1fed34db301a34eabd00dd062bdee7, type: 3}
+  m_Script: {fileID: 11500000, guid: cec9bcbd63d2b0942a26289a93ad5d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectAudio: {fileID: 1325189823}
 --- !u!114 &189743908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,19 +512,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 189743907}
-          m_MethodName: StartAudio
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 189743909}
-          m_MethodName: ScaleUPbutton
+          m_MethodName: Aumentar_ButtonScale
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -540,19 +527,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 189743907}
-          m_MethodName: StopAudio
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 189743909}
-          m_MethodName: ScaleDOWNbutton
+          m_MethodName: BajarEscalado
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -571,22 +547,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 189743902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 495fbb69d9525d94783b9a20bf338ddb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c5f89588fa7aa94aa37e014e0531f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonRect: {fileID: 189743903}
---- !u!114 &189743910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189743902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc2edcec657a4b47929ee42a4afcb99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  scroll: {fileID: 189743903}
 --- !u!1 &273502120
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,7 +565,6 @@ GameObject:
   - component: {fileID: 273502122}
   - component: {fileID: 273502126}
   - component: {fileID: 273502125}
-  - component: {fileID: 273502127}
   m_Layer: 5
   m_Name: BtnHacker
   m_TagString: Untagged
@@ -728,10 +691,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 273502120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b1fed34db301a34eabd00dd062bdee7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c5f89588fa7aa94aa37e014e0531f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectAudio: {fileID: 1325189823}
+  scroll: {fileID: 273502121}
 --- !u!114 &273502126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,18 +713,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 273502125}
-          m_MethodName: StartAudio
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 273502127}
-          m_MethodName: ScaleUPbutton
+          m_MethodName: Aumentar_ButtonScale
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -776,7 +728,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 273502125}
-          m_MethodName: StopAudio
+          m_MethodName: BajarEscalado
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -786,30 +738,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 273502127}
-          m_MethodName: ScaleDOWNbutton
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &273502127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 273502120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 495fbb69d9525d94783b9a20bf338ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonRect: {fileID: 273502121}
 --- !u!1 &423594841
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,12 +876,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 445669869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c997aed1c3b240a95fa336ff70887, type: 3}
+  m_Script: {fileID: 11500000, guid: 05650e872a87f6345b09c9b05ca13e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textUI: {fileID: 445669872}
-  textEnglish: CONTINUE
-  textSpain: CONTINUAR
+  texto: {fileID: 445669872}
+  textoIngles: CONTINUE
+  textoEspanol: CONTINUAR
 --- !u!114 &445669872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,7 +1118,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 9ad5a6869336a664ba345c0ec086d98f, type: 3}
+  m_Texture: {fileID: 2800000, guid: 944dd13cc3af8464091817d38133dcac, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1262,7 +1190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 6787ff6efb008dd439fe1af4a06b2f66, type: 3}
+  m_Texture: {fileID: 2800000, guid: f5d4ce83a107ea14280730e715a9f612, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1291,7 +1219,6 @@ GameObject:
   - component: {fileID: 730088273}
   - component: {fileID: 730088277}
   - component: {fileID: 730088276}
-  - component: {fileID: 730088278}
   m_Layer: 5
   m_Name: BtnAlquimist
   m_TagString: Untagged
@@ -1418,10 +1345,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 730088271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b1fed34db301a34eabd00dd062bdee7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c5f89588fa7aa94aa37e014e0531f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectAudio: {fileID: 1325189823}
+  scroll: {fileID: 730088272}
 --- !u!114 &730088277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,18 +1367,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 730088276}
-          m_MethodName: StartAudio
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 730088278}
-          m_MethodName: ScaleUPbutton
+          m_MethodName: Aumentar_ButtonScale
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1466,7 +1382,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 730088276}
-          m_MethodName: StopAudio
+          m_MethodName: BajarEscalado
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1476,30 +1392,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 730088278}
-          m_MethodName: ScaleDOWNbutton
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &730088278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730088271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 495fbb69d9525d94783b9a20bf338ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonRect: {fileID: 730088272}
 --- !u!1 &803643913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,7 +1441,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9311fa29a3508d4586b9c5ada4da86a, type: 2}
+  - {fileID: 2100000, guid: 53a6c76451c87d24b87a7ee05af56250, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1639,12 +1531,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 809549399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c997aed1c3b240a95fa336ff70887, type: 3}
+  m_Script: {fileID: 11500000, guid: 05650e872a87f6345b09c9b05ca13e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textUI: {fileID: 809549402}
-  textEnglish: 'Enter your name:'
-  textSpain: 'Ingrese su nombre:'
+  texto: {fileID: 809549402}
+  textoIngles: 'Enter your name:'
+  textoEspanol: 'Ingrese su nombre:'
 --- !u!114 &809549402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1783,7 +1675,6 @@ GameObject:
   - component: {fileID: 866633913}
   - component: {fileID: 866633912}
   - component: {fileID: 866633914}
-  - component: {fileID: 866633915}
   m_Layer: 5
   m_Name: BtnPlay
   m_TagString: Untagged
@@ -1855,7 +1746,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 866633915}
+      - m_Target: {fileID: 866633914}
         m_MethodName: ValidarNombreIngresado
         m_Mode: 1
         m_Arguments:
@@ -1911,10 +1802,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 866633907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b1fed34db301a34eabd00dd062bdee7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c5f89588fa7aa94aa37e014e0531f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectAudio: {fileID: 1325189823}
+  scroll: {fileID: 866633908}
 --- !u!114 &866633913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1933,18 +1824,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 866633912}
-          m_MethodName: StartAudio
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 866633914}
-          m_MethodName: ScaleUPbutton
+          m_MethodName: Aumentar_ButtonScale
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1959,18 +1839,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 866633912}
-          m_MethodName: StopAudio
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 866633914}
-          m_MethodName: ScaleDOWNbutton
+          m_MethodName: BajarEscalado
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1989,28 +1858,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 866633907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 495fbb69d9525d94783b9a20bf338ddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonRect: {fileID: 866633908}
---- !u!114 &866633915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866633907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c452749c5e048441b9eda9be2280296, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cb17690b39498f4eabe240b7519a2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   btnPlayGame: {fileID: 866633909}
   panelValidator: {fileID: 1914356323}
   personajeElegido: {fileID: 1837615643}
   txtNombreIngresado: {fileID: 1521377603}
-  texturaIngles: {fileID: 2800000, guid: 897a0d756d5b8c7449cf194181f5f19a, type: 3}
-  texturaEspanol: {fileID: 2800000, guid: 78df9e7c1ac41d34cb3f268d4725acd6, type: 3}
+  texturaIngles: {fileID: 2800000, guid: 276e39c00c2fbbd43859291cb6de913c, type: 3}
+  texturaEspanol: {fileID: 2800000, guid: a9f2b916d3bb6894fac8de4ed161e60b, type: 3}
   imagenPanel: {fileID: 1899640639}
 --- !u!1 &892947244
 GameObject:
@@ -2426,6 +2282,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521377601}
   m_CullTransparentMesh: 0
+--- !u!1001 &1613334308
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1865322872}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 62
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -199.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 191
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12.497846
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12.497846
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 12.497846
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+        type: 3}
+      propertyPath: m_Name
+      value: CharlieRunning
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa5e5c87ef923c045ab7ed6ad7345d55, type: 3}
+--- !u!1 &1613334309 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+    type: 3}
+  m_PrefabInstance: {fileID: 1613334308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1613334310 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: aa5e5c87ef923c045ab7ed6ad7345d55,
+    type: 3}
+  m_PrefabInstance: {fileID: 1613334308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1699327919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,12 +2465,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699327919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c997aed1c3b240a95fa336ff70887, type: 3}
+  m_Script: {fileID: 11500000, guid: 05650e872a87f6345b09c9b05ca13e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textUI: {fileID: 1699327921}
-  textEnglish: BACK
-  textSpain: VOLVER
+  texto: {fileID: 1699327921}
+  textoIngles: BACK
+  textoEspanol: VOLVER
 --- !u!1 &1769355471
 GameObject:
   m_ObjectHideFlags: 0
@@ -2706,121 +2658,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1837615641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97719400cd06b434bb6fa4df9acb13d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 505aa0287893807419a353c54d317b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   valorElegidoText: {fileID: 1837615643}
---- !u!1001 &1853761816
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1865322872}
-    m_Modifications:
-    - target: {fileID: -6057140222963153312, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -774
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 213
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.67293704
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.73969984
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 194.39075
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 119.99838
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 157.18169
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_Name
-      value: CharlieRunning
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 44512be0a3983004696683ed8670552e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 44512be0a3983004696683ed8670552e, type: 3}
---- !u!4 &1853761817 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 44512be0a3983004696683ed8670552e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1853761816}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1853761818 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 44512be0a3983004696683ed8670552e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1853761816}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1865322871
 GameObject:
   m_ObjectHideFlags: 0
@@ -2850,8 +2691,8 @@ Transform:
   m_LocalPosition: {x: 709, y: 207, z: 406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1853761817}
   - {fileID: 14255472}
+  - {fileID: 1613334310}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2864,12 +2705,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1865322871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb2351ef1ae4f84fadf686671ed3e4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 02b1d1c00ca790b499346c188fbfdc48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterList:
   - {fileID: 14255473}
-  - {fileID: 1853761818}
+  - {fileID: 1613334309}
 --- !u!95 &1865322874
 Animator:
   serializedVersion: 3
