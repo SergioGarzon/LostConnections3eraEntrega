@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: de0ef9206ba2f85438e71ad6bd9dd175
+=======
+<<<<<<< HEAD:Assets/Scripts/Shop/ShopData.cs.meta
+guid: 683a87dc628f5fb4d88450e3760718d5
+=======
+guid: de0ef9206ba2f85438e71ad6bd9dd175
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab:Assets/Scripts/Controller/MovementPersonajes/CameraPlayer.cs.meta
+>>>>>>> 51afad2cc9aa904e36af6a32734a25bdfe2f99ab
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

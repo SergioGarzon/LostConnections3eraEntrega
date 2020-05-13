@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 17d306ac601ff614dae802e31f1f3836
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - scoreData: {fileID: 11400000, guid: fa9a29d7a518e304eb9efac4902034b2, type: 2}
+  - shopData: {fileID: 11400000, guid: 8776f5acd4414c447b5ba4aba763fe7c, type: 2}
+  - blueCard: {fileID: 11400000, guid: 941884cc9788ceb458a08c3e7e53b90e, type: 2}
+  - greenCard: {fileID: 11400000, guid: 368ab10765758224eb7dae613095dbc2, type: 2}
+  - violetCard: {fileID: 11400000, guid: c6919e0812dc3e34e94425c5f46fe110, type: 2}
+  - blackCard: {fileID: 11400000, guid: c1c6a3aa647da684183b5e5b026f1ca2, type: 2}
+  - goldenCard: {fileID: 11400000, guid: d0255d4bc49c533478c30e1a21ca86e0, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
