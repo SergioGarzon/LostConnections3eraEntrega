@@ -68,6 +68,7 @@ public class SerializableHackerLife {
 }
 public class GameData : ScriptableObject
 {
+    /*
     [SerializeField] private State currentState;
     [SerializeField] private State enemysDamagePoints;
 
@@ -75,13 +76,14 @@ public class GameData : ScriptableObject
     //para cambiar de estado. Guarda el estado actual 
     [NonSerialized] public State enemyDamage;
     //cuenta los virus muertos
+    */
 
     public void SaveState()
     {
-        actualState = currentState;
+       // actualState = currentState;
     }
     public void Damage()
     {
-        enemyDamage = enemysDamagePoints;
+        //enemyDamage = enemysDamagePoints;
     }
 }

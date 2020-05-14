@@ -11,13 +11,11 @@ public class HabilitarBotonesBatalla : MonoBehaviour
     public ShopData shopd;
 
     public GameObject objetoBattalla;
-    private BattleMachine batallaScript;
     public int tipoBatalla;
 
 
     void Start()
     {
-        this.batallaScript = this.objetoBattalla.GetComponent<BattleMachine>();
         BotonesIniciales();
     }
 
@@ -29,7 +27,6 @@ public class HabilitarBotonesBatalla : MonoBehaviour
 
     public void ActivarBotonesAtaqueCharlie()
     {
-        this.batallaScript.setBotonesHabilitados(1);
         this.PanelesVeracidadActivacion(false, false, false, true, true, true, true, false, false, false);
 
     }
@@ -37,15 +34,11 @@ public class HabilitarBotonesBatalla : MonoBehaviour
 
     public void ActivarBotonesAtaquesAtif()
     {
-        this.batallaScript.setBotonesHabilitados(2);
         this.PanelesVeracidadActivacion(false, false, false, true, false, false, false, true, true, true);
     }
 
     public void ActivarBotonesMaquinaBatalla(int x)
     {
-        this.batallaScript.setBotonesHabilitados(x);
-
-        if(this.batallaScript.getRetornarActivacionBotones() == 0)
             BotonesIniciales();
     }
 

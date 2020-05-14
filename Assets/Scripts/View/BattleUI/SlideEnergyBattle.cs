@@ -10,20 +10,17 @@ public class SlideEnergyBattle : MonoBehaviour
     public Slider energyBoot;
 
     public GameObject objectBattle;
-    private BattleMachine batMachine;
 
     public ScoreData score;
 
 
     void Start()
     {
-        this.batMachine = this.objectBattle.GetComponent<BattleMachine>();
     }
 
     private void Update()
     {
         this.energyPlayerCharlie.value = score.hLife;
         this.energyPlayerAtif.value = score.mLife;
-        this.energyBoot.value = batMachine.getRetornarVidaEnemigo();
     }
 }
