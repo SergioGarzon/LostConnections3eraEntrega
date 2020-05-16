@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
-
     //Creo un vector de GameObject
-    public GameObject[] characterList; 
+    public GameObject[] characterList;
     private int index;
     private int activarCharlieAtif;
 
@@ -58,18 +58,18 @@ public class CharacterSelection : MonoBehaviour
 
             characterList[index].SetActive(true);
 
-            GuardarPlayerPref(0);
+            GuardarPlayerPref(1);
 
             this.activarCharlieAtif = 0;
         }
 
-       
+
 
     }
 
     public void ToggleRight()
     {
-        if(this.activarCharlieAtif == 0)
+        if (this.activarCharlieAtif == 0)
         {
             characterList[index].SetActive(false);
 
@@ -82,21 +82,15 @@ public class CharacterSelection : MonoBehaviour
 
             characterList[index].SetActive(true);
 
-            GuardarPlayerPref(1);
-            
+            GuardarPlayerPref(0);
+
             this.activarCharlieAtif = 1;
         }
-
-        
     }
-
 
     private void GuardarPlayerPref(int valor)
     {
         PlayerPrefs.SetInt("ObjetoElegido", valor);
         PlayerPrefs.Save();
     }
-
-
-
 }

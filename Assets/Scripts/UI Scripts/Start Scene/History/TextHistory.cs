@@ -11,6 +11,7 @@ public class TextHistory : MonoBehaviour
     public UnityEngine.UI.Text textScene;
     private string texto;
 
+
     private void Start() {
         this.texto = "";
 
