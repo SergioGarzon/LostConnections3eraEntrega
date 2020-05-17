@@ -24,6 +24,7 @@ public class BattleMachine : MonoBehaviour
 
     public GameObject panelUICards;
     public GameObject btnMenu;
+    public GameObject panelTarjetas;
 
     public ActivateButtons panelUIBattle;
 
@@ -37,14 +38,19 @@ public class BattleMachine : MonoBehaviour
 
         panelUICards = GameObject.Find("Canvas/PnlTarjetaGB");
         btnMenu = GameObject.Find("InventoryCanvas/OpenMenu");
+        panelTarjetas = GameObject.Find("Canvas/PnlAccesoTarjeta");
+
 
         panelUIBattle = GameObject.Find("Canvas/PnlBattleUI").GetComponent<ActivateButtons>();
 
         currentState = BattleState.None;
 
+        panelTarjetas.gameObject.SetActive(false);
+
         //DEBUG - ONLY Test
         //Attack(0);
     }
+
 
     public void StartBattle(EnemyBattleSystem _enemy)
     {
@@ -92,8 +98,9 @@ public class BattleMachine : MonoBehaviour
 
     private void ShowAttackOptions(PlayerBattleSystem player)
     {
+        panelTarjetas.gameObject.SetActive(false);
         btnMenu.gameObject.SetActive(false);
-        panelUICards.gameObject.SetActive(false);
+        panelUICards.gameObject.SetActive(false);        
         panelUIBattle.gameObject.SetActive(true);
         panelUIBattle.ShowAttackButtons(player);
     }

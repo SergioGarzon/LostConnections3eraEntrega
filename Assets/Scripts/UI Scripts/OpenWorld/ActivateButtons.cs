@@ -15,7 +15,7 @@ public class ActivateButtons : MonoBehaviour
         btnFirst = transform.Find("ContainerBtn/Scroll View/Viewport/Content/BtnFirst").GetComponent<Button>();
 
         //DEBUG = ONLY test
-        PlayerPrefs.SetInt("LenguajeGuardado", 0);
+        //PlayerPrefs.SetInt("LenguajeGuardado", 0);
 
         lang = PlayerPrefs.GetInt("LenguajeGuardado", 0);
     }
@@ -46,12 +46,12 @@ public class ActivateButtons : MonoBehaviour
         if (lang == 0)
         {
             //0 es en Ingles
-            image = Resources.Load<Sprite>("GeneralTextures/Buttons/English/" + powerName);
+            image = Resources.Load<Sprite>("Textures/TextureBattleButton/English/" + powerName);
         }
         else
         {
             //1 en Español
-            image = Resources.Load<Sprite>("GeneralTextures/Buttons/Espanol/" + powerName);
+            image = Resources.Load<Sprite>("Textures/TextureBattleButton/Espanol/" + powerName);
         }
 
         return image;

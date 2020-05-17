@@ -23,7 +23,7 @@ public class ScoreData : ScriptableObject
         xp = SessionData.Data.xp;
         mLife= SessionData.Data.lifeWizard;
         hLife = SessionData.Data.lifeHacker;
-        Debug.Log(SessionData.Data.lifeHacker);
+        //Debug.Log(SessionData.Data.lifeHacker);
         SessionData.LoadData();
     }
     
