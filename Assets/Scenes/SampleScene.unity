@@ -4032,6 +4032,7 @@ GameObject:
   - component: {fileID: 193456446}
   - component: {fileID: 193456448}
   - component: {fileID: 193456445}
+  - component: {fileID: 193456449}
   m_Layer: 0
   m_Name: ObjetoVirus5
   m_TagString: EnemiesGroup
@@ -4129,6 +4130,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: -4, y: 5, z: -2}
   m_Center: {x: 0, y: 2, z: 3}
+--- !u!114 &193456449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193456443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c432dd394edcae942ba9cc089d2bc77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powers: 
+  playerClass: 0
+  battleSystem: {fileID: 0}
+  hp: 0
 --- !u!1 &194826375
 GameObject:
   m_ObjectHideFlags: 0
@@ -4875,6 +4892,7 @@ GameObject:
   - component: {fileID: 212952272}
   - component: {fileID: 212952274}
   - component: {fileID: 212952271}
+  - component: {fileID: 212952275}
   m_Layer: 0
   m_Name: ObjetoVirus4
   m_TagString: EnemiesGroup
@@ -4972,6 +4990,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: -4, y: 5, z: -2}
   m_Center: {x: 0.0000076293945, y: 2, z: 5}
+--- !u!114 &212952275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212952269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c432dd394edcae942ba9cc089d2bc77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powers: 
+  playerClass: 0
+  battleSystem: {fileID: 0}
+  hp: 0
 --- !u!1 &221965688
 GameObject:
   m_ObjectHideFlags: 0
@@ -34453,6 +34487,7 @@ GameObject:
   - component: {fileID: 923164653}
   - component: {fileID: 923164655}
   - component: {fileID: 923164652}
+  - component: {fileID: 923164656}
   m_Layer: 0
   m_Name: ObjetoVirus1
   m_TagString: EnemiesGroup
@@ -34550,6 +34585,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7, y: 4, z: 10}
   m_Center: {x: 0.000006914139, y: 2, z: -0.0000038146973}
+--- !u!114 &923164656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923164650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c432dd394edcae942ba9cc089d2bc77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powers: 
+  playerClass: 0
+  battleSystem: {fileID: 0}
+  hp: 0
 --- !u!1 &925928842
 GameObject:
   m_ObjectHideFlags: 0
@@ -36254,6 +36305,7 @@ GameObject:
   - component: {fileID: 991714593}
   - component: {fileID: 991714595}
   - component: {fileID: 991714592}
+  - component: {fileID: 991714596}
   m_Layer: 0
   m_Name: ObjetoVirus3
   m_TagString: EnemiesGroup
@@ -36351,6 +36403,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: -4, y: 5, z: -2}
   m_Center: {x: -4, y: 2, z: -3}
+--- !u!114 &991714596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991714590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c432dd394edcae942ba9cc089d2bc77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powers: 
+  playerClass: 0
+  battleSystem: {fileID: 0}
+  hp: 0
 --- !u!1 &997963016
 GameObject:
   m_ObjectHideFlags: 0
@@ -64814,6 +64882,7 @@ GameObject:
   - component: {fileID: 1869584791}
   - component: {fileID: 1869584793}
   - component: {fileID: 1869584790}
+  - component: {fileID: 1869584794}
   m_Layer: 0
   m_Name: ObjetoVirus2
   m_TagString: EnemiesGroup
@@ -64911,6 +64980,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: -4, y: 5, z: -2}
   m_Center: {x: 0.0000076293945, y: 2, z: 4}
+--- !u!114 &1869584794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869584788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c432dd394edcae942ba9cc089d2bc77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powers: 
+  playerClass: 0
+  battleSystem: {fileID: 0}
+  hp: 0
 --- !u!1 &1874974659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6600818092113277876, guid: d33980ab07b89a545961567e29609f42,
