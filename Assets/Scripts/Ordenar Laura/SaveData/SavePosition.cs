@@ -28,11 +28,13 @@ public class SavePosition : MonoBehaviour
             objetoPlayer.transform.position = new Vector3(PlayerPrefs.GetFloat("x"),
             PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));
 
-            this.positionObject.destination = this.objetoPlayerTwo.transform.position;
+
+            objetoPlayerTwo.transform.position = new Vector3(PlayerPrefs.GetFloat("x2"),
+            PlayerPrefs.GetFloat("y2"), PlayerPrefs.GetFloat("z2"));
+            //this.positionObject.destination = this.objetoPlayerTwo.transform.position;
 
             this.camaraPosition.transform.position = new Vector3(PlayerPrefs.GetFloat("xCam"),
             PlayerPrefs.GetFloat("yCam"), PlayerPrefs.GetFloat("zCam"));
-
 
             SavePosition.cargarPosicionInicial = 2;
 

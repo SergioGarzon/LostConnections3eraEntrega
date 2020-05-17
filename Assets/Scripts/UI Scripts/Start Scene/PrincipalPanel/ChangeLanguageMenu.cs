@@ -15,7 +15,7 @@ public class ChangeLanguageMenu : MonoBehaviour
     void Start()
     {
         texto = new string[] {"PLAY GAME", "LOAD GAME", "OPTIONS", "CREDITS", "QUIT GAME",
-            "INICIAR JUEGO", "CARGAR JUEGO", "OPTIONS", "CREDITOS", "SALIR"};
+            "INICIAR JUEGO", "CARGAR JUEGO", "OPCIONES", "CREDITOS", "SALIR"};
     }
 
 
@@ -71,9 +71,6 @@ public class ChangeLanguageMenu : MonoBehaviour
         {
             if (j < 10)
                 this.textoBotonesVector[i].text = this.texto[j];
-
-            Debug.Log("Español: " + this.texto[j]);
-
             j++;
         }
     }

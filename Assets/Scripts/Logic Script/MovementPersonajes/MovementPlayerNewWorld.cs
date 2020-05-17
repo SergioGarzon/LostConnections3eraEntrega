@@ -20,7 +20,7 @@ public class MovementPlayerNewWorld : MonoBehaviour
     private Vector3 movePlayer;
     private bool canMovePlayer;
 
-    
+
 
     void Start()
     {
@@ -44,9 +44,6 @@ public class MovementPlayerNewWorld : MonoBehaviour
             DirectionCamara();
 
             this.movePlayer = playerInput.x * camRight + playerInput.z * camaraForward;
-
-            //Aqui esto no va
-            //this.movePlayer = this.movePlayer * this.speed;
 
             this.controlerPlayer.transform.LookAt(this.controlerPlayer.transform.position + movePlayer);
 
@@ -79,7 +76,7 @@ public class MovementPlayerNewWorld : MonoBehaviour
         this.movePlayer.y = this.fallVelocity;
     }
 
-    public void setMovementPlayer(bool valor)
+    public void SetMovementPlayer(bool valor)
     {
         this.canMovePlayer = valor;
     }

@@ -21,15 +21,15 @@ public class FollowPlayerTwo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             this.dentro = true;
-        } 
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-       if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             this.dentro = false;
         }
@@ -37,14 +37,19 @@ public class FollowPlayerTwo : MonoBehaviour
 
     void Update()
     {
-        if(!dentro)
+        if (!dentro)
         {
             this.enemigo.destination = jugador.position;
-        }   
-        if(dentro)
+        }
+        if (dentro)
         {
             this.enemigo.destination = this.transform.position;
         }
+    }
+
+    public void SetCanFollow(bool canFollow)
+    {
+        dentro = canFollow;
     }
 
 }

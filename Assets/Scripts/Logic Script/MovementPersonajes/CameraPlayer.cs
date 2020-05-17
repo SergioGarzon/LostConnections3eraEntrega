@@ -79,7 +79,6 @@ public class CameraPlayer : MonoBehaviour
                 transform.LookAt(this.targetPlayer);
             }
         }
-
     }
 
 
