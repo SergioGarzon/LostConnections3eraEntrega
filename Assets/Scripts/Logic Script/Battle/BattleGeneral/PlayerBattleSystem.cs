@@ -32,9 +32,13 @@ public class PlayerBattleSystem : MonoBehaviour
 
     public BattleMachine battleSystem;
 
+    public ParticleSystem particulas;
+
     void Start()
     {
         battleSystem = GameObject.Find("GameManager").GetComponent<BattleMachine>();
+
+        particulas = GameObject.Find("ObjectsWorldScene/ObjectPlayers/Player").GetComponentInChildren<ParticleSystem>();
 
         InitializePowers();
     }
@@ -96,10 +100,12 @@ public class PlayerBattleSystem : MonoBehaviour
                 }
             case PlayerPowers.Steal:
                 {
+                    powerValue = 1;
                     break;
                 }
             case PlayerPowers.Pixel:
                 {
+                    powerValue = 3;
                     break;
                 }
             case PlayerPowers.Shock:
@@ -141,6 +147,7 @@ public class PlayerBattleSystem : MonoBehaviour
         }
 
         battleSystem.AttackEnd(powerValue);
+        particulas.Play();
     }
 
     public List<PlayerPowers> GetPowers()
