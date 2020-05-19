@@ -9,10 +9,15 @@ public class ObjetoElegido : MonoBehaviour
     public Text valorElegidoText;
     private int valorAux;
 
+    void Awake()
+    {
+
+        PlayerPrefs.SetInt("ObjetoElegido", 0);
+    }
+
     void Start()
     {
         this.valorAux = 10;
-        PlayerPrefs.SetInt("ObjetoElegido", 1);
     }
 
 
@@ -25,10 +30,13 @@ public class ObjetoElegido : MonoBehaviour
             this.valorAux = x;
 
 
-            if (x == 1)
-                this.valorElegidoText.text = "ATIF";
-            else
-                this.valorElegidoText.text = "CHARLIE";
+            switch(x)
+            {
+                case 0: this.valorElegidoText.text = "ATIF"; break;
+                case 1: this.valorElegidoText.text = "CHARLIE"; break;
+                case 2:  this.valorElegidoText.text = "BIOWARE"; break;
+            }
+                
 
         }
 

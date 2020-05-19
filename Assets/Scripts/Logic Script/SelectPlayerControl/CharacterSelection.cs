@@ -9,7 +9,6 @@ public class CharacterSelection : MonoBehaviour
     //Creo un vector de GameObject
     public GameObject[] characterList;
     private int index;
-    private int activarCharlieAtif;
 
 
     private void Start()
@@ -38,54 +37,49 @@ public class CharacterSelection : MonoBehaviour
             characterList[0].SetActive(true);
         }
 
-        this.activarCharlieAtif = 0;
     }
 
 
     public void ToggleLeft()
     {
-
-        if (this.activarCharlieAtif == 1)
+        if(index > 0)
         {
             characterList[index].SetActive(false);
 
             index--;
 
-            if (index < 0)
-            {
-                index = characterList.Length - 1;
-            }
-
             characterList[index].SetActive(true);
 
-            GuardarPlayerPref(1);
-
-            this.activarCharlieAtif = 0;
+            switch (index)
+            {
+                case 0: GuardarPlayerPref(0); break;
+                case 1: GuardarPlayerPref(1); break;
+                case 2: GuardarPlayerPref(2); break;
+            }
         }
-
 
 
     }
 
     public void ToggleRight()
     {
-        if (this.activarCharlieAtif == 0)
+
+        if(index < 2)
         {
             characterList[index].SetActive(false);
 
             index++;
 
-            if (index == characterList.Length)
-            {
-                index = characterList.Length - 1;
-            }
-
             characterList[index].SetActive(true);
 
-            GuardarPlayerPref(0);
-
-            this.activarCharlieAtif = 1;
+            switch (index)
+            {
+                case 0: GuardarPlayerPref(0); break;
+                case 1: GuardarPlayerPref(1); break;
+                case 2: GuardarPlayerPref(2); break;
+            }
         }
+       
     }
 
     private void GuardarPlayerPref(int valor)

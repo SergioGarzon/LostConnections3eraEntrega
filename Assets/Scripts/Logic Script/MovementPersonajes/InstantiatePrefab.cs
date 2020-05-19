@@ -9,14 +9,14 @@ public class InstantiatePrefab : MonoBehaviour
 
     void Start()
     {
-        int x = PlayerPrefs.GetInt("ObjetoElegido", 0);  //0 Atif, 1 Charlie
+        int x = PlayerPrefs.GetInt("ObjetoElegido", 1);  //0 Atif, 1 Charlie
 
-        if (x == 0)
+        if (x == 1)
         {
             this.objectPrefab1.gameObject.SetActive(true); 
             this.objectPrefab2.gameObject.SetActive(false);
         }
-        if(x == 1)
+        if(x == 0)
         {
             this.objectPrefab1.gameObject.SetActive(false);
             this.objectPrefab2.gameObject.SetActive(true);

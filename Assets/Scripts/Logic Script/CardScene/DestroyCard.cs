@@ -16,15 +16,26 @@ public class DestroyCard : MonoBehaviour
     //private InventoryScript _inventoryScript;
     public GameObject inventary;
 
+
+    private CameraPlayer camPlayer;
+
     private void Start()
     {
         // _inventoryScript = inventary.GetComponent<InventoryScript>();
+        camPlayer = Camera.main.GetComponent<CameraPlayer>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
+            MovementPlayerNewWorld player = other.gameObject.GetComponent<MovementPlayerNewWorld>();
+            player.SetMovementPlayer(false);
+
+            camPlayer.setCameraMovement(false);
+
+
+
             if (this.VerificarLenguaje() == 0)
             {
                 this.imageTexture.texture = this.englishTexture;
@@ -36,6 +47,9 @@ public class DestroyCard : MonoBehaviour
 
             this.gameObject.SetActive(true);
             panel.gameObject.SetActive(true);
+
+
+
 
             /*
             if (this.valorTarjeta == 8)
