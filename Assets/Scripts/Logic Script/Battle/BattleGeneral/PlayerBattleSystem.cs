@@ -32,13 +32,12 @@ public class PlayerBattleSystem : MonoBehaviour
 
     public BattleMachine battleSystem;
 
-    public ParticleSystem particulas;
+    //public ParticleSystem particleSystem;
 
     void Start()
     {
         battleSystem = GameObject.Find("GameManager").GetComponent<BattleMachine>();
-
-        particulas = GameObject.Find("ObjectsWorldScene/ObjectPlayers/Player").GetComponentInChildren<ParticleSystem>();
+        //particleSystem = transform.Find("ParticleSystem").GetComponentInChildren<ParticleSystem>();
 
         InitializePowers();
     }
@@ -55,7 +54,7 @@ public class PlayerBattleSystem : MonoBehaviour
         {
             Debug.Log("EnemiesGroup Trigger Enter -->");
 
-            StartBattle(other.gameObject.GetComponent<EnemyBattleSystem>());
+            StartBattle(other.GetComponent<EnemyBattleSystem>());
         }
     }
 
@@ -147,7 +146,7 @@ public class PlayerBattleSystem : MonoBehaviour
         }
 
         battleSystem.AttackEnd(powerValue);
-        particulas.Play();
+        //particleSystem.Play();
     }
 
     public List<PlayerPowers> GetPowers()
@@ -163,5 +162,10 @@ public class PlayerBattleSystem : MonoBehaviour
     public void AddNewPower(PlayerPowers power)
     {
         powers.Add(power);
+    }
+
+    public void PlayerEndBattle()
+    {
+        //TODO -> Reiniciar y cambiar los valores necesarios del player cuando no esta en batalla. Por ej: desactivar el particle system
     }
 }

@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ActivateButtons : MonoBehaviour
+public class PanelUIBattle : MonoBehaviour
 {
-    public Button btnBack, btnFirst;
+    public Button btnBack, btnPrefab;
+
+    public Transform scrollContent;
 
     int lang;
 
     void Awake()
     {
         btnBack = transform.Find("ContainerBtn/BtnBack").GetComponent<Button>();
-        btnFirst = transform.Find("ContainerBtn/Scroll View/Viewport/Content/BtnFirst").GetComponent<Button>();
+        scrollContent = btnBack.transform.parent.Find("Scroll View/Viewport/Content");
+
+        btnPrefab = Resources.Load<Button>("Prefabs/UI/BtnPowerBattleSystem");
 
         //DEBUG = ONLY test
         //PlayerPrefs.SetInt("LenguajeGuardado", 0);
@@ -61,17 +65,28 @@ public class ActivateButtons : MonoBehaviour
     {
         List<PlayerBattleSystem.PlayerPowers> powersList = player.GetPowers();
 
-        btnBack.gameObject.SetActive(true);
-
-        FillButton(btnFirst.gameObject, player, powersList[0]);
-
-        for (int i = 1; i < player.GetPowers().Count; i++)
+        for (int i = 0; i < player.GetPowers().Count; i++)
         {
-            GameObject button = Instantiate(btnFirst.gameObject);
-            button.transform.parent = btnFirst.transform.parent;
+            GameObject button = Instantiate(btnPrefab.gameObject);
+            button.transform.parent = scrollContent;
 
             FillButton(button, player, powersList[i]);
         }
-
     }
+
+    public void CleanAttackButtons()
+    {
+        for (int i = 0; i < scrollContent.childCount; i++)
+        {
+            Debug.Log(scrollContent.GetChild(i).name);
+
+            Destroy(scrollContent.GetChild(i).gameObject);
+        }
+    }
+
+    public void SetScapeButton(BattleMachine battleSystem)
+    {
+        btnBack.onClick.AddListener(() => battleSystem.BattleEnd());
+    }
+
 }

@@ -41,7 +41,7 @@ public class ActivateText : MonoBehaviour
 	}
 
 
-	void OnCollisionEnter(Collision other)
+	void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "Player")
 		{
@@ -58,7 +58,7 @@ public class ActivateText : MonoBehaviour
 	}
 
 
-	void OnCollisionExit(Collision other)
+	void OnTriggerExit(Collider other)
 	{
 		if (other.gameObject.tag == "Player")
 		{

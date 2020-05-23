@@ -12,8 +12,7 @@ public class MovementPlayerNewWorld : MonoBehaviour
     public float gravity;
     public float fallVelocity;
 
-    public Camera camara;
-
+    private Camera camara;
     private Vector3 playerInput;
     private Vector3 camaraForward;
     private Vector3 camRight;
@@ -29,6 +28,7 @@ public class MovementPlayerNewWorld : MonoBehaviour
         this.horizontalMove = 0;
         this.gravity = 9.8f;
         this.canMovePlayer = true;
+        camara = Camera.main;
     }
 
     void Update()
