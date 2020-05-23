@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b2bc58b591649439d1ccf8393ee5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerClass: 0
+  playerClass: 1
   powers: 
   hp: 0
   battleSystem: {fileID: 0}

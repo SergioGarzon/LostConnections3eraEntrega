@@ -38,6 +38,7 @@ public class PlayersCreations : MonoBehaviour
         CharacterController charController = player.GetComponent<CharacterController>(); //Ajustamos dimensiones del collider por la escala
         charController.height = 20;
         charController.radius = 5;
+        charController.slopeLimit = 80;
 
         //TODO -> Instanciar el player 2
         // - Crear Prefab Player2 y Player3
@@ -63,6 +64,11 @@ public class PlayersCreations : MonoBehaviour
             case (int)PlayersEnum.Charlie:
                 {
                     playerPrefab = charliePrefab;
+                    break;
+                }
+            case (int)PlayersEnum.BioWare:
+                {
+                    playerPrefab = biowarePrefab;
                     break;
                 }
         }

@@ -10,7 +10,7 @@ public class DesactivarUnPanel : MonoBehaviour
 
     void Start()
     {
-        movPlayerWorld = GameObject.Find("ObjectsWorldScene/ObjectPlayers/AtifPrefab(Clone)").GetComponent<MovementPlayerNewWorld>();
+        movPlayerWorld = GameObject.Find("ObjectsWorldScene/ObjectPlayers").transform.GetChild(0).gameObject.GetComponent<MovementPlayerNewWorld>();
     }
 
     public void ActivarPanelSolicitado()

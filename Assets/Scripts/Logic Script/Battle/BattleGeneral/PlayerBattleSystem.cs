@@ -23,7 +23,8 @@ public class PlayerBattleSystem : MonoBehaviour
     public enum PlayerClass
     {
         hacker,
-        mage
+        mage,
+        bioware
     }
 
     public PlayerClass playerClass;
