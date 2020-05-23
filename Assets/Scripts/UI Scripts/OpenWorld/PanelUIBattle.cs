@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PanelUIBattle : MonoBehaviour
 {
-    public Button btnBack, btnPrefab;
+    public Button btnBack, btnInventory, btnPrefab;
 
     public Transform scrollContent;
 
@@ -14,6 +14,7 @@ public class PanelUIBattle : MonoBehaviour
     void Awake()
     {
         btnBack = transform.Find("ContainerBtn/BtnBack").GetComponent<Button>();
+        btnInventory = transform.Find("ContainerBtn/BtnInventory").GetComponent<Button>();
         scrollContent = btnBack.transform.parent.Find("Scroll View/Viewport/Content");
 
         btnPrefab = Resources.Load<Button>("Prefabs/UI/BtnPowerBattleSystem");
@@ -82,6 +83,11 @@ public class PanelUIBattle : MonoBehaviour
 
             Destroy(scrollContent.GetChild(i).gameObject);
         }
+    }
+
+    public void OpenInventoryPanel(BattleMachine battleSystem)
+    {
+        btnInventory.onClick.AddListener(() => battleSystem.ActivateInventory());
     }
 
     public void SetScapeButton(BattleMachine battleSystem)

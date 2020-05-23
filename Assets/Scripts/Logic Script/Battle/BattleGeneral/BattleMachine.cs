@@ -24,6 +24,9 @@ public class BattleMachine : MonoBehaviour
 
     public GameObject btnMenu;
     public GameObject panelTarjetas;
+    public GameObject pnlMenuInventory;
+    public GameObject panelInventory;
+
 
     public PanelUIBattle panelUIBattle;
 
@@ -38,13 +41,14 @@ public class BattleMachine : MonoBehaviour
 
         btnMenu = GameObject.Find("InventoryCanvas/OpenMenu");
         panelTarjetas = GameObject.Find("Canvas/PnlAccesoTarjeta");
-
         panelUIBattle = GameObject.Find("Canvas/PnlBattleUI").GetComponent<PanelUIBattle>();
+        pnlMenuInventory = GameObject.Find("InventoryCanvas/Menu");
+        panelInventory = GameObject.Find("InventoryCanvas/Menu/PanelInventory");
 
         currentState = BattleState.None;
         currentSide = Side.Players;
 
-        panelTarjetas.gameObject.SetActive(false);
+
 
         characterIndexCount = 0;
 
@@ -55,6 +59,10 @@ public class BattleMachine : MonoBehaviour
     private void Start()
     {
         playerList = GameObject.Find("ObjectsWorldScene/ObjectPlayers").GetComponentsInChildren<PlayerBattleSystem>().ToList<PlayerBattleSystem>();
+
+        panelTarjetas.gameObject.SetActive(false);
+        pnlMenuInventory.SetActive(false);
+        panelInventory.SetActive(false);
     }
 
     public void StartBattle(EnemyBattleSystem _enemy)
@@ -70,6 +78,7 @@ public class BattleMachine : MonoBehaviour
             currentSide = Side.Players;
 
             panelUIBattle.SetScapeButton(this);
+            panelUIBattle.OpenInventoryPanel(this);
 
             Attack(characterIndexCount);
         }
@@ -98,6 +107,12 @@ public class BattleMachine : MonoBehaviour
         currentState = BattleState.End;
 
         CleanBattleComponents();
+    }
+
+    public void ActivateInventory()
+    {
+        pnlMenuInventory.SetActive(true);
+        panelInventory.gameObject.SetActive(true);
     }
 
     private void NextTurn()
