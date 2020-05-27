@@ -54,7 +54,6 @@ public class CharacterSelection : MonoBehaviour
             {
                 case 0: GuardarPlayerPref(0); break;
                 case 1: GuardarPlayerPref(1); break;
-                case 2: GuardarPlayerPref(2); break;
             }
         }
 
@@ -64,7 +63,7 @@ public class CharacterSelection : MonoBehaviour
     public void ToggleRight()
     {
 
-        if(index < 2)
+        if(index < 1)
         {
             characterList[index].SetActive(false);
 
@@ -76,7 +75,6 @@ public class CharacterSelection : MonoBehaviour
             {
                 case 0: GuardarPlayerPref(0); break;
                 case 1: GuardarPlayerPref(1); break;
-                case 2: GuardarPlayerPref(2); break;
             }
         }
        

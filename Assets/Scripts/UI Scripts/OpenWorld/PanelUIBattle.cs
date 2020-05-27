@@ -10,16 +10,16 @@ public class PanelUIBattle : MonoBehaviour
     public GameObject btnMenu;
 
     public Slider sldEnemy;
-    //public Slider sldPlayerOne;
-    //public Slider sldPlayerTwo;
+    public Slider sldPlayerOne;
+    public Slider sldPlayerTwo;
 
-    //public RawImage imgCardBlack;
+    public RawImage imgCharlie;
+    public RawImage imgAtif;
+    public RawImage imgVirus;
     public RawImage imgCardGoldenBlack;
 
     public Text txtInformationBattle;
     public Text TxtTarjetaBlack;
-    public Text TxtTarjetaGolden;
-
 
     public Transform scrollContent;
 
@@ -55,12 +55,28 @@ public class PanelUIBattle : MonoBehaviour
         //PlayerPrefs.SetInt("LenguajeGuardado", 0);
 
         lang = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+
+        
+            
     }
 
     void Start()
     {
         //TODO - Llamar a EndBattle con este button
         //btnBack.onClick.AddListener();
+        int playerSelected = PlayerPrefs.GetInt("ObjetoElegido", 0);
+
+        if (playerSelected == 0)  //0 Atif 1 Charlie
+        {
+            imgCharlie.gameObject.SetActive(false);
+            imgAtif.gameObject.SetActive(true);
+        }
+        else
+        {
+            imgCharlie.gameObject.SetActive(true);
+            imgAtif.gameObject.SetActive(false);
+        }
+
 
         sldEnemy.value = 100;
 
@@ -129,15 +145,14 @@ public class PanelUIBattle : MonoBehaviour
     {
         imgCardGoldenBlack.enabled = false;
         //imgCardBlack.enabled = false;
-        TxtTarjetaGolden.enabled = false;
         TxtTarjetaBlack.enabled = false;
     }
 
     public void EnabledImage()
     {
         //imgCardBlack.enabled = true;
+        imgVirus.enabled = true;
         imgCardGoldenBlack.enabled = true;
-        TxtTarjetaGolden.enabled = true;
         TxtTarjetaBlack.enabled = true;
         btnMenu.SetActive(true);
 

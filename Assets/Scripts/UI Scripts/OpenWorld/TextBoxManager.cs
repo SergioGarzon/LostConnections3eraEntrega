@@ -111,8 +111,8 @@ public class TextBoxManager : MonoBehaviour
 
 		if (this.objetoPanelShop != null && this.lineasNPCGuardia == 2)
 		{
-			this.objetoPanelShop.gameObject.SetActive(true);
 			isActiveShop = true;
+			this.objetoPanelShop.gameObject.SetActive(true);			
 		}
 
 

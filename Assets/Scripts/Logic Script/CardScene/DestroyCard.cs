@@ -59,26 +59,11 @@ public class DestroyCard : MonoBehaviour
             _inventoryScript.LoadCards();
             */
             Destroy(this.gameObject);
-
-            /*
-            if (this.valorTarjeta == 2)
-                PlayerPrefs.SetInt("ValorGuardadoTarjeta", valorTarjeta);
-
-            if (this.valorTarjeta == 4)
-                PlayerPrefs.SetInt("TarjetaAccesoArcade", valorTarjeta);
-
-            if (this.valorTarjeta == 5)
-                PlayerPrefs.SetInt("TarjetaAccesoPanal", valorTarjeta);
-                */
-
+            
             if (this.cardValue == 6)
-                GuardarValorTarjetaShop();
-        }
-    }
+                PlayerPrefs.SetInt("TarjetaShop", 1);
 
-    private void GuardarValorTarjetaShop()
-    {
-        PlayerPrefs.SetInt("TarjetaShop", 1);
+        }
     }
 
 

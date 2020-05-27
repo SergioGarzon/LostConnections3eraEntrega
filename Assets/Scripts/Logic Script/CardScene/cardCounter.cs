@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class cardCounter : MonoBehaviour
 {
-    public Text goldenCards;
 
     public Text blackCards;
 
@@ -17,7 +16,8 @@ public class cardCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        goldenCards.text = "Gold: " + goldenCard.amount * goldenCard.value;
-        blackCards.text = "Black: " + blackCard.amount * blackCard.value;
+        string value = ":" + goldenCard.amount * goldenCard.value + "\n" + ": " + blackCard.amount * blackCard.value;
+
+        blackCards.text = value;
     }
 }

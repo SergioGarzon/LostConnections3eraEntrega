@@ -20,14 +20,12 @@ public class ActivateText : MonoBehaviour
 
 	private bool requieredMouseClick;
 	private bool waitingClick;
-	private bool clickShop;
 
 
 	void Start()
 	{
 		theTextBox = this.objetoTextBoxManager.GetComponent<TextBoxManager>();
 		this.requieredMouseClick = true;
-		clickShop = true;
 	}
 
 	// Update is called once per frame

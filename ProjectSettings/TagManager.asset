@@ -12,6 +12,7 @@ TagManager:
   - ShopLevelArc2
   - ShopLevelArc4
   - ShopLevelArc7
+  - CollisionShop
   layers:
   - Default
   - TransparentFX
