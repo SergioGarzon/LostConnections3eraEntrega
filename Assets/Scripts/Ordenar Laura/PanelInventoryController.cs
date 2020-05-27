@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,25 @@ public class PanelInventoryController : MonoBehaviour
     public GameObject OptionsInventory;
     public Button _buttonBack;
     
+    int player = PlayerPrefs.GetInt("ObjetoElegido",0);
+
+    private void Start()
+    {
+        if (player == 0)
+        {
+            ShowAtifAttacks();
+        }
+        else if (player == 1)
+        {
+            ShowCharlieAttacks();
+        }
+        else
+        {
+            ShowAtifAttacks();
+            Debug.Log("Player no recibido");
+        }
+    }
+
     public void CloseInventory()
     {
         this.gameObject.SetActive(false);
