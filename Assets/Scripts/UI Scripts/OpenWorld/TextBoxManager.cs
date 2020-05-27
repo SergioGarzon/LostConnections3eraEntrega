@@ -14,11 +14,7 @@ public class TextBoxManager : MonoBehaviour
 	private int lineasNPCViejita;
 	private int lineasNPCGuardia;
 
-	public Button boton1;
-	public Button boton2;
-	public Button boton3;
 
-	//default text file that can be loaded straight to the textbox if activatetextatline has no associated text file
 	public Text theText;
 
 	private TextAsset textFile;
@@ -28,14 +24,12 @@ public class TextBoxManager : MonoBehaviour
 	public int currentLine;
 	public int endAtLine;
 
-	//public pcMovement player;
-
 	public bool isActive;
+	private bool isActiveShop;
 
 	public int valorActivadorBotones;
 
-	public GameObject objetoPanelShop;
-
+	public GameObject objetoPanelShop;  //Descomentar esta linea de codigo
 
 	// Use this for initialization
 	void Start()
@@ -62,6 +56,8 @@ public class TextBoxManager : MonoBehaviour
 		{
 			DisableTextBox();
 		}
+
+		isActiveShop = false;
 	}
 
 	// Update is called once per frame
@@ -83,7 +79,7 @@ public class TextBoxManager : MonoBehaviour
 			DisableTextBox();
 		}
 		else
-		{			
+		{
 			theText.text = textLines[currentLine];
 		}
 	}
@@ -111,8 +107,15 @@ public class TextBoxManager : MonoBehaviour
 		this.objetoPanel.gameObject.SetActive(false);
 		theText.text = "";
 
-		if(this.objetoPanelShop != null && this.lineasNPCGuardia == 2)
+
+
+		if (this.objetoPanelShop != null && this.lineasNPCGuardia == 2)
+		{
 			this.objetoPanelShop.gameObject.SetActive(true);
+			isActiveShop = true;
+		}
+
+
 
 		StartCoroutine(toggleActive());
 	}
@@ -143,14 +146,14 @@ public class TextBoxManager : MonoBehaviour
 			this.textPanelInformationClick.text = "Click to Chat";
 		else
 			this.textPanelInformationClick.text = "Click para conversar";
-	
+
 	}
 
 	public void setTipoNPC(int valorNPC)
 	{
 		this.tipoNPC = valorNPC;
 
-		if(this.tipoNPC == 1)
+		if (this.tipoNPC == 1)
 		{
 			this.lineasNPCViejita = 1;
 			this.lineasNPCGuardia = 0;
@@ -161,7 +164,7 @@ public class TextBoxManager : MonoBehaviour
 			this.lineasNPCGuardia = 2;
 			this.lineasNPCViejita = 0;
 		}
-			
+
 	}
 
 
@@ -170,6 +173,26 @@ public class TextBoxManager : MonoBehaviour
 		this.objetoPanel.gameObject.SetActive(false);
 	}
 
+
+	public bool getActiveShop()
+	{
+		return isActiveShop;
+	}
+
+	public void SetActiveShop(bool value)
+	{
+		isActiveShop = value;
+	}
+
+	public string getTextPnlInformation()
+	{
+		return textPanelInformationClick.text;
+	}
+
+	public void SetTextPnlInformation()
+	{
+		textPanelInformationClick.text = "";
+	}
 
 }
 

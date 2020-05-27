@@ -7,6 +7,11 @@ TagManager:
   - Teleport1
   - Menu
   - EnemiesGroup
+  - Tree
+  - NoTree
+  - ShopLevelArc2
+  - ShopLevelArc4
+  - ShopLevelArc7
   layers:
   - Default
   - TransparentFX

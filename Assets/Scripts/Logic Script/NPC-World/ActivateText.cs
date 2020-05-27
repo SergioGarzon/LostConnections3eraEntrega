@@ -5,39 +5,39 @@ using UnityEngine.UI;
 
 public class ActivateText : MonoBehaviour
 {
-
 	public TextAsset englishText;
 	public TextAsset espanolText;
-	
-	public int lineaInicio;  
+
+	public int lineaInicio;
 	public int lineaFin;
 
 
-	//Objeto que activa el panel de texto
 	public GameObject objetoTextBoxManager;
 	private TextBoxManager theTextBox;
 
 	public int tipoNPC;
 
-	
+
 	private bool requieredMouseClick;
 	private bool waitingClick;
-
+	private bool clickShop;
 
 
 	void Start()
 	{
 		theTextBox = this.objetoTextBoxManager.GetComponent<TextBoxManager>();
 		this.requieredMouseClick = true;
+		clickShop = true;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		if (!theTextBox.isActive && waitingClick && Input.GetMouseButtonDown(0) && !theTextBox.getActiveShop())
+		{
+			this.dataTextGame();
+		}
 
-
-		if (!theTextBox.isActive &&  waitingClick && Input.GetMouseButtonDown(0))		
-			this.dataTextGame();		
 	}
 
 
@@ -54,6 +54,8 @@ public class ActivateText : MonoBehaviour
 			}
 
 			this.dataTextGame();
+
+
 		}
 	}
 
@@ -64,6 +66,8 @@ public class ActivateText : MonoBehaviour
 		{
 			waitingClick = false;
 			DesactivatePanel();
+			theTextBox.SetTextPnlInformation();
+			theTextBox.SetActiveShop(false);
 		}
 	}
 
@@ -91,7 +95,12 @@ public class ActivateText : MonoBehaviour
 		if (this.getValidateLanguage() == 0)
 			theTextBox.ReloadScript(englishText);
 		else
-			theTextBox.ReloadScript(espanolText);		
+			theTextBox.ReloadScript(espanolText);
+
+		if (theTextBox.getActiveShop())
+		{
+			waitingClick = false;
+		}
 	}
 
 
@@ -104,4 +113,5 @@ public class ActivateText : MonoBehaviour
 	{
 		this.theTextBox.DesactivatePanelDialog();
 	}
+
 }

@@ -135,9 +135,12 @@ GameObject:
   - component: {fileID: 4551536899963175158}
   - component: {fileID: 6544015286873150756}
   - component: {fileID: 6296605601841125162}
+  - component: {fileID: 9158311632424889749}
+  - component: {fileID: 3754028929082914672}
+  - component: {fileID: -4205766373861752434}
   m_Layer: 0
   m_Name: AtifPrefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,6 +177,7 @@ MonoBehaviour:
   powers: 
   hp: 0
   battleSystem: {fileID: 0}
+  particleSystem: {fileID: 0}
 --- !u!65 &6296605601841125162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -187,6 +191,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 25, z: 5}
   m_Center: {x: 0, y: 15, z: 8}
+--- !u!114 &9158311632424889749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680350766635266789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abcb29a910ef504185cc56bfb08fc26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3754028929082914672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680350766635266789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b642a41a54de60a46bb4a67bd5ac1505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4205766373861752434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680350766635266789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30112aeebc41fa049a62fd0bcc55b64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1076693583598417805
 GameObject:
   m_ObjectHideFlags: 0
