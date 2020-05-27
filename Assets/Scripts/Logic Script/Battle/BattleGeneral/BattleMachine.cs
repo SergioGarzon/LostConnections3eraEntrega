@@ -22,12 +22,6 @@ public class BattleMachine : MonoBehaviour
     public List<PlayerBattleSystem> playerList;
     public EnemyBattleSystem enemy;
 
-    public GameObject btnMenu;
-    public GameObject panelTarjetas;
-    public GameObject pnlMenuInventory;
-    public GameObject panelInventory;
-
-
     public PanelUIBattle panelUIBattle;
 
     private BattleState currentState;
@@ -39,16 +33,10 @@ public class BattleMachine : MonoBehaviour
     {
         playerList = new List<PlayerBattleSystem>();
 
-        btnMenu = GameObject.Find("InventoryCanvas/OpenMenu");
-        panelTarjetas = GameObject.Find("Canvas/PnlAccesoTarjeta");
         panelUIBattle = GameObject.Find("Canvas/PnlBattleUI").GetComponent<PanelUIBattle>();
-        pnlMenuInventory = GameObject.Find("InventoryCanvas/Menu");
-        panelInventory = GameObject.Find("InventoryCanvas/Menu/PanelInventory");
 
         currentState = BattleState.None;
         currentSide = Side.Players;
-
-
 
         characterIndexCount = 0;
 
@@ -59,10 +47,6 @@ public class BattleMachine : MonoBehaviour
     private void Start()
     {
         playerList = GameObject.Find("ObjectsWorldScene/ObjectPlayers").GetComponentsInChildren<PlayerBattleSystem>().ToList<PlayerBattleSystem>();
-
-        panelTarjetas.gameObject.SetActive(false);
-        pnlMenuInventory.SetActive(false);
-        panelInventory.SetActive(false);
     }
 
     public void StartBattle(EnemyBattleSystem _enemy)
@@ -78,7 +62,6 @@ public class BattleMachine : MonoBehaviour
             currentSide = Side.Players;
 
             panelUIBattle.SetScapeButton(this);
-            panelUIBattle.OpenInventoryPanel(this);
 
             Attack(characterIndexCount);
         }
@@ -88,17 +71,24 @@ public class BattleMachine : MonoBehaviour
         }
     }
 
-    public void AttackEnd(float dmg)
+    public void AttackPlayerEnd(float dmg)
     {
         enemy.SetDamage(dmg);
+        CleanAttackOptions();
 
-        NextTurn();
+        panelUIBattle.SetEnergyEnemy(enemy.GetHP());
     }
 
-    public void AttackEnemyEnd(float dmg)
+    public void AttackEnemyEnd(float dmg, PlayerBattleSystem player)
     {
-        playerList[Random.Range(0, playerList.Count)].SetDamage(dmg);
+        player.SetDamage(dmg);
+        CleanAttackOptions();
 
+        Debug.Log("Attack Enemy -->");
+    }
+
+    public void AttackFXEnd()
+    {
         NextTurn();
     }
 
@@ -109,18 +99,12 @@ public class BattleMachine : MonoBehaviour
         CleanBattleComponents();
     }
 
-    public void ActivateInventory()
-    {
-        pnlMenuInventory.SetActive(true);
-        panelInventory.gameObject.SetActive(true);
-    }
-
     private void NextTurn()
     {
-        characterIndexCount++;
-
         if (currentSide == Side.Players)
         {
+            characterIndexCount++;
+
             if (characterIndexCount >= playerList.Count)
             {
                 currentSide = Side.Enemies;
@@ -140,11 +124,13 @@ public class BattleMachine : MonoBehaviour
     {
         if (currentSide == Side.Players)
         {
+            panelUIBattle.SetTextInformation("Attack Player: " + playerList[characterCount].name);
             DisplayAttackOptions(playerList[characterCount], true);
         }
         else
         {
-            enemy.Attack();
+            panelUIBattle.SetTextInformation("Attack Enemy: " + enemy.name);
+            enemy.Attack(playerList[Random.Range(0, playerList.Count)].transform);
         }
 
         currentState = BattleState.InProgress;
@@ -152,12 +138,13 @@ public class BattleMachine : MonoBehaviour
 
     private void DisplayAttackOptions(PlayerBattleSystem player, bool display)
     {
-        btnMenu.SetActive(!display);
+        panelUIBattle.Unactivate();
+        panelUIBattle.UnenableImage();
         panelUIBattle.gameObject.SetActive(display);
 
         if (player != null)
         {
-            panelUIBattle.ShowAttackButtons(player);
+            panelUIBattle.ShowAttackButtons(player, enemy.transform);
         }
     }
 
@@ -185,7 +172,7 @@ public class BattleMachine : MonoBehaviour
     private void CleanBattleComponents()
     {
         //ENEMIES
-        //enemy.EnemyEndBattle();
+        enemy.EnemyEndBattle();
         enemy = null;
 
         //TODO - Cerrar UI Battle
@@ -194,8 +181,10 @@ public class BattleMachine : MonoBehaviour
 
         //PLAYERS
         //player[n].PlayerEndBattle();
-
         AllowPlayersMovement(true);
+
+        //Aqui puse esto
+        panelUIBattle.EnabledImage();
 
         characterIndexCount = 0;
         currentState = BattleState.None;

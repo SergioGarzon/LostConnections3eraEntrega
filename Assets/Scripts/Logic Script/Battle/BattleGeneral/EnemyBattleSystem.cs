@@ -24,12 +24,14 @@ public class EnemyBattleSystem : MonoBehaviour
     public EnemyClass enemyClass;
 
     public BattleMachine battleSystem;
+    public ParticlesAttack particleSystem;
 
     public float hp;
 
     void Start()
     {
         battleSystem = GameObject.Find("GameManager").GetComponent<BattleMachine>();
+        particleSystem = battleSystem.GetComponent<ParticlesAttack>();
 
         hp = 20;
 
@@ -67,7 +69,7 @@ public class EnemyBattleSystem : MonoBehaviour
         return powers;
     }
 
-    public void Attack()
+    public void Attack(Transform player)
     {
         float powerValue = 0;
         int power = 0;
@@ -117,18 +119,44 @@ public class EnemyBattleSystem : MonoBehaviour
                 }
         }
 
-        battleSystem.AttackEnd(powerValue);
+        particleSystem.AttackEnemyPower((EnemyPowers)power, this, player);
+        battleSystem.AttackEnemyEnd(powerValue, player.GetComponent<PlayerBattleSystem>());
+    }
+
+    public void AttackEnd()
+    {
+        battleSystem.AttackFXEnd();
     }
 
     public void SetDamage(float dmg)
     {
         hp -= dmg;
 
+        if (hp <= 0)
+        {
+            EnemyEndBattle();
+        }
+
         Debug.Log("Enemy HP: " + hp);
+    }
+
+    public float GetHP()  //Este metodo devuelve la vida del enemigo
+    {
+        return hp;
     }
 
     public void EnemyEndBattle()
     {
-        //TODO -> Reiniciar y cambiar los valores necesarios del enemigo cuando no esta en batalla. Por ej: eliminar el enemigo si hp <= 0
+        //Acá hacemos el IF para comprobar que HP <= 0 para destruir el objeto virus
+        if (hp <= 0)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            //TODO -> Reiniciar y cambiar los valores necesarios del enemigo cuando no esta en batalla. Esto es si el player abandona la batalla
+        }
     }
+
+
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerBattleSystem : MonoBehaviour
 {
-    public enum PlayerPowers
+
+    public enum PlayerPowers //Los Prefabs en la carpeta de resources AttackFX tienen que estar en el mismo orden que estos enums
     {
         Bug,
         Steal,
@@ -12,19 +13,18 @@ public class PlayerBattleSystem : MonoBehaviour
         Shock,
         Lighting,
         Electricity,
-        ControlZ,
-        Reset,
-        Delete,
-        Heal,
-        Updating,
-        Electroshock
+        ControlZ, //Poder exclusivo de charlie, recupera la vida robada por el enemigo
+        Reset, //Poder exclusivo de Charlie, reinicia toda la batalla desde cero, inclusive los estados tanto del equipo como el enemigo
+        Delete, //Poder exclusivo de Charlie que suma tanto mana como daño que ocasiona el enemigo
+        Heal, //Restaura la vida de todo el equipo incluidad la suya pero dejara inhabilitado para pelear momentaneamente
+        Updating, //Restaura el mana de Atif pero no produce daño al enemigo
+        Electroshock //Poderoso ataque Atif que daña tanto al enemigo como la energia que quita
     }
 
     public enum PlayerClass
     {
         hacker,
-        mage,
-        bioware
+        mage
     }
 
     public PlayerClass playerClass;
@@ -32,13 +32,12 @@ public class PlayerBattleSystem : MonoBehaviour
     public float hp;
 
     public BattleMachine battleSystem;
-
-    //public ParticleSystem particleSystem;
+    public ParticlesAttack particleSystem;
 
     void Start()
     {
         battleSystem = GameObject.Find("GameManager").GetComponent<BattleMachine>();
-        //particleSystem = transform.Find("ParticleSystem").GetComponentInChildren<ParticleSystem>();
+        particleSystem = battleSystem.GetComponent<ParticlesAttack>();
 
         InitializePowers();
     }
@@ -86,7 +85,7 @@ public class PlayerBattleSystem : MonoBehaviour
         //Load players powers
     }
 
-    public void Attack(PlayerPowers power)
+    public void Attack(PlayerPowers power, Transform enemy)
     {
         float powerValue = 0;
 
@@ -110,6 +109,7 @@ public class PlayerBattleSystem : MonoBehaviour
                 }
             case PlayerPowers.Shock:
                 {
+                    powerValue = 4;
                     break;
                 }
             case PlayerPowers.Lighting:
@@ -146,9 +146,15 @@ public class PlayerBattleSystem : MonoBehaviour
                 }
         }
 
-        battleSystem.AttackEnd(powerValue);
-        //particleSystem.Play();
+        particleSystem.AttackPlayerPower(power, this, enemy);
+        battleSystem.AttackPlayerEnd(powerValue);
     }
+
+    public void AttackEnd()
+    {
+        battleSystem.AttackFXEnd();
+    }
+
 
     public List<PlayerPowers> GetPowers()
     {
@@ -165,8 +171,15 @@ public class PlayerBattleSystem : MonoBehaviour
         powers.Add(power);
     }
 
+    public void ReplacePower(PlayerPowers power)
+    {
+        //Método para reemplazar valor en la lista
+    }
+
+
     public void PlayerEndBattle()
     {
         //TODO -> Reiniciar y cambiar los valores necesarios del player cuando no esta en batalla. Por ej: desactivar el particle system
     }
+
 }
