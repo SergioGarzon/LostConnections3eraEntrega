@@ -27,6 +27,7 @@ public class PanelUIBattle : MonoBehaviour
 
     void Awake()
     {
+        /*
         btnBack = transform.Find("ContainerBtn/BtnBack").GetComponent<Button>();
 
         scrollContent = btnBack.transform.parent.Find("Scroll View/Viewport/Content");
@@ -49,7 +50,7 @@ public class PanelUIBattle : MonoBehaviour
 
         TxtTarjetaBlack = GameObject.Find("Canvas/PnlTarjetaGB/TxtTarjetaBlack").GetComponent<Text>();
         TxtTarjetaGolden = GameObject.Find("Canvas/PnlTarjetaGB/TxtTarjetaGolden").GetComponent<Text>();
-
+        */
         //DEBUG = ONLY test
         //PlayerPrefs.SetInt("LenguajeGuardado", 0);
 

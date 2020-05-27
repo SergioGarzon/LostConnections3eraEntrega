@@ -58788,18 +58788,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f26283edf81176469ef3ff28b72b4d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnBack: {fileID: 0}
-  btnPrefab: {fileID: 0}
-  btnMenu: {fileID: 0}
-  sldEnemy: {fileID: 0}
-  sldPlayerOne: {fileID: 0}
-  sldPlayerTwo: {fileID: 0}
-  imgCardBlack: {fileID: 0}
-  imgCardGolden: {fileID: 0}
-  txtInformationBattle: {fileID: 0}
-  TxtTarjetaBlack: {fileID: 0}
-  TxtTarjetaGolden: {fileID: 0}
-  scrollContent: {fileID: 0}
+  btnBack: {fileID: 1104870555}
+  btnPrefab: {fileID: 70404532795324225, guid: ea3aac07150d6f74dadb66c288067d26, type: 3}
+  btnMenu: {fileID: 454110460}
+  sldEnemy: {fileID: 737675651}
+  sldPlayerOne: {fileID: 66351939}
+  sldPlayerTwo: {fileID: 1107682795}
+  imgCardBlack: {fileID: 1899895889}
+  imgCardGolden: {fileID: 328681777}
+  txtInformationBattle: {fileID: 80316747}
+  TxtTarjetaBlack: {fileID: 630854751}
+  TxtTarjetaGolden: {fileID: 961284679}
+  scrollContent: {fileID: 410721315}
 --- !u!1 &1899895887
 GameObject:
   m_ObjectHideFlags: 0
