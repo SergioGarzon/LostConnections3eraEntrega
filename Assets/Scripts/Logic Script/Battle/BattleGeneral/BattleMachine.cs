@@ -172,7 +172,7 @@ public class BattleMachine : MonoBehaviour
     private void CleanBattleComponents()
     {
         //ENEMIES
-        enemy.EnemyEndBattle();
+        //enemy.EnemyEndBattle();  //Descomentar esto nuevamente
         enemy = null;
 
         //TODO - Cerrar UI Battle
@@ -189,4 +189,5 @@ public class BattleMachine : MonoBehaviour
         characterIndexCount = 0;
         currentState = BattleState.None;
     }
+
 }

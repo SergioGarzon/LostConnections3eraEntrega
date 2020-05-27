@@ -10,11 +10,11 @@ public class PanelUIBattle : MonoBehaviour
     public GameObject btnMenu;
 
     public Slider sldEnemy;
-    public Slider sldPlayerOne;
-    public Slider sldPlayerTwo;
+    //public Slider sldPlayerOne;
+    //public Slider sldPlayerTwo;
 
-    public RawImage imgCardBlack;
-    public RawImage imgCardGolden;
+    //public RawImage imgCardBlack;
+    public RawImage imgCardGoldenBlack;
 
     public Text txtInformationBattle;
     public Text TxtTarjetaBlack;
@@ -126,17 +126,17 @@ public class PanelUIBattle : MonoBehaviour
     }
 
     public void UnenableImage()
-    {        
-        imgCardGolden.enabled = false;
-        imgCardBlack.enabled = false;
+    {
+        imgCardGoldenBlack.enabled = false;
+        //imgCardBlack.enabled = false;
         TxtTarjetaGolden.enabled = false;
         TxtTarjetaBlack.enabled = false;
     }
 
     public void EnabledImage()
-    {        
-        imgCardBlack.enabled = true;
-        imgCardGolden.enabled = true;
+    {
+        //imgCardBlack.enabled = true;
+        imgCardGoldenBlack.enabled = true;
         TxtTarjetaGolden.enabled = true;
         TxtTarjetaBlack.enabled = true;
         btnMenu.SetActive(true);
@@ -152,7 +152,7 @@ public class PanelUIBattle : MonoBehaviour
     //Este método es para descontar las barra de energia del enemigo en la escena
     public void SetEnergyEnemy(float dmg)
     {
-        sldEnemy.value -= (dmg / 100);
+        sldEnemy.value -= dmg;
     }
 
     public void SetTextInformation(string dato)

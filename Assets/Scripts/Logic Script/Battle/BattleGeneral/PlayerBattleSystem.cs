@@ -176,10 +176,4 @@ public class PlayerBattleSystem : MonoBehaviour
         //Método para reemplazar valor en la lista
     }
 
-
-    public void PlayerEndBattle()
-    {
-        //TODO -> Reiniciar y cambiar los valores necesarios del player cuando no esta en batalla. Por ej: desactivar el particle system
-    }
-
 }

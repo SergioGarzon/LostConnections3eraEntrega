@@ -12,8 +12,7 @@ public class PlayersCreations : MonoBehaviour
     enum PlayersEnum
     {
         Atif,
-        Charlie,
-        BioWare
+        Charlie
     }
 
     void Awake()
@@ -41,16 +40,10 @@ public class PlayersCreations : MonoBehaviour
         charController.slopeLimit = 80;
 
 
-        //TODO -> Instanciar el player 2
-        // - Crear Prefab Player2 y Player3
-        //Player 2,3,n - NavMesh / FollowPlayerTwo
-
-        //Transform player2 = Instantiate(SelectPlayer(pjSelected), playersParent).transform;
-        //player2.parent = playersParent;
-        //player2.gameObject.AddComponent<NavMeshAgent>();
-        //player2.gameObject.AddComponent<FollowPlayerTwo>();
+        //TODO -> Instanciar el player 3
     }
 
+    //Esto despues se va a reemplazar por los ternarios que asignan el prefab. Vamos a necesitar un for que recorra los players e instancie el 2 y 3
     GameObject SelectPlayer(int player)
     {
         GameObject playerPrefab = null;
@@ -65,10 +58,6 @@ public class PlayersCreations : MonoBehaviour
             case (int)PlayersEnum.Charlie:
                 {
                     playerPrefab = charliePrefab;
-                    break;
-                }
-            case (int)PlayersEnum.BioWare:
-                {
                     break;
                 }
         }
