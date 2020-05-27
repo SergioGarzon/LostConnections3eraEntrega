@@ -7,25 +7,22 @@ public class CameraPlayer : MonoBehaviour
 {
     public Vector3 distanceCamera;
     private Transform targetPlayer;  //Este es el currentView
-    
+
     public Transform objectCubo1;
     public Transform objectCubo2;
 
-
-    public GameObject objectPlayer;
-    [Range (0 , 1)] public float lerpValue;
+    [Range(0, 1)] public float lerpValue;
     public float sensibilidad;
-    
+
     private bool validationBattle;
     private bool validation1;
     private bool validation2;
 
     private bool canMoveCamera;
 
-
     void Start()
     {
-        this.targetPlayer = this.objectPlayer.transform;
+        targetPlayer = GameObject.Find("ObjectsWorldScene/ObjectPlayers").transform.GetChild(0).transform;
         this.validationBattle = false;
         this.validation1 = false;
         this.validation2 = false;
@@ -36,7 +33,7 @@ public class CameraPlayer : MonoBehaviour
     {
         if (this.canMoveCamera)
         {
-            if (!this.objectPlayer.gameObject.activeSelf)
+            if (!targetPlayer.gameObject.activeSelf)
             {
                 this.validationBattle = true;
                 this.targetPlayer = this.objectCubo1.transform;
@@ -48,8 +45,6 @@ public class CameraPlayer : MonoBehaviour
                 this.validation2 = true;
             }
         }
-
-
     }
 
     void LateUpdate()
@@ -81,8 +76,6 @@ public class CameraPlayer : MonoBehaviour
         }
     }
 
-
-
     IEnumerator CorrutinaEspera()
     {
         yield return new WaitForSeconds(100f);
@@ -92,7 +85,6 @@ public class CameraPlayer : MonoBehaviour
     {
         this.canMoveCamera = camaraCanMove;
     }
-
 }
 
 

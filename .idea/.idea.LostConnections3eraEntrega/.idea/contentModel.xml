@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\usuario\.Rider2019.2\system\extResources" t="IncludeRecursive" />
@@ -25,6 +25,7 @@
               <e p="BattleGeneral" t="Include">
                 <e p="BattleMachine.cs" t="Include" />
                 <e p="EnemyBattleSystem.cs" t="Include" />
+                <e p="ParticlesAttack.cs" t="Include" />
                 <e p="PlayerBattleSystem.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
@@ -44,16 +45,6 @@
               <e p="DestroyCard.cs" t="Include" />
               <e p="ValidatorArcade.cs" t="Include" />
             </e>
-            <e p="Colision Building" t="Include">
-              <e p="CollisionValidateBuilding.cs" t="Include" />
-            </e>
-            <e p="ColisionShop" t="Include">
-              <e p="ValidatorShop.cs" t="Include" />
-            </e>
-            <e p="ColisionTree" t="Include">
-              <e p="ChargeLifeTree.cs" t="Include" />
-              <e p="CollisionTreeNoLife.cs" t="Include" />
-            </e>
             <e p="Inventory" t="Include">
               <e p="AddToInventory.cs" t="Include" />
               <e p="AttackItem.cs" t="Include" />
@@ -72,6 +63,7 @@
               <e p="FollowPlayerTwo.cs" t="Include" />
               <e p="InstantiatePrefab.cs" t="Include" />
               <e p="MovementPlayerNewWorld.cs" t="Include" />
+              <e p="PlayersCreations.cs" t="Include" />
             </e>
             <e p="NPC-World" t="Include">
               <e p="ActivateText.cs" t="Include" />
@@ -131,12 +123,12 @@
               <e p="SeteoDatos.cs" t="Include" />
             </e>
             <e p="OpenWorld" t="Include">
-              <e p="ActivateButtons.cs" t="Include" />
               <e p="ActivatePanelNoChargeEnergy.cs" t="Include" />
               <e p="ActivatePanelUIBattle.cs" t="Include" />
               <e p="ActivateTreeEnergy.cs" t="Include" />
               <e p="DesactivarUnPanel.cs" t="Include" />
               <e p="PanelAccessNoAutorized.cs" t="Include" />
+              <e p="PanelUIBattle.cs" t="Include" />
               <e p="PanelValidatorArcade.cs" t="Include" />
               <e p="SliderEnergy.cs" t="Include" />
               <e p="TextBoxManager.cs" t="Include" />

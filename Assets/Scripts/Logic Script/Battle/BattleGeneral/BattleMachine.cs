@@ -22,35 +22,32 @@ public class BattleMachine : MonoBehaviour
     public List<PlayerBattleSystem> playerList;
     public EnemyBattleSystem enemy;
 
-    public GameObject panelUICards;
-    public GameObject btnMenu;
-    public GameObject panelTarjetas;
-
-    public ActivateButtons panelUIBattle;
+    public PanelUIBattle panelUIBattle;
 
     private BattleState currentState;
-    private Side side;
+    private Side currentSide;
+
+    private int characterIndexCount;
 
     private void Awake()
     {
         playerList = new List<PlayerBattleSystem>();
-        playerList = GameObject.Find("ObjectsWorldScene/ObjectPlayers").GetComponentsInChildren<PlayerBattleSystem>().ToList<PlayerBattleSystem>();
 
-        panelUICards = GameObject.Find("Canvas/PnlTarjetaGB");
-        btnMenu = GameObject.Find("InventoryCanvas/OpenMenu");
-        panelTarjetas = GameObject.Find("Canvas/PnlAccesoTarjeta");
-
-
-        panelUIBattle = GameObject.Find("Canvas/PnlBattleUI").GetComponent<ActivateButtons>();
+        panelUIBattle = GameObject.Find("Canvas/PnlBattleUI").GetComponent<PanelUIBattle>();
 
         currentState = BattleState.None;
+        currentSide = Side.Players;
 
-        panelTarjetas.gameObject.SetActive(false);
+        characterIndexCount = 0;
 
         //DEBUG - ONLY Test
         //Attack(0);
     }
 
+    private void Start()
+    {
+        playerList = GameObject.Find("ObjectsWorldScene/ObjectPlayers").GetComponentsInChildren<PlayerBattleSystem>().ToList<PlayerBattleSystem>();
+    }
 
     public void StartBattle(EnemyBattleSystem _enemy)
     {
@@ -62,9 +59,11 @@ public class BattleMachine : MonoBehaviour
 
             enemy = _enemy;
 
-            side = Side.Players;
+            currentSide = Side.Players;
 
-            Attack(0);
+            panelUIBattle.SetScapeButton(this);
+
+            Attack(characterIndexCount);
         }
         else
         {
@@ -72,37 +71,81 @@ public class BattleMachine : MonoBehaviour
         }
     }
 
-    public void AttackEnd(float dmg)
+    public void AttackPlayerEnd(float dmg)
     {
         enemy.SetDamage(dmg);
+        CleanAttackOptions();
+
+        panelUIBattle.SetEnergyEnemy(enemy.GetHP());
+    }
+
+    public void AttackEnemyEnd(float dmg, PlayerBattleSystem player)
+    {
+        player.SetDamage(dmg);
+        CleanAttackOptions();
+
+        Debug.Log("Attack Enemy -->");
+    }
+
+    public void AttackFXEnd()
+    {
+        NextTurn();
     }
 
     public void BattleEnd()
     {
-        AllowPlayersMovement(true);
-
         currentState = BattleState.End;
 
         CleanBattleComponents();
     }
 
-    private void Attack(int playerCount)
+    private void NextTurn()
     {
-        if (side == Side.Players)
+        if (currentSide == Side.Players)
         {
-            ShowAttackOptions(playerList[playerCount]);
+            characterIndexCount++;
+
+            if (characterIndexCount >= playerList.Count)
+            {
+                currentSide = Side.Enemies;
+
+                characterIndexCount = 0;
+            }
+        }
+        else
+        {
+            currentSide = Side.Players;
+        }
+
+        Attack(characterIndexCount);
+    }
+
+    private void Attack(int characterCount)
+    {
+        if (currentSide == Side.Players)
+        {
+            panelUIBattle.SetTextInformation("Attack Player: " + playerList[characterCount].name);
+            DisplayAttackOptions(playerList[characterCount], true);
+        }
+        else
+        {
+            panelUIBattle.SetTextInformation("Attack Enemy: " + enemy.name);
+            enemy.Attack(playerList[Random.Range(0, playerList.Count)].transform);
         }
 
         currentState = BattleState.InProgress;
     }
 
-    private void ShowAttackOptions(PlayerBattleSystem player)
+    private void DisplayAttackOptions(PlayerBattleSystem player, bool display)
     {
-        panelTarjetas.gameObject.SetActive(false);
-        btnMenu.gameObject.SetActive(false);
-        panelUICards.gameObject.SetActive(false);        
-        panelUIBattle.gameObject.SetActive(true);
-        panelUIBattle.ShowAttackButtons(player);
+        panelUIBattle.Unactivate();
+        panelUIBattle.UnenableImage();
+        panelUIBattle.gameObject.SetActive(display);
+
+        if (player != null)
+        {
+            panelUIBattle.ShowAttackButtons(player, enemy.transform);
+        }
     }
 
     private void AllowPlayersMovement(bool canMove)
@@ -111,25 +154,39 @@ public class BattleMachine : MonoBehaviour
         MovementPlayerNewWorld player1Movement = playerList[0].GetComponent<MovementPlayerNewWorld>();
         player1Movement.SetMovementPlayer(canMove);
 
-        FollowPlayerTwo player2Movement = playerList[1].GetComponent<FollowPlayerTwo>();
-        player2Movement.SetCanFollow(canMove);
+        if (playerList.Count > 1)
+        {
+            for (int i = 1; i < playerList.Count; i++)
+            {
+                FollowPlayerTwo playerSecondaryMovement = playerList[i].GetComponent<FollowPlayerTwo>();
+                playerSecondaryMovement.SetCanFollow(canMove);
+            }
+        }
     }
 
-  
+    private void CleanAttackOptions()
+    {
+        panelUIBattle.CleanAttackButtons();
+    }
 
     private void CleanBattleComponents()
     {
-
         //ENEMIES
-        //TODO - Llamar a Reset en el enemy cuando se termina la batalla = Si el enemigo murio eliminarlo, si no resetear las stats (vida, etc)
-        //enemy.Reset();
+        enemy.EnemyEndBattle();
         enemy = null;
 
         //TODO - Cerrar UI Battle
+        CleanAttackOptions();
+        DisplayAttackOptions(null, false);
 
         //PLAYERS
-        // -
+        //player[n].PlayerEndBattle();
+        AllowPlayersMovement(true);
 
+        //Aqui puse esto
+        panelUIBattle.EnabledImage();
+
+        characterIndexCount = 0;
         currentState = BattleState.None;
     }
 }

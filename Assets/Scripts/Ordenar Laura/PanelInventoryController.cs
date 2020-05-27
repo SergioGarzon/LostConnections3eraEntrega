@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,10 +10,9 @@ public class PanelInventoryController : MonoBehaviour
     public GameObject OptionsInventory;
     public Button _buttonBack;
     
-    int player = PlayerPrefs.GetInt("ObjetoElegido",0);
-
-    private void Start()
+    void Awake()
     {
+        int player = PlayerPrefs.GetInt("ObjetoElegido",0);
         if (player == 0)
         {
             ShowAtifAttacks();
@@ -29,7 +27,7 @@ public class PanelInventoryController : MonoBehaviour
             Debug.Log("Player no recibido");
         }
     }
-
+    
     public void CloseInventory()
     {
         this.gameObject.SetActive(false);
