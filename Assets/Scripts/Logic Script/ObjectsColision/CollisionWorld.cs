@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeEnergy : MonoBehaviour
+public class CollisionWorld : MonoBehaviour
 {
-
     private ActivatePanelGeneral activatePanel;
     private int language;
     private string textSend;
@@ -17,36 +16,27 @@ public class TreeEnergy : MonoBehaviour
         language = PlayerPrefs.GetInt("LenguajeGuardado", 0);
 
         if (language == 0)
-            textSend = "PRESS KEY E, FOR CHARGE ENERGY";
+            textSend = "NO PUEDES INGRESAR POR AQUÍ";
         else
-            textSend = "PRESIONA LA TECLA E PARA CARGAR ENERGIA";
+            textSend = "YOU CANNOT ENTER HERE";
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Tree"))
+        if (other.CompareTag("CollisionWorld"))
         {
             activatePanel.ActivatePanel();
-
             activatePanel.SetText(textSend);
-
-            if (Input.GetKey(KeyCode.E))
-            {
-
-            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Tree"))
+        if (other.CompareTag("CollisionWorld"))
         {
             activatePanel.UnactivePanel();
-
             activatePanel.SetText("");
         }
     }
-
-
 }

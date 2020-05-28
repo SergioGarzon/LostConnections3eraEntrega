@@ -139,6 +139,8 @@ GameObject:
   - component: {fileID: 3754028929082914672}
   - component: {fileID: -4205766373861752434}
   - component: {fileID: 9064773916516437045}
+  - component: {fileID: 2128460977711511519}
+  - component: {fileID: -8427773858175253744}
   m_Layer: 0
   m_Name: Atif
   m_TagString: Player
@@ -238,6 +240,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00a8d1b3fa124ba48a8ef3203dce5457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2128460977711511519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680350766635266789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dcf5fd96f38a164299c32b1caff32c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8427773858175253744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680350766635266789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d1ffab1eb9234418b2548a3be3469c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1076693583598417805

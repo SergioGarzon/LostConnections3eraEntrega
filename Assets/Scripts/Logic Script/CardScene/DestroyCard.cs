@@ -63,6 +63,9 @@ public class DestroyCard : MonoBehaviour
             if (this.cardValue == 6)
                 PlayerPrefs.SetInt("TarjetaShop", 1);
 
+            if (this.cardValue == 4)
+                PlayerPrefs.SetInt("ArcadeGame", 1);
+
         }
     }
 

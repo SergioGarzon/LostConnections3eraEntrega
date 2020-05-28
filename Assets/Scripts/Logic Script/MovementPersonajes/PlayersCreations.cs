@@ -9,6 +9,8 @@ public class PlayersCreations : MonoBehaviour
     public GameObject atifPrefab;
     public GameObject charliePrefab;
 
+    private TreeEnergy treeEnergy;
+
     enum PlayersEnum
     {
         Atif,
@@ -38,6 +40,7 @@ public class PlayersCreations : MonoBehaviour
         charController.height = 20;
         charController.radius = 5;
         charController.slopeLimit = 80;
+       
 
 
         //TODO -> Instanciar el player 3
