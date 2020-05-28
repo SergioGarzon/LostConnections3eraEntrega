@@ -3806,7 +3806,6 @@ GameObject:
   - component: {fileID: 193456444}
   - component: {fileID: 193456447}
   - component: {fileID: 193456448}
-  - component: {fileID: 193456445}
   - component: {fileID: 193456446}
   m_Layer: 0
   m_Name: Virus
@@ -3830,22 +3829,6 @@ Transform:
   m_Father: {fileID: 1063852691}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &193456445
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193456443}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &193456446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3882,7 +3865,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.11
+  m_Radius: 4.67
   m_Center: {x: -0.03, y: 1.16, z: 2.86}
 --- !u!1 &194826375
 GameObject:
@@ -4608,7 +4591,6 @@ GameObject:
   - component: {fileID: 212952270}
   - component: {fileID: 212952273}
   - component: {fileID: 212952274}
-  - component: {fileID: 212952271}
   - component: {fileID: 212952272}
   m_Layer: 0
   m_Name: Virus
@@ -4632,22 +4614,6 @@ Transform:
   m_Father: {fileID: 1063852691}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &212952271
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 212952269}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &212952272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4684,7 +4650,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.11
+  m_Radius: 4.67
   m_Center: {x: 0.32, y: 1.16, z: 4.15}
 --- !u!1 &221965688
 GameObject:
@@ -31347,7 +31313,6 @@ GameObject:
   - component: {fileID: 923164651}
   - component: {fileID: 923164654}
   - component: {fileID: 923164655}
-  - component: {fileID: 923164652}
   - component: {fileID: 923164653}
   m_Layer: 0
   m_Name: Virus
@@ -31371,22 +31336,6 @@ Transform:
   m_Father: {fileID: 1063852691}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &923164652
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923164650}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &923164653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31423,7 +31372,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.11
+  m_Radius: 4.67
   m_Center: {x: 0.35, y: 1.16, z: 2.46}
 --- !u!1 &925928842
 GameObject:
@@ -32612,7 +32561,6 @@ GameObject:
   - component: {fileID: 991714591}
   - component: {fileID: 991714594}
   - component: {fileID: 991714595}
-  - component: {fileID: 991714592}
   - component: {fileID: 991714593}
   m_Layer: 0
   m_Name: Virus
@@ -32636,22 +32584,6 @@ Transform:
   m_Father: {fileID: 1063852691}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &991714592
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991714590}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &991714593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32688,7 +32620,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.11
+  m_Radius: 4.67
   m_Center: {x: -4.65, y: 1.16, z: -2.43}
 --- !u!1001 &997310516
 PrefabInstance:
@@ -57656,7 +57588,6 @@ GameObject:
   - component: {fileID: 1869584789}
   - component: {fileID: 1869584792}
   - component: {fileID: 1869584793}
-  - component: {fileID: 1869584790}
   - component: {fileID: 1869584791}
   m_Layer: 0
   m_Name: Virus
@@ -57680,22 +57611,6 @@ Transform:
   m_Father: {fileID: 1063852691}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1869584790
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1869584788}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &1869584791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57732,7 +57647,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.11
+  m_Radius: 4.67
   m_Center: {x: -0.15, y: 1.16, z: 3.27}
 --- !u!1 &1874974659 stripped
 GameObject:
