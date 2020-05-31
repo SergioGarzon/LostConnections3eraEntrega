@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBattleSystem : MonoBehaviour
 {
+
     public enum EnemyPowers
     {
         Scan,
@@ -32,8 +33,6 @@ public class EnemyBattleSystem : MonoBehaviour
     {
         battleSystem = GameObject.Find("GameManager").GetComponent<BattleMachine>();
         particleSystem = battleSystem.GetComponent<ParticlesAttack>();
-
-        hp = 20;
 
         SetPowers();
     }
@@ -150,7 +149,7 @@ public class EnemyBattleSystem : MonoBehaviour
         //Acá hacemos el IF para comprobar que HP <= 0 para destruir el objeto virus
         if (hp <= 0)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {

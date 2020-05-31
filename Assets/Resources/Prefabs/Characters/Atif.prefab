@@ -178,7 +178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerClass: 1
   powers: 
-  hp: 0
+  hp: 100
+  mana: 100
   battleSystem: {fileID: 0}
   particleSystem: {fileID: 0}
 --- !u!65 &6296605601841125162

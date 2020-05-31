@@ -1,20 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayersCreations : MonoBehaviour
 {
+
     int pjSelected = 0;
 
-    public GameObject atifPrefab;
-    public GameObject charliePrefab;
-
-    private TreeEnergy treeEnergy;
+    public List<GameObject> characterPrefabsList;
 
     enum PlayersEnum
     {
         Atif,
-        Charlie
+        Charlie,
+        Dante
     }
 
     void Awake()
@@ -24,11 +24,41 @@ public class PlayersCreations : MonoBehaviour
 
     void CreatePlayers()
     {
-        pjSelected = PlayerPrefs.GetInt("ObjetoElegido", 0);  //0 Atif, 1 Charlie
+        pjSelected = PlayerPrefs.GetInt("ObjetoElegido", 0);  //0 Atif, 1 Charlie, 2 Dante
         Transform playersParent = GameObject.Find("ObjectsWorldScene/ObjectPlayers").transform;
 
         //Player 1 - PlayerController / MovementPlayerNewWorld
-        GameObject prefab = pjSelected == 0 ? atifPrefab : charliePrefab;
+        GameObject userPlayer = GetPlayerPrefab((PlayersEnum)pjSelected);
+        CreateUserPlayer(userPlayer, playersParent);
+
+        //Player 2,3,n - NavMeshAgent / FollowPlayerTwo
+        /*        for(int i = 0; i<characterPrefabsList.Count; i++)
+                {
+                    GameObject playerSupport = GetPlayerPrefab((PlayersEnum)pjSelected);
+
+                    if (playerSupport != userPlayer)
+                    {
+                        CreateNonControllerPlayer(playerSupport, playersParent);
+                    }
+                }
+                */
+
+        //TPDO - ELIMINAR ESTE FOR Y DEJAR AL DE ARRIBA CUANDO ESTEN LISTOS LOS PREFABS DE LOS PLAYERS
+        
+        /*for (int i = 1; i < characterPrefabsList.Count; i++)
+        {
+            GameObject playerSupport = GetPlayerPrefab((PlayersEnum)pjSelected);
+            CreateNonControllerPlayer(playerSupport, playersParent);
+        }*/
+    }
+
+    private GameObject GetPlayerPrefab(PlayersEnum playerNumber)
+    {
+        return characterPrefabsList[(int)playerNumber];
+    }
+
+    private void CreateUserPlayer(GameObject prefab, Transform playersParent)
+    {
         Transform player = Instantiate(prefab, playersParent).transform;
         player.parent = playersParent;
         player.gameObject.AddComponent<CharacterController>();
@@ -40,31 +70,21 @@ public class PlayersCreations : MonoBehaviour
         charController.height = 20;
         charController.radius = 5;
         charController.slopeLimit = 80;
-       
-
-
-        //TODO -> Instanciar el player 3
     }
 
-    //Esto despues se va a reemplazar por los ternarios que asignan el prefab. Vamos a necesitar un for que recorra los players e instancie el 2 y 3
-    GameObject SelectPlayer(int player)
+    private void CreateNonControllerPlayer(GameObject prefab, Transform playersParent)
     {
-        GameObject playerPrefab = null;
-
-        switch (player)
-        {
-            case (int)PlayersEnum.Atif:
-                {
-                    playerPrefab = atifPrefab;
-                    break;
-                }
-            case (int)PlayersEnum.Charlie:
-                {
-                    playerPrefab = charliePrefab;
-                    break;
-                }
-        }
-
-        return playerPrefab;
+        Transform player = Instantiate(prefab, playersParent).transform;
+        player.parent = playersParent;
+        player.name = prefab.name;
+        NavMeshAgent agent = player.gameObject.AddComponent<NavMeshAgent>();
+        FollowPlayerTwo followP = player.gameObject.AddComponent<FollowPlayerTwo>();
+        agent.baseOffset = 1;
+        agent.speed = 70;
+        agent.angularSpeed = 360;
+        agent.acceleration = 50;
+        agent.stoppingDistance = 40;
+        agent.radius = 3;
+        agent.height = 2;
     }
 }

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Experimental.AI;
 
 public class ParticlesAttack : MonoBehaviour
 {
+
     public List<ParticleSystem> attackPlayersParticles;
     public List<ParticleSystem> attackEnemiesParticles;
     public ParticleSystem currentSystem;
@@ -55,6 +57,9 @@ public class ParticlesAttack : MonoBehaviour
     {
         if (prefab != null)
         {
+            if(prefab.name.Equals("Shock"))
+                prefab.transform.localScale = new Vector3(30,30,30); //Aqui le incremente el tamaño a la particula
+
             if (currentSystem == null)
             {
                 //El indice del power respeta el nombre de los enums, los prefabs en la carpeta AttackFX tienen que tener el mismo nombre.
@@ -81,7 +86,7 @@ public class ParticlesAttack : MonoBehaviour
         {
             Debug.Log("Particle update - DESTROY");
 
-            Destroy(currentSystem);
+            Destroy(currentSystem.gameObject);
             currentSystem = null;
 
             if (player != null)
@@ -104,6 +109,7 @@ public class ParticlesAttack : MonoBehaviour
             StartCoroutine(SystemCheck());
         }
     }
+
 
 
 }

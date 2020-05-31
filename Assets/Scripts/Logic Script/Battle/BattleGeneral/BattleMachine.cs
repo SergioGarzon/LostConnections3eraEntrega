@@ -101,6 +101,19 @@ public class BattleMachine : MonoBehaviour
 
     private void NextTurn()
     {
+        if (IsEnemyDead() == true)
+        {
+            //TODO - Agregar panel rewards
+            BattleEnd();
+            return;
+        }
+        else if (IsPlayerDead() == true)
+        {
+            //TODO - Agregar panel perdiste y sacar la llamada al metodo
+            BattleEnd();
+            return;
+        }
+
         if (currentSide == Side.Players)
         {
             characterIndexCount++;
@@ -122,18 +135,21 @@ public class BattleMachine : MonoBehaviour
 
     private void Attack(int characterCount)
     {
-        if (currentSide == Side.Players)
+        if (currentState != BattleState.None)
         {
-            panelUIBattle.SetTextInformation("Attack Player: " + playerList[characterCount].name);
-            DisplayAttackOptions(playerList[characterCount], true);
-        }
-        else
-        {
-            panelUIBattle.SetTextInformation("Attack Enemy: " + enemy.name);
-            enemy.Attack(playerList[Random.Range(0, playerList.Count)].transform);
-        }
+            if (currentSide == Side.Players)
+            {
+                panelUIBattle.SetTextInformation("Attack Player: " + playerList[characterCount].name);
+                DisplayAttackOptions(playerList[characterCount], true);
+            }
+            else
+            {
+                panelUIBattle.SetTextInformation("Attack Enemy: " + enemy.name);
+                enemy.Attack(playerList[Random.Range(0, playerList.Count)].transform);
+            }
 
-        currentState = BattleState.InProgress;
+            currentState = BattleState.InProgress;
+        }
     }
 
     private void DisplayAttackOptions(PlayerBattleSystem player, bool display)
@@ -172,8 +188,11 @@ public class BattleMachine : MonoBehaviour
     private void CleanBattleComponents()
     {
         //ENEMIES
-        //enemy.EnemyEndBattle();  //Descomentar esto nuevamente
-        enemy = null;
+        if (enemy != null)
+        {
+            enemy.EnemyEndBattle();
+            enemy = null;
+        }
 
         //TODO - Cerrar UI Battle
         CleanAttackOptions();
@@ -188,6 +207,29 @@ public class BattleMachine : MonoBehaviour
 
         characterIndexCount = 0;
         currentState = BattleState.None;
+    }
+
+    private bool IsEnemyDead()
+    {
+        return (enemy == null) || (enemy.GetHP() <= 0);
+    }
+
+    private bool IsPlayerDead()
+    {
+        bool dead = false;
+
+        for (int i = 0; i < playerList.Count; i++)
+        {
+            if (playerList[i].GetHP() > 0)
+            {
+                dead = false;
+                break;
+            }
+
+            dead = true;
+        }
+
+        return dead;
     }
 
 }
