@@ -9,8 +9,13 @@ using UnityEngine.SceneManagement;
 public class TextHistory : MonoBehaviour
 {
     public UnityEngine.UI.Text textScene;
+    public Scrollbar scrollbar;
     private string texto;
 
+    private void Awake()
+    {
+        scrollbar.value = 1.0f;
+    }
 
     private void Start() {
         this.texto = "";
@@ -45,9 +50,27 @@ public class TextHistory : MonoBehaviour
     IEnumerator FraseTexto(string frase) {
         int letra = 0;
         this.textScene.text = "";
+        int x = 0;
         
         while(letra < frase.Length) {
             this.textScene.text += frase[letra];
+            x = letra;
+
+            switch (x)
+            {
+                case 75: scrollbar.value -= 0.1f; break;
+                case 150: scrollbar.value -= 0.1f; break;
+                case 225: scrollbar.value -= 0.1f; break;
+                case 300: scrollbar.value -= 0.1f; break;
+                case 375: scrollbar.value -= 0.1f; break;
+                case 450: scrollbar.value -= 0.1f; break;
+                case 525: scrollbar.value -= 0.1f; break;
+                case 600: scrollbar.value -= 0.1f; break;
+
+            }
+
+            x = letra;
+
             letra += 1;
             yield return new WaitForSeconds(0.05f);
         }
