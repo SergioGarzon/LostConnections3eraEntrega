@@ -91,17 +91,17 @@ public class EnemyBattleSystem : MonoBehaviour
         {
             case (int)EnemyPowers.Scan:
                 {
-                    powerValue = UnityEngine.Random.Range(1f, 3f);
+                    powerValue = 30;
                     break;
                 }
             case (int)EnemyPowers.Attack:
                 {
-                    powerValue = 1;
+                    powerValue = 10;
                     break;
                 }
             case (int)EnemyPowers.Infect:
                 {
-                    powerValue = 3;
+                    powerValue = 20;
                     break;
                 }
             case (int)EnemyPowers.ScanBoss:
@@ -136,7 +136,8 @@ public class EnemyBattleSystem : MonoBehaviour
             EnemyEndBattle();
         }
 
-        Debug.Log("Enemy HP: " + hp);
+        battleSystem.SetEnergyEnemy(hp);
+
     }
 
     public float GetHP()  //Este metodo devuelve la vida del enemigo

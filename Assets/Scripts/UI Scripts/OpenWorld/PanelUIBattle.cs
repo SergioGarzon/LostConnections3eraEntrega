@@ -12,14 +12,20 @@ public class PanelUIBattle : MonoBehaviour
     public Slider sldEnemy;
     public Slider sldPlayerOne;
     public Slider sldPlayerTwo;
+    public Slider sldManaPlayerOne;
+    public Slider sldManaPlayerTwo;
+
 
     public RawImage imgCharlie;
     public RawImage imgAtif;
     public RawImage imgVirus;
     public RawImage imgCardGoldenBlack;
+    public RawImage imgBlack;
 
     public Text txtInformationBattle;
     public Text TxtTarjetaBlack;
+    public Text txtManaAtif;
+    public Text txtManaCharlie;
 
     public Transform scrollContent;
 
@@ -76,9 +82,6 @@ public class PanelUIBattle : MonoBehaviour
             imgCharlie.gameObject.SetActive(true);
             imgAtif.gameObject.SetActive(false);
         }
-
-
-        sldEnemy.value = 100;
 
         gameObject.SetActive(false);
     }
@@ -144,13 +147,13 @@ public class PanelUIBattle : MonoBehaviour
     public void UnenableImage()
     {
         imgCardGoldenBlack.enabled = false;
-        //imgCardBlack.enabled = false;
+        imgBlack.enabled = false;
         TxtTarjetaBlack.enabled = false;
     }
 
     public void EnabledImage()
     {
-        //imgCardBlack.enabled = true;
+        imgBlack.enabled = true;
         imgVirus.enabled = true;
         imgCardGoldenBlack.enabled = true;
         TxtTarjetaBlack.enabled = true;
@@ -167,7 +170,7 @@ public class PanelUIBattle : MonoBehaviour
     //Este método es para descontar las barra de energia del enemigo en la escena
     public void SetEnergyEnemy(float dmg)
     {
-        sldEnemy.value -= dmg;
+        sldEnemy.value = dmg;
     }
 
     public void SetTextInformation(string dato)
@@ -178,5 +181,32 @@ public class PanelUIBattle : MonoBehaviour
     private void ClickButton(BattleMachine battleSystem)
     {
         battleSystem.BattleEnd();
+    }
+
+    public void SetSliderEnergyGeneral(float playerEnergy)
+    {
+        if (PlayerPrefs.GetInt("ObjetoElegido", 0) == 0)  //0 Atif 1 Charlie
+        {
+            sldPlayerOne.value = playerEnergy;
+        }
+        else
+        {
+            sldPlayerTwo.value = playerEnergy;
+        }
+    }
+
+    public void SetSliderMana(float value)
+    {
+        if (PlayerPrefs.GetInt("ObjetoElegido", 0) == 0)  //0 Atif 1 Charlie
+        {
+            //sldManaPlayerOne.value = value;
+            sldManaPlayerOne.value = value;
+            txtManaAtif.text = sldManaPlayerOne.value + "%";
+        }
+        else
+        {
+            sldManaPlayerTwo.value = value;
+            txtManaCharlie.text = sldManaPlayerTwo.value + "%";
+        }
     }
 }

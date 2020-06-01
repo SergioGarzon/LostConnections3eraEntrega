@@ -58,6 +58,7 @@ public class BattleMachine : MonoBehaviour
             AllowPlayersMovement(false);
 
             enemy = _enemy;
+            panelUIBattle.SetEnergyEnemy(enemy.GetHP());
 
             currentSide = Side.Players;
 
@@ -67,6 +68,7 @@ public class BattleMachine : MonoBehaviour
         }
         else
         {
+            //Despues quitar esto asi puedo poner bien todo
             Debug.LogWarning("BattleState != None --> " + currentState);
         }
     }
@@ -230,6 +232,21 @@ public class BattleMachine : MonoBehaviour
         }
 
         return dead;
+    }
+
+    public void SetManaPanelBattleUI(float manaBattle)
+    {
+        panelUIBattle.SetSliderMana(manaBattle);
+    }
+
+    public void SetEnergyEnemy(float energyEnemy)
+    {
+        panelUIBattle.SetEnergyEnemy(energyEnemy);
+    }
+
+    public void SetEnergyPlayer(float energyPlayer)
+    {
+        panelUIBattle.SetSliderEnergyGeneral(energyPlayer);
     }
 
 }

@@ -40,7 +40,7 @@ public class PlayerBattleSystem : MonoBehaviour
 
     void Awake()
     {
-        mana = 100;
+        
     }
 
     void Start()
@@ -49,6 +49,8 @@ public class PlayerBattleSystem : MonoBehaviour
         particleSystem = battleSystem.GetComponent<ParticlesAttack>();
 
         InitializePowers();
+        SetMana(mana, 0); //Volverlo al Awake
+
     }
 
     //Cuando el player colisiona con un Enemy inicia la batalla
@@ -97,7 +99,8 @@ public class PlayerBattleSystem : MonoBehaviour
     public void Attack(PlayerPowers power, Transform enemy)
     {
         float powerValue = 0;
-        float mn = 0;  //Acá está lo de mana
+        float mnPositivo = 0;  //Acá está lo de mana
+        float mnNegativo = 0;
 
         switch (power)
         {
@@ -105,54 +108,54 @@ public class PlayerBattleSystem : MonoBehaviour
                 {
                     //Le saca 50 al virus en el nivel 1 pero le resta 60 de mana a uno
                     powerValue = 50;
-                    mn -= 60;
+                    mnNegativo = 60;
                     break;
                 }
             case PlayerPowers.Steal:
                 {
                     //Le saca 10 al enemigo y le suma 30 en mana a uno mismo
                     powerValue = 10;
-                    mn += 30;
+                    mnPositivo = 30;
                     break;
                 }
             case PlayerPowers.Pixel:
                 {
                     //Le saca 20 al virus y le resta 30 de mana 
                     powerValue = 20;
-                    mn -= 30;
+                    mnNegativo = 30;
                     break;
                 }
             case PlayerPowers.Shock:
                 {
                     //Le saca 20 al enemigo y resta 25 de mana
                     powerValue = 4;
-                    mn -= 25;
+                    mnNegativo = 25;
                     break;
                 }
             case PlayerPowers.Lighting:
                 {
                     //Resta 50 al enemigo y resta 50 de mana
                     powerValue = 50;
-                    mn -= 50;
+                    mnNegativo = 50;
                     break;
                 }
             case PlayerPowers.Electricity:
                 {
                     //Resta 10 al enemigo y suma 20 de mana
                     powerValue = 50;
-                    mn += 20;
+                    mnPositivo += 20;
                     break;
                 }
             case PlayerPowers.ControlZ:
                 {
                     //Revierte el ataque recibido pero resta 20 de mana
-                    mn -= 20;
+                    mnNegativo = 20;
                     break;
                 }
             case PlayerPowers.Reset:
                 {
                     //Reinicia toda la batalla pero resta todo el mana de Charlie
-                    mn = 0;
+                    mnPositivo = 0;
                     break;
                 }
             case PlayerPowers.Delete:
@@ -160,7 +163,7 @@ public class PlayerBattleSystem : MonoBehaviour
                     //Poder exclusivo de Charlie que suma tanto mana como daño que ocasiona el enemigo
                     //Resta 30 al enemigo y suma 30 de mana
                     powerValue = 30;
-                    mn += 30;
+                    mnPositivo = 30;
                     break;
                 }
             case PlayerPowers.Heal:
@@ -172,20 +175,20 @@ public class PlayerBattleSystem : MonoBehaviour
             case PlayerPowers.Updating:
                 {
                     //No daña al enemigo pero recupera, pero suma 50 de mana
-                    mn += 50;
+                    mnPositivo = 50;
                     break;
                 }
             case PlayerPowers.Electroshock:
                 {
                     powerValue = 70;
-                    mn -= 70;
+                    mnNegativo = 70;
                     break;
                 }
         }
 
         particleSystem.AttackPlayerPower(power, this, enemy);
         battleSystem.AttackPlayerEnd(powerValue);
-        SetMana(mn);
+        SetMana(mnPositivo, mnNegativo);
     }
 
     public void AttackEnd()
@@ -202,11 +205,32 @@ public class PlayerBattleSystem : MonoBehaviour
     public void SetDamage(float dmg)
     {
         hp -= dmg;
+
+        Debug.Log("Energia del enemigo: " + hp);
+
+        SetEnergySlider(hp);
     }
 
-    public void SetMana(float mn)
+    private void SetEnergySlider(float energyPlayer)
     {
-        mana += mn;
+        battleSystem.SetEnergyPlayer(energyPlayer);
+    }
+
+    public void SetMana(float mnPositivo, float mnNegativo)
+    {        
+        if(mnPositivo != 0)
+        {
+            if(mana < 100)
+                mana += mnPositivo;
+        }
+
+        if (mnNegativo != 0)
+        {
+            mana -= mnNegativo;            
+        }
+            
+
+        battleSystem.SetManaPanelBattleUI(mana);
     }
 
     public void AddNewPower(PlayerPowers power)
