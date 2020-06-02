@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9e5d58eba5ed84c868acabf17ff821, type: 3}
+  m_Name: Text Panel Information
+  m_EditorClassIdentifier: 
+  noTreeEnglish: This tree was destroyed! You can't charge energy right now.
+  noTreeSpanish: "\xA1Este \xE1rbol fue destruido! No puedes cargar energ\xEDa en
+    estos momentos."
+  treeEnglish: Press key "E" for charge energy.
+  treeSpanish: Presione la tecla "E" para cargar la energia
+  noArcadeEnglish: The Mini Games Arcade is currently under renovation,  please come
+    back soon to enjoy the updates.
+  noArcadeSpanish: "El Arcade de Mini Juegos se encuentra moment\xE1neamente en remodelaci\xF3n,
+    por favor vuelva pronto para disfrutar de las actualizaciones."
+  stopEnterEnglish: You can't get in here.
+  stopEnterSpanish: "No puedes ingresar por aqu\xED."
+  noAutorizeEnglish: Authorized personal only.
+  noAutorizeSpanish: Solo Personal Autorizado
+  shopArc2English: You can't enter this place until you reach level 2.
+  shopArc2Spanish: No puedes ingresar a este espacio hasta llegar al nivel 2.
+  shopArc4English: You can't enter this place until you reach level 4.
+  shopArc4Spanish: No puedes ingresar a este espacio hasta llegar al nivel 4.
+  shopArc7English: You can't enter this place until you reach level 3.
+  shopArc7Spanish: No puedes ingresar a este espacio hasta llegar al nivel 3.

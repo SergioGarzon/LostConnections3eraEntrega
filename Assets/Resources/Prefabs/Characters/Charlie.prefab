@@ -13,66 +13,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 25, z: 5}
   m_Center: {x: 0, y: 15, z: 8}
---- !u!114 &-637133942354257438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8177147813716374794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d1ffab1eb9234418b2548a3be3469c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-234634423014702253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8177147813716374794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30112aeebc41fa049a62fd0bcc55b64f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &214712790581461490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8177147813716374794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dcf5fd96f38a164299c32b1caff32c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1579060677741491333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8177147813716374794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00a8d1b3fa124ba48a8ef3203dce5457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4460878989043105536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8177147813716374794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abcb29a910ef504185cc56bfb08fc26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6795672793221237635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,7 +31,7 @@ MonoBehaviour:
   mana: 100
   battleSystem: {fileID: 0}
   particleSystem: {fileID: 0}
---- !u!114 &8681638972332459222
+--- !u!114 &5984822389542969677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,9 +40,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8177147813716374794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b642a41a54de60a46bb4a67bd5ac1505, type: 3}
+  m_Script: {fileID: 11500000, guid: a06937fba5a6d574db44467f48c31473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activatePanel: {fileID: 0}
+  txtPanelInformation: {fileID: 11400000, guid: 5b7f72846c979104188a860018d383c2,
+    type: 2}
 --- !u!1001 &169726708723903491
 PrefabInstance:
   m_ObjectHideFlags: 0

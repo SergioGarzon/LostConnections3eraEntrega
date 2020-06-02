@@ -20,7 +20,6 @@ public class PanelUIBattle : MonoBehaviour
     public RawImage imgAtif;
     public RawImage imgVirus;
     public RawImage imgCardGoldenBlack;
-    public RawImage imgBlack;
 
     public Text txtInformationBattle;
     public Text TxtTarjetaBlack;
@@ -147,13 +146,11 @@ public class PanelUIBattle : MonoBehaviour
     public void UnenableImage()
     {
         imgCardGoldenBlack.enabled = false;
-        imgBlack.enabled = false;
         TxtTarjetaBlack.enabled = false;
     }
 
     public void EnabledImage()
     {
-        imgBlack.enabled = true;
         imgVirus.enabled = true;
         imgCardGoldenBlack.enabled = true;
         TxtTarjetaBlack.enabled = true;
