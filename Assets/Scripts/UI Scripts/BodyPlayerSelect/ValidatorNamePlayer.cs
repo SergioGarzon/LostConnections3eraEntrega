@@ -10,8 +10,8 @@ public class ValidatorNamePlayer : MonoBehaviour
     public GameObject panelValidator;
     public Text personajeElegido;
     public InputField txtNombreIngresado;
-    public Texture texturaIngles;
-    public Texture texturaEspanol;
+    public Texture textureImage;
+    public Text txtInformation;
     public RawImage imagenPanel;
     
     void Start()
@@ -31,11 +31,14 @@ public class ValidatorNamePlayer : MonoBehaviour
             int valor = PlayerPrefs.GetInt("LenguajeGuardado", 0);
 
             if (valor == 0)
-                this.imagenPanel.texture = this.texturaIngles;
+                this.txtInformation.text = "<Please enter player name or your progress will not be saved>";
             else
-                this.imagenPanel.texture = this.texturaEspanol;
+                this.txtInformation.text = "<Por favor ingrese nombre de jugador sino su progreso no será guardado>";
 
+            imagenPanel.texture = textureImage;
             this.panelValidator.SetActive(true);
+
+
             return;
         }
 
