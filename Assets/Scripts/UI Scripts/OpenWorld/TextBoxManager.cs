@@ -26,12 +26,22 @@ public class TextBoxManager : MonoBehaviour
 
 	public bool isActive;
 	private bool isActiveShop;
+	private bool isActiveButton;
 
 	public int valorActivadorBotones;
 
-	public GameObject objetoPanelShop;  //Descomentar esta linea de codigo
+	public GameObject objetoPanelShop;
 
-	// Use this for initialization
+	public Button btnYes;
+	public Button btnNo;
+	public Button btnIgnore;
+
+	void Awake()
+	{
+		UnactiveButton();
+	}
+
+
 	void Start()
 	{
 
@@ -39,7 +49,6 @@ public class TextBoxManager : MonoBehaviour
 
 		if (textFile != null)
 		{
-			//grabs text and splits into lines
 			textLines = (textFile.text.Split('\n'));
 		}
 
@@ -63,7 +72,7 @@ public class TextBoxManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (isActive && Input.GetMouseButtonDown(0))
+		if (isActive && Input.GetMouseButtonDown(0) && !getActiveButon())
 		{
 			advanceTextBox();
 		}
@@ -81,6 +90,15 @@ public class TextBoxManager : MonoBehaviour
 		else
 		{
 			theText.text = textLines[currentLine];
+		}
+
+		if(currentLine == 4 && tipoNPC == 1)
+		{
+			ActivateButton();
+		}
+		else
+		{
+			UnactiveButton();
 		}
 	}
 
@@ -112,7 +130,7 @@ public class TextBoxManager : MonoBehaviour
 		if (this.objetoPanelShop != null && this.lineasNPCGuardia == 2)
 		{
 			isActiveShop = true;
-			this.objetoPanelShop.gameObject.SetActive(true);			
+			this.objetoPanelShop.gameObject.SetActive(true);
 		}
 
 
@@ -167,6 +185,24 @@ public class TextBoxManager : MonoBehaviour
 
 	}
 
+	public void UnactiveButton()
+	{
+		btnYes.gameObject.SetActive(false);
+		btnNo.gameObject.SetActive(false);
+		btnIgnore.gameObject.SetActive(false);
+
+		isActiveButton = false;
+	}
+
+	public void ActivateButton()
+	{
+		btnYes.gameObject.SetActive(true);
+		btnNo.gameObject.SetActive(true);
+		btnIgnore.gameObject.SetActive(true);
+
+		isActiveButton = true;
+	}
+
 
 	public void DesactivatePanelDialog()
 	{
@@ -193,6 +229,26 @@ public class TextBoxManager : MonoBehaviour
 	{
 		textPanelInformationClick.text = "";
 	}
+
+	public void ButtonPress(int value)
+	{
+		Debug.Log("Aqui entra: " + value);
+
+		switch(value)
+		{
+			case (1): DisableTextBox(); break;
+			case (2): isActiveButton = false; break;
+			case (3): DisableTextBox(); break;
+		}
+	}
+
+	public bool getActiveButon()
+	{
+		return isActiveButton;
+	}
+
+
+	
 
 }
 

@@ -31,7 +31,8 @@ public class ActivateText : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (!theTextBox.isActive && waitingClick && Input.GetMouseButtonDown(0) && !theTextBox.getActiveShop())
+
+		if (!theTextBox.isActive && waitingClick && Input.GetMouseButtonDown(0) && !theTextBox.getActiveShop() && !theTextBox.getActiveButon())
 		{
 			this.dataTextGame();
 		}
@@ -110,6 +111,11 @@ public class ActivateText : MonoBehaviour
 	private void DesactivatePanel()
 	{
 		this.theTextBox.DesactivatePanelDialog();
+	}
+
+	public void SetWaitingClick(bool value)
+	{
+		waitingClick = value;
 	}
 
 }
