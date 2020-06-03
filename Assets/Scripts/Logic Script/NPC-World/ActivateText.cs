@@ -53,8 +53,6 @@ public class ActivateText : MonoBehaviour
 			}
 
 			this.dataTextGame();
-
-
 		}
 	}
 

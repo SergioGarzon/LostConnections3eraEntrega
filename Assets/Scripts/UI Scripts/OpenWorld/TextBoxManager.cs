@@ -74,6 +74,7 @@ public class TextBoxManager : MonoBehaviour
 	{
 		if (isActive && Input.GetMouseButtonDown(0) && !getActiveButon())
 		{
+			this.textPanelInformationClick.text = "";
 			advanceTextBox();
 		}
 	}
@@ -160,10 +161,8 @@ public class TextBoxManager : MonoBehaviour
 
 		int value = PlayerPrefs.GetInt("LenguajeGuardado", 0);
 
-		if (value == 0)
-			this.textPanelInformationClick.text = "Click to Chat";
-		else
-			this.textPanelInformationClick.text = "Click para conversar";
+
+		SetTextHelpUser();
 
 	}
 
@@ -201,6 +200,8 @@ public class TextBoxManager : MonoBehaviour
 		btnIgnore.gameObject.SetActive(true);
 
 		isActiveButton = true;
+
+		SetTextHelpUser();
 	}
 
 
@@ -232,19 +233,41 @@ public class TextBoxManager : MonoBehaviour
 
 	public void ButtonPress(int value)
 	{
-		Debug.Log("Aqui entra: " + value);
 
-		switch(value)
+		switch (value)
 		{
-			case (1): DisableTextBox(); break;
-			case (2): isActiveButton = false; break;
-			case (3): DisableTextBox(); break;
+			case (1): endAtLine = 0;  
+				break;
+			case (2): isActiveButton = false; this.textPanelInformationClick.text = "";
+				break;
+			case (3): endAtLine = 0; 
+				break;
 		}
+
+		advanceTextBox();
 	}
 
 	public bool getActiveButon()
 	{
 		return isActiveButton;
+	}
+
+	private void SetTextHelpUser()
+	{
+
+		int value  = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+
+
+		if (!isActiveButton)
+			if (value == 0)
+				this.textPanelInformationClick.text = "Click to Chat";
+			else
+				this.textPanelInformationClick.text = "Click para conversar";		
+		else 
+			if (value == 0)
+				this.textPanelInformationClick.text = "Select Option";
+			else
+				this.textPanelInformationClick.text = "Seleccione una opción";
 	}
 
 
