@@ -63,7 +63,7 @@ public class PlayersCreations : MonoBehaviour
         player.parent = playersParent;
         player.gameObject.AddComponent<CharacterController>();
         player.gameObject.AddComponent<MovementPlayerNewWorld>().speed = 70; //Speed=70
-        player.GetChild(0).transform.position = player.position - new Vector3(0, 7f, 0); //Ajustamos la posicion del hijo (GameObject modelo del pj) por la escala
+        player.GetChild(0).transform.position = player.position - new Vector3(0,4f, 0); //Ajustamos la posicion del hijo (GameObject modelo del pj) por la escala
         player.tag = "Player"; //Solo el Player 1 tiene el tag Player
         player.name = prefab.name;
         CharacterController charController = player.GetComponent<CharacterController>(); //Ajustamos dimensiones del collider por la escala
