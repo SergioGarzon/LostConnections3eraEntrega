@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 //Panel SHOP es una clase que muestra los datos
@@ -24,10 +25,32 @@ public class Shop : MonoBehaviour
     
     public ScoreData scoreData;
 
+    [Header("UI")] 
+    public GameObject CharlieShop;
+    public GameObject AtifShop;
+
     private InventoryItem _inventoryItem;
     public GameObject dialogPanelNPC;
     private Text dialogText;
     private string _stringText;
+
+    private void Awake()
+    {
+        int player = PlayerPrefs.GetInt("ObjetoElegido", 0);
+        if (player == 0)
+        {
+            ShowAtifAttacks();
+        }
+        else if (player == 1)
+        {
+            ShowCharlieAttacks();
+        }
+        else
+        {
+            ShowAtifAttacks();
+            Debug.Log("Player no recibido");
+        }
+    }
 
     private void Start()
     {
@@ -49,6 +72,19 @@ public class Shop : MonoBehaviour
             itemObject.GetComponent<Button>().onClick.AddListener(()=>OnButtonClick(si));
 
         }
+    }
+    public void ShowAtifAttacks()
+    {
+        CharlieShop.SetActive(false);
+        AtifShop.SetActive(true);
+        Debug.Log("Atif");
+    }
+
+    public void ShowCharlieAttacks()
+    {
+        CharlieShop.SetActive(true);
+        AtifShop.SetActive(false);
+        Debug.Log("Charlie");
     }
 
     private void OnButtonClick(ShopItem item)

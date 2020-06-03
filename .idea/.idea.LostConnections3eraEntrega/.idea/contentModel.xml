@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\usuario\.Rider2019.2\system\extResources" t="IncludeRecursive" />
@@ -43,7 +43,6 @@
               <e p="cardCounter.cs" t="Include" />
               <e p="CardScoreGB.cs" t="Include" />
               <e p="DestroyCard.cs" t="Include" />
-              <e p="ValidatorArcade.cs" t="Include" />
             </e>
             <e p="Inventory" t="Include">
               <e p="AddToInventory.cs" t="Include" />
@@ -67,6 +66,10 @@
             </e>
             <e p="NPC-World" t="Include">
               <e p="ActivateText.cs" t="Include" />
+            </e>
+            <e p="ObjectsColision" t="Include">
+              <e p="CollisionObjects.cs" t="Include" />
+              <e p="TextPanelInformation.cs" t="Include" />
             </e>
             <e p="SelectPlayerControl" t="Include">
               <e p="CharacterSelection.cs" t="Include" />
@@ -118,18 +121,15 @@
             </e>
             <e p="General" t="Include">
               <e p="ActionsButton.cs" t="Include" />
-              <e p="AumentarEscalado.cs" t="Include" />
               <e p="ChangeImageLanguage.cs" t="Include" />
+              <e p="RandomParticle.cs" t="Include" />
               <e p="SeteoDatos.cs" t="Include" />
             </e>
             <e p="OpenWorld" t="Include">
-              <e p="ActivatePanelNoChargeEnergy.cs" t="Include" />
+              <e p="ActivatePanelGeneral.cs" t="Include" />
               <e p="ActivatePanelUIBattle.cs" t="Include" />
-              <e p="ActivateTreeEnergy.cs" t="Include" />
               <e p="DesactivarUnPanel.cs" t="Include" />
-              <e p="PanelAccessNoAutorized.cs" t="Include" />
               <e p="PanelUIBattle.cs" t="Include" />
-              <e p="PanelValidatorArcade.cs" t="Include" />
               <e p="SliderEnergy.cs" t="Include" />
               <e p="TextBoxManager.cs" t="Include" />
               <e p="UpdateEnergyBar.cs" t="Include" />
@@ -151,6 +151,25 @@
                 <e p="CoursorGame.cs" t="Include" />
                 <e p="OpenPanel.cs" t="Include" />
               </e>
+            </e>
+          </e>
+        </e>
+        <e p="VRWaterShader2" t="Include">
+          <e p="Readme.txt" t="Include" />
+          <e p="VRWaterShader(legacy)" t="Include">
+            <e p="Readme.txt" t="Include" />
+            <e p="Readme_ja.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="Double Sided.shader" t="Include" />
+              <e p="GLES30" t="Include">
+                <e p="Double Sided.shader" t="Include" />
+                <e p="Standard.shader" t="Include" />
+                <e p="ZWrite Double Sided.shader" t="Include" />
+                <e p="ZWrite Standard.shader" t="Include" />
+              </e>
+              <e p="Standard.shader" t="Include" />
+              <e p="ZWrite Double Sided.shader" t="Include" />
+              <e p="ZWrite Standard.shader" t="Include" />
             </e>
           </e>
         </e>
