@@ -26,6 +26,8 @@ public class EnemyBattleSystem : MonoBehaviour
 
     public BattleMachine battleSystem;
     public ParticlesAttack particleSystem;
+    public Animator animationVirus;
+
 
     public float hp;
 
@@ -71,7 +73,7 @@ public class EnemyBattleSystem : MonoBehaviour
     public void Attack(Transform player)
     {
         float powerValue = 0;
-        int power = 0;
+        int power = 0;        
 
         switch (enemyClass)
         {
@@ -157,5 +159,6 @@ public class EnemyBattleSystem : MonoBehaviour
             //TODO -> Reiniciar y cambiar los valores necesarios del enemigo cuando no esta en batalla. Esto es si el player abandona la batalla
         }
     }
+
 
 }
