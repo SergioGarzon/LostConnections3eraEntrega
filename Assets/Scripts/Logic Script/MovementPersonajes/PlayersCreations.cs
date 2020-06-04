@@ -32,22 +32,22 @@ public class PlayersCreations : MonoBehaviour
         CreateUserPlayer(userPlayer, playersParent);
 
         //Player 2,3,n - NavMeshAgent / FollowPlayerTwo
-        /*        for(int i = 0; i<characterPrefabsList.Count; i++)
+              /*for(int i = 0; i<characterPrefabsList.Count; i++)
                 {
-                    GameObject playerSupport = GetPlayerPrefab((PlayersEnum)pjSelected);
+                    GameObject playerSupport = GetPlayerPrefab((PlayersEnum)1);
 
                     if (playerSupport != userPlayer)
                     {
                         CreateNonControllerPlayer(playerSupport, playersParent);
                     }
-                }
-                */
+                }*/
+               
 
         //TPDO - ELIMINAR ESTE FOR Y DEJAR AL DE ARRIBA CUANDO ESTEN LISTOS LOS PREFABS DE LOS PLAYERS
-        
-        /*for (int i = 1; i < characterPrefabsList.Count; i++)
+        /*
+        for (int i = 1; i < characterPrefabsList.Count; i++)
         {
-            GameObject playerSupport = GetPlayerPrefab((PlayersEnum)pjSelected);
+            GameObject playerSupport = GetPlayerPrefab((PlayersEnum)1);
             CreateNonControllerPlayer(playerSupport, playersParent);
         }*/
     }
@@ -76,15 +76,16 @@ public class PlayersCreations : MonoBehaviour
     {
         Transform player = Instantiate(prefab, playersParent).transform;
         player.parent = playersParent;
-        player.name = prefab.name;
-        NavMeshAgent agent = player.gameObject.AddComponent<NavMeshAgent>();
+        player.name = prefab.name;        
+         NavMeshAgent agent = player.gameObject.AddComponent<NavMeshAgent>();
         FollowPlayerTwo followP = player.gameObject.AddComponent<FollowPlayerTwo>();
+        followP.jugador = GameObject.Find("ObjectsWorldScene/ObjectPlayers").transform.GetChild(0);
         agent.baseOffset = 1;
         agent.speed = 70;
         agent.angularSpeed = 360;
         agent.acceleration = 50;
         agent.stoppingDistance = 40;
-        agent.radius = 3;
+        agent.radius = 100;
         agent.height = 2;
     }
 }

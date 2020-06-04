@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 6544015286873150756}
   - component: {fileID: 6296605601841125162}
   - component: {fileID: 7976892400275131277}
+  - component: {fileID: 7660954597308388508}
   m_Layer: 0
   m_Name: Atif
   m_TagString: Player
@@ -205,6 +206,25 @@ MonoBehaviour:
   activatePanel: {fileID: 0}
   txtPanelInformation: {fileID: 11400000, guid: 5b7f72846c979104188a860018d383c2,
     type: 2}
+--- !u!95 &7660954597308388508
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680350766635266789}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 82b957c4005bc9749afab894be639b9b, type: 3}
+  m_Controller: {fileID: 9100000, guid: 4b7a8eff5bcf5d54bae28258df477805, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1076693583598417805
 GameObject:
   m_ObjectHideFlags: 0
