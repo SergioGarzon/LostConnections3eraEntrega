@@ -40,10 +40,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b2bc58b591649439d1ccf8393ee5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifePlayer: {fileID: 11400000, guid: cf08d5457328e734a85ede45d1de2c82, type: 2}
   playerClass: 0
   powers: 
-  hp: 100
-  mana: 100
+  hp: 0
+  mana: 0
   battleSystem: {fileID: 0}
   particleSystem: {fileID: 0}
 --- !u!1001 &169726708723903491

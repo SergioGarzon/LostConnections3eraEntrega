@@ -7,13 +7,37 @@ public class CollisionObjects : MonoBehaviour
 
     public ActivatePanelGeneral activatePanel;
     public TextPanelInformation txtPanelInformation;
+    public LifePlayer lifePlayer;
     private int language;
+    private bool control;
 
 
     void Awake()
     {
         activatePanel = GameObject.Find("Canvas/TextBoxManager").GetComponent<ActivatePanelGeneral>();
         language = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+        control = false;
+    }
+
+
+    //Unicamente para este caso lo pongo
+    private void Update()
+    {
+        if(control)
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                lifePlayer.hpPlayerOne = 100;
+                lifePlayer.manaPlayerOne = 100;
+                lifePlayer.hpPlayerTwo = 100;
+                lifePlayer.manaPlayerTwo = 100;
+                lifePlayer.hpPlayerThree = 100;
+                lifePlayer.manaPlayerThree = 100;
+
+                control = false;
+                Value(9);
+            }
+        }
     }
 
 
@@ -21,7 +45,15 @@ public class CollisionObjects : MonoBehaviour
     {
         switch (other.tag)
         {
-            case "Tree": Value(1); activatePanel.ActivatePanel(); break;
+            case "Tree":
+                {
+                    Value(1); 
+                    activatePanel.ActivatePanel();
+                    control = true;
+                    
+
+                }
+                break;
             case "NoTree": Value(2); activatePanel.ActivatePanel(); break;
             case "Arcade":
                 if (PlayerPrefs.GetInt("ArcadeGame") == 0)
@@ -78,6 +110,7 @@ public class CollisionObjects : MonoBehaviour
             Spanish(number);
     }
 
+    
     private void Spanish(int number)
     {
         switch (number)
@@ -90,6 +123,7 @@ public class CollisionObjects : MonoBehaviour
             case 6: activatePanel.SetText(txtPanelInformation.shopArc2Spanish); break;
             case 7: activatePanel.SetText(txtPanelInformation.shopArc4Spanish); break;
             case 8: activatePanel.SetText(txtPanelInformation.shopArc7Spanish); break;
+            case 9: activatePanel.SetText(txtPanelInformation.energyChargedSpanish); break;
 
         }
     }
@@ -106,7 +140,9 @@ public class CollisionObjects : MonoBehaviour
             case 6: activatePanel.SetText(txtPanelInformation.shopArc2English); break;
             case 7: activatePanel.SetText(txtPanelInformation.shopArc4English); break;
             case 8: activatePanel.SetText(txtPanelInformation.shopArc7English); break;
+            case 9: activatePanel.SetText(txtPanelInformation.energyChargedEnglish); break;
         }
     }
+
 
 }

@@ -31,3 +31,5 @@ MonoBehaviour:
   shopArc4Spanish: No puedes ingresar a este espacio hasta llegar al nivel 4.
   shopArc7English: You can't enter this place until you reach level 3.
   shopArc7Spanish: No puedes ingresar a este espacio hasta llegar al nivel 3.
+  energyChargedEnglish: Energy Charged!
+  energyChargedSpanish: "\xA1Energia Cargada!"

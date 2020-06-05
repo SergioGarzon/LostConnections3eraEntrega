@@ -172,10 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b2bc58b591649439d1ccf8393ee5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifePlayer: {fileID: 11400000, guid: cf08d5457328e734a85ede45d1de2c82, type: 2}
   playerClass: 1
   powers: 
-  hp: 100
-  mana: 100
+  hp: 0
+  mana: 0
   battleSystem: {fileID: 0}
   particleSystem: {fileID: 0}
 --- !u!65 &6296605601841125162
@@ -206,6 +207,7 @@ MonoBehaviour:
   activatePanel: {fileID: 0}
   txtPanelInformation: {fileID: 11400000, guid: 5b7f72846c979104188a860018d383c2,
     type: 2}
+  lifePlayer: {fileID: 11400000, guid: cf08d5457328e734a85ede45d1de2c82, type: 2}
 --- !u!95 &7660954597308388508
 Animator:
   serializedVersion: 3

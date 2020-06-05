@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBattleSystem : MonoBehaviour
 {
-
+    public LifePlayer lifePlayer;
     public enum PlayerPowers //Los Prefabs en la carpeta de resources AttackFX tienen que estar en el mismo orden que estos enums
     {
         Bug, //Le saca 50 al virus en el nivel 1 pero le resta 60 de mana a uno
@@ -40,7 +40,8 @@ public class PlayerBattleSystem : MonoBehaviour
 
     void Awake()
     {
-        
+        hp = lifePlayer.hpPlayerOne;
+        mana = lifePlayer.manaPlayerOne;
     }
 
     void Start()
@@ -206,6 +207,8 @@ public class PlayerBattleSystem : MonoBehaviour
     {
         hp -= dmg;
 
+        lifePlayer.hpPlayerOne = hp;
+
         Debug.Log("Energia del enemigo: " + hp);
 
         SetEnergySlider(hp);
@@ -228,8 +231,9 @@ public class PlayerBattleSystem : MonoBehaviour
         {
             mana -= mnNegativo;            
         }
-            
 
+
+        lifePlayer.manaPlayerOne = mana;
         battleSystem.SetManaPanelBattleUI(mana);
     }
 

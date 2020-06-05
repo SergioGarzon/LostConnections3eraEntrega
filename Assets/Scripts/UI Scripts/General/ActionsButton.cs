@@ -9,7 +9,7 @@ public class ActionsButton : MonoBehaviour
     public string textoIngles;
     public string textoEspanol;
 
-    void Start()
+    void Awake()
     {
         int valor = PlayerPrefs.GetInt("LenguajeGuardado", 0);
 

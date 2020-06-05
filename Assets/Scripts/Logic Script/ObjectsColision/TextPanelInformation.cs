@@ -6,27 +6,30 @@ using UnityEngine;
 [CreateAssetMenu]
 public class TextPanelInformation : ScriptableObject
 {
-    public string noTreeEnglish;
-    public string noTreeSpanish;
+    [SerializeField] public string noTreeEnglish;
+    [SerializeField] public string noTreeSpanish;
 
-    public string treeEnglish;
-    public string treeSpanish;
+    [SerializeField] public string treeEnglish;
+    [SerializeField] public string treeSpanish;
 
-    public string noArcadeEnglish;
-    public string noArcadeSpanish;
+    [SerializeField] public string noArcadeEnglish;
+    [SerializeField] public string noArcadeSpanish;
 
-    public string stopEnterEnglish;
-    public string stopEnterSpanish;
+    [SerializeField] public string stopEnterEnglish;
+    [SerializeField] public string stopEnterSpanish;
 
-    public string noAutorizeEnglish;
-    public string noAutorizeSpanish;
+    [SerializeField] public string noAutorizeEnglish;
+    [SerializeField] public string noAutorizeSpanish;
 
-    public string shopArc2English;
-    public string shopArc2Spanish;
+    [SerializeField] public string shopArc2English;
+    [SerializeField] public string shopArc2Spanish;
 
-    public string shopArc4English;
-    public string shopArc4Spanish;
+    [SerializeField] public string shopArc4English;
+    [SerializeField] public string shopArc4Spanish;
 
-    public string shopArc7English;
-    public string shopArc7Spanish;
+    [SerializeField] public string shopArc7English;
+    [SerializeField] public string shopArc7Spanish;
+
+    [SerializeField] public string energyChargedEnglish;
+    [SerializeField] public string energyChargedSpanish;
 }

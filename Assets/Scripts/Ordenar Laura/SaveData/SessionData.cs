@@ -61,6 +61,16 @@ public class GameDataSave {
 	public int xp;
 	public int lifeHacker;
 	public int lifeWizard;
+	
+	public float hpPlayerOne;
+	public float manaPlayerOne;
+	public float hpPlayerTwo;
+	public float manaPlayerTwo;
+	public float hpPlayerThree;
+	public float manaPlayerThree;
+
+
+
 	public int[] cardsAmount = { 0, 0 , 0 ,0, 0};
 	public bool resettingSold;
 	public bool healSold;
