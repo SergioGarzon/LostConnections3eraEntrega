@@ -8,6 +8,7 @@ public class CardScoreGB : MonoBehaviour
     public InventoryItem Card;
     private InventoryScript _inventoryScript;
     public GameObject inventary;
+    public ParticleSystem particleCard;
 
     private void Start()
     {
@@ -26,7 +27,8 @@ public class CardScoreGB : MonoBehaviour
                 GuardarValorTarjetaShop();
             
             _inventoryScript.LoadCards();
-            
+
+            particleCard.gameObject.SetActive(false);
             Destroy(this.gameObject);
 
         }

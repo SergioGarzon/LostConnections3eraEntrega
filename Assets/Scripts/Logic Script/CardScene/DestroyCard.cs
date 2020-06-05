@@ -15,6 +15,7 @@ public class DestroyCard : MonoBehaviour
     //public InventoryItem Card;
     //private InventoryScript _inventoryScript;
     public GameObject inventary;
+    public ParticleSystem particlesCard;
 
 
     private CameraPlayer camPlayer;
@@ -58,6 +59,8 @@ public class DestroyCard : MonoBehaviour
                 Card.amount += 1;
             _inventoryScript.LoadCards();
             */
+
+            particlesCard.gameObject.SetActive(false);
             Destroy(this.gameObject);
             
             if (this.cardValue == 6)

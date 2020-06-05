@@ -70,6 +70,7 @@ public class PlayersCreations : MonoBehaviour
         charController.height = 20;
         charController.radius = 5;
         charController.slopeLimit = 80;
+        charController.center = new Vector3(0f, 10f, 0f);
     }
 
     private void CreateNonControllerPlayer(GameObject prefab, Transform playersParent)

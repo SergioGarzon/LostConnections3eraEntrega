@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0533856, g: 0.046039604, b: 0.25618854, a: 1}
+  m_IndirectSpecularColor: {r: 0.053386368, g: 0.04604, b: 0.25618997, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3841,6 +3841,84 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae2f1357eebe778489b1e711f0dfbd97, type: 3}
+--- !u!198 &188686066 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052623580387624, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686067 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052624018992958, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686068 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052623697990134, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686069 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052624747683063, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686070 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052624403658673, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686071 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052624285052160, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686072 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052624516826809, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686073 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052622812476883, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686074 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052623682457072, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686075 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052624111960610, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686076 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052623467303675, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686077 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052624365229029, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &188686078 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8561052623841782134, guid: ae2f1357eebe778489b1e711f0dfbd97,
+    type: 3}
+  m_PrefabInstance: {fileID: 188686065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &189459610 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3100926635435978561, guid: d33980ab07b89a545961567e29609f42,
@@ -4751,6 +4829,7 @@ MonoBehaviour:
   valorTarjeta: 2
   Card: {fileID: 11400000, guid: d0255d4bc49c533478c30e1a21ca86e0, type: 2}
   inventary: {fileID: 1825418907}
+  particleCard: {fileID: 188686070}
 --- !u!54 &209434687
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8556,6 +8635,7 @@ MonoBehaviour:
   englishTexture: {fileID: 2800000, guid: 36ade96367a2b3e428808b0bde26b2bb, type: 3}
   imageTexture: {fileID: 1803041650}
   inventary: {fileID: 1825418907}
+  particlesCard: {fileID: 188686071}
 --- !u!65 &432927789
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15461,22 +15541,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562900241}
   m_CullTransparentMesh: 0
---- !u!1 &568534935
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 624310583}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 624310584}
-  m_Layer: 0
-  m_Name: Viejita (Missing Prefab)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &568807682
 GameObject:
   m_ObjectHideFlags: 0
@@ -20566,7 +20630,7 @@ Transform:
   m_LocalPosition: {x: -0.000030517578, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 99.99994, z: 99.99994}
   m_Children:
-  - {fileID: 624310584}
+  - {fileID: 743473514}
   m_Father: {fileID: 1897063223}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21346,21 +21410,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 860a7a19e56e9d2499e54a78a25659de, type: 3}
---- !u!4 &624310584
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 624310583}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568534935}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 743473514}
-  m_Father: {fileID: 591574310}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &627834541
 GameObject:
   m_ObjectHideFlags: 0
@@ -22661,6 +22710,7 @@ MonoBehaviour:
   englishTexture: {fileID: 2800000, guid: 9ecb7737988362448bf1c0ea8c7a509b, type: 3}
   imageTexture: {fileID: 1803041650}
   inventary: {fileID: 1825418907}
+  particlesCard: {fileID: 188686072}
 --- !u!1 &704099872
 GameObject:
   m_ObjectHideFlags: 0
@@ -23969,21 +24019,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.60366714, y: 0.4898151, z: 0.02639449}
   m_Center: {x: -1.5761417, y: 27.815758, z: 0.0069747684}
---- !u!4 &743473514
+--- !u!4 &743473514 stripped
 Transform:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 860a7a19e56e9d2499e54a78a25659de,
     type: 3}
   m_PrefabInstance: {fileID: 624310583}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190620078}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 624310584}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &745816431
 GameObject:
   m_ObjectHideFlags: 0
@@ -25199,6 +25240,7 @@ MonoBehaviour:
   valorTarjeta: 2
   Card: {fileID: 11400000, guid: d0255d4bc49c533478c30e1a21ca86e0, type: 2}
   inventary: {fileID: 1825418907}
+  particleCard: {fileID: 188686077}
 --- !u!54 &820726811
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43168,6 +43210,7 @@ MonoBehaviour:
   valorTarjeta: 1
   Card: {fileID: 11400000, guid: c1c6a3aa647da684183b5e5b026f1ca2, type: 2}
   inventary: {fileID: 1825418907}
+  particleCard: {fileID: 188686075}
 --- !u!54 &1132373509
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44269,22 +44312,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.8736277, y: 1.3406124, z: 10.34}
   m_Center: {x: -2.542912, y: -12.720009, z: 3.91}
---- !u!1 &1190620078
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 624310583}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 743473514}
-  m_Layer: 0
-  m_Name: Missing Prefab (Dummy)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1191034624 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7742607425572370963, guid: d33980ab07b89a545961567e29609f42,
@@ -47201,6 +47228,7 @@ MonoBehaviour:
   valorTarjeta: 2
   Card: {fileID: 11400000, guid: d0255d4bc49c533478c30e1a21ca86e0, type: 2}
   inventary: {fileID: 1825418907}
+  particleCard: {fileID: 188686069}
 --- !u!54 &1372420814
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51832,6 +51860,7 @@ MonoBehaviour:
   valorTarjeta: 2
   Card: {fileID: 11400000, guid: d0255d4bc49c533478c30e1a21ca86e0, type: 2}
   inventary: {fileID: 1825418907}
+  particleCard: {fileID: 188686076}
 --- !u!54 &1621221050
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52174,6 +52203,7 @@ MonoBehaviour:
   valorTarjeta: 2
   Card: {fileID: 11400000, guid: d0255d4bc49c533478c30e1a21ca86e0, type: 2}
   inventary: {fileID: 1825418907}
+  particleCard: {fileID: 188686078}
 --- !u!54 &1642379682
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54593,6 +54623,7 @@ MonoBehaviour:
   englishTexture: {fileID: 2800000, guid: 25d25ad455cfc1043b2bd69773ce0d0b, type: 3}
   imageTexture: {fileID: 1803041650}
   inventary: {fileID: 1825418907}
+  particlesCard: {fileID: 188686067}
 --- !u!1 &1793399890
 GameObject:
   m_ObjectHideFlags: 0
@@ -56333,6 +56364,7 @@ MonoBehaviour:
   valorTarjeta: 1
   Card: {fileID: 11400000, guid: c1c6a3aa647da684183b5e5b026f1ca2, type: 2}
   inventary: {fileID: 1825418907}
+  particleCard: {fileID: 188686074}
 --- !u!54 &1807330519
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -59087,6 +59119,7 @@ MonoBehaviour:
   englishTexture: {fileID: 2800000, guid: 3a554a8e1d1808b45aca6641dacb2349, type: 3}
   imageTexture: {fileID: 1803041650}
   inventary: {fileID: 1825418907}
+  particlesCard: {fileID: 188686066}
 --- !u!1 &1964080653
 GameObject:
   m_ObjectHideFlags: 0
@@ -59673,7 +59706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.9382324, y: -1.2}
+  m_AnchoredPosition: {x: 0.9382324, y: -1.199997}
   m_SizeDelta: {x: -43.685, y: 0.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1985374762
@@ -60061,7 +60094,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1715233651}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -60332,6 +60365,7 @@ MonoBehaviour:
   englishTexture: {fileID: 2800000, guid: d6afd63a534b7084c829e740f0768313, type: 3}
   imageTexture: {fileID: 1803041650}
   inventary: {fileID: 1825418907}
+  particlesCard: {fileID: 188686068}
 --- !u!1 &2018138699
 GameObject:
   m_ObjectHideFlags: 0
@@ -63289,6 +63323,7 @@ MonoBehaviour:
   englishTexture: {fileID: 2800000, guid: a9da45258cbe2f34aabeed86e1dae836, type: 3}
   imageTexture: {fileID: 1803041650}
   inventary: {fileID: 1825418907}
+  particlesCard: {fileID: 188686073}
 --- !u!65 &2093045026
 BoxCollider:
   m_ObjectHideFlags: 0
