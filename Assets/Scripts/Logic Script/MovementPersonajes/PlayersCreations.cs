@@ -33,7 +33,7 @@ public class PlayersCreations : MonoBehaviour
         CreateUserPlayer(userPlayer, playersParent);
 
         //Player 2,3,n - NavMeshAgent / FollowPlayerTwo
-             /* for(int i = 0; i<characterPrefabsList.Count; i++)
+             /*for(int i = 0; i<characterPrefabsList.Count; i++)
                 {
                     GameObject playerSupport = GetPlayerPrefab((PlayersEnum)1);
 
