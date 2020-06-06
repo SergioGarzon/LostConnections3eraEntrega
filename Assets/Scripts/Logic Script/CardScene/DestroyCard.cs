@@ -63,11 +63,19 @@ public class DestroyCard : MonoBehaviour
             particlesCard.gameObject.SetActive(false);
             Destroy(this.gameObject);
             
-            if (this.cardValue == 6)
-                PlayerPrefs.SetInt("TarjetaShop", 1);
+            switch(cardValue)
+            {
+                case 4: PlayerPrefs.SetInt("ArcadeGame", 1); break;
+                case 5: PlayerPrefs.SetInt("TarjetaPanal", 1); break;
+                case 6: PlayerPrefs.SetInt("TarjetaShop", 1); break;                    
+            }
 
-            if (this.cardValue == 4)
-                PlayerPrefs.SetInt("ArcadeGame", 1);
+
+
+            if(cardValue == 5)
+            {
+
+            }
 
         }
     }

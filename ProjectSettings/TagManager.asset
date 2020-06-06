@@ -15,6 +15,7 @@ TagManager:
   - CollisionShop
   - CollisionWorld
   - Arcade
+  - Panal
   layers:
   - Default
   - TransparentFX
