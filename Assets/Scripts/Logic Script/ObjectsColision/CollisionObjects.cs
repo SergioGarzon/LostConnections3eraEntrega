@@ -9,6 +9,8 @@ public class CollisionObjects : MonoBehaviour
     public ActivatePanelGeneral activatePanel;
     public TextPanelInformation txtPanelInformation;
     public LifePlayer lifePlayer;
+    public List<ParticleSystem> particlesCollider;
+
     private int language;
     private bool control;
 
@@ -86,8 +88,7 @@ public class CollisionObjects : MonoBehaviour
                     activatePanel.ActivatePanel();
                 }                    
                 else
-                    SceneManager.LoadScene("BattleScene");
-                
+                    SceneManager.LoadScene("BattleScene");                
                 break;
         }
 

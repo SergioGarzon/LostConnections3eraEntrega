@@ -8,8 +8,15 @@ public class CharacterSelection : MonoBehaviour
 {
     //Creo un vector de GameObject
     public GameObject[] characterList;
+    public GameObject changeText;
+    private ObjetoElegido objectSelected;
     private int index;
 
+
+    private void Awake()
+    {
+        objectSelected = changeText.GetComponent<ObjetoElegido>();
+    }
 
     private void Start()
     {
@@ -57,6 +64,7 @@ public class CharacterSelection : MonoBehaviour
             }
         }
 
+        objectSelected.ChangeNamePlayer();
 
     }
 
@@ -77,7 +85,10 @@ public class CharacterSelection : MonoBehaviour
                 case 1: GuardarPlayerPref(1); break;
             }
         }
-       
+
+        objectSelected.ChangeNamePlayer();
+
+
     }
 
     private void GuardarPlayerPref(int valor)

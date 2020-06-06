@@ -7,37 +7,33 @@ public class ObjetoElegido : MonoBehaviour
 {
 
     public Text valorElegidoText;
-    private int valorAux;
+    private int valueAux;
+    private int x;
 
     void Awake()
     {
-
         PlayerPrefs.SetInt("ObjetoElegido", 0);
+        
+        valueAux = -1;
+
+        ChangeNamePlayer();
     }
 
-    void Start()
+
+    public void ChangeNamePlayer()
     {
-        this.valorAux = 10;
-    }
+        x = PlayerPrefs.GetInt("ObjetoElegido", 0);
 
-
-    void Update()
-    {
-        int x = PlayerPrefs.GetInt("ObjetoElegido", 0);
-
-        if (x != valorAux)
+        if (x != valueAux)
         {
-            this.valorAux = x;
-
+            valueAux = x;
 
             switch(x)
             {
-                case 0: this.valorElegidoText.text = "ATIF"; break;
-                case 1: this.valorElegidoText.text = "CHARLIE"; break;
-                case 2:  this.valorElegidoText.text = "BIOWARE"; break;
+                case 0: valorElegidoText.text = "ATIF"; break;
+                case 1: valorElegidoText.text = "CHARLIE"; break;
+                case 2: valorElegidoText.text = "BIOWARE"; break;
             }
-                
-
         }
 
     }

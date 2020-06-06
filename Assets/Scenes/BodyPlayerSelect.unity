@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 8071601}
   - component: {fileID: 8071602}
   - component: {fileID: 8071603}
+  - component: {fileID: 8071604}
   m_Layer: 5
   m_Name: ObjectPrincipal
   m_TagString: Untagged
@@ -183,6 +184,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectAudio: {fileID: 675328421}
+--- !u!114 &8071604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8071600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505aa0287893807419a353c54d317b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valorElegidoText: {fileID: 1837615643}
 --- !u!1001 &14255471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -328,7 +342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22500001, y: 0.1628659}
   m_AnchorMax: {x: 0.7625133, y: 0.820866}
-  m_AnchoredPosition: {x: 0.000015497, y: 0.32367}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0.32366943}
   m_SizeDelta: {x: 72.336, y: 65.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117022949
@@ -1401,7 +1415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8575032, y: 0.44877276}
   m_AnchorMax: {x: 0.9462453, y: 0.56200004}
-  m_AnchoredPosition: {x: -0.099998474, y: -0.3000002}
+  m_AnchoredPosition: {x: -0.1000061, y: -0.29999924}
   m_SizeDelta: {x: 9.18, y: -2.459999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &730088273
@@ -2663,7 +2677,6 @@ GameObject:
   - component: {fileID: 1837615644}
   - component: {fileID: 1837615643}
   - component: {fileID: 1837615645}
-  - component: {fileID: 1837615646}
   m_Layer: 5
   m_Name: TxtTypeSelected
   m_TagString: Untagged
@@ -2749,19 +2762,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1837615646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837615641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 505aa0287893807419a353c54d317b5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  valorElegidoText: {fileID: 1837615643}
 --- !u!1 &1865322871
 GameObject:
   m_ObjectHideFlags: 0
@@ -2811,6 +2811,7 @@ MonoBehaviour:
   characterList:
   - {fileID: 14255473}
   - {fileID: 1613334309}
+  changeText: {fileID: 8071600}
 --- !u!95 &1865322874
 Animator:
   serializedVersion: 3

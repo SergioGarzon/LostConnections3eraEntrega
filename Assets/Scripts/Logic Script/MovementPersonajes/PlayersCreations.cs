@@ -9,6 +9,7 @@ public class PlayersCreations : MonoBehaviour
     int pjSelected = 0;
 
     public List<GameObject> characterPrefabsList;
+    public string sceneName;
 
     enum PlayersEnum
     {
@@ -61,16 +62,24 @@ public class PlayersCreations : MonoBehaviour
     {
         Transform player = Instantiate(prefab, playersParent).transform;
         player.parent = playersParent;
-        player.gameObject.AddComponent<CharacterController>();
+
         player.gameObject.AddComponent<MovementPlayerNewWorld>().speed = 70; //Speed=70
-        player.GetChild(0).transform.position = player.position - new Vector3(0,4f, 0); //Ajustamos la posicion del hijo (GameObject modelo del pj) por la escala
+        player.gameObject.AddComponent<CharacterController>();
+        player.GetChild(0).transform.position = player.position - new Vector3(0, 4f, 0); //Ajustamos la posicion del hijo (GameObject modelo del pj) por la escala                               
         player.tag = "Player"; //Solo el Player 1 tiene el tag Player
         player.name = prefab.name;
+        
         CharacterController charController = player.GetComponent<CharacterController>(); //Ajustamos dimensiones del collider por la escala
         charController.height = 20;
         charController.radius = 5;
         charController.slopeLimit = 80;
         charController.center = new Vector3(0f, 10f, 0f);
+
+        if(sceneName.Equals("BattleScene"))
+        {
+            MovementPlayerNewWorld movPlayer = player.GetComponent<MovementPlayerNewWorld>();
+            movPlayer.SetMovementPlayer(false);
+        }
     }
 
     private void CreateNonControllerPlayer(GameObject prefab, Transform playersParent)

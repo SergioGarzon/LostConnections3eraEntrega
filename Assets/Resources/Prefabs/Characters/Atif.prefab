@@ -190,8 +190,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 25, z: 5}
-  m_Center: {x: 0, y: 15, z: 8}
+  m_Size: {x: 24.73, y: 70.43, z: 35.3}
+  m_Center: {x: 0, y: 33.6, z: 27.8}
 --- !u!114 &7976892400275131277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +208,7 @@ MonoBehaviour:
   txtPanelInformation: {fileID: 11400000, guid: 5b7f72846c979104188a860018d383c2,
     type: 2}
   lifePlayer: {fileID: 11400000, guid: cf08d5457328e734a85ede45d1de2c82, type: 2}
+  particlesCollider: []
 --- !u!95 &7660954597308388508
 Animator:
   serializedVersion: 3
