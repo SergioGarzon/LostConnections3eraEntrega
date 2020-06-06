@@ -37,6 +37,7 @@ public class Shop : MonoBehaviour
     private void Awake()
     {
         int player = PlayerPrefs.GetInt("ObjetoElegido", 0);
+
         if (player == 0)
         {
             ShowAtifAttacks();
@@ -48,7 +49,6 @@ public class Shop : MonoBehaviour
         else
         {
             ShowAtifAttacks();
-            Debug.Log("Player no recibido");
         }
     }
 
@@ -77,14 +77,12 @@ public class Shop : MonoBehaviour
     {
         CharlieShop.SetActive(false);
         AtifShop.SetActive(true);
-        Debug.Log("Atif");
     }
 
     public void ShowCharlieAttacks()
     {
         CharlieShop.SetActive(true);
         AtifShop.SetActive(false);
-        Debug.Log("Charlie");
     }
 
     private void OnButtonClick(ShopItem item)
@@ -94,18 +92,15 @@ public class Shop : MonoBehaviour
         if (item.cost < 100 & (item.cost/10)<=goldenCard.amount  & item.cost>=10)
         {
             goldenCard.amount = goldenCard.amount - (item.cost/10);
-            Debug.Log("Sold! (you paid with gold)");
             ActivateItemBuyed(item);
         }
         else if ( item.cost>=100 & (item.cost/100)<=blackCard.amount)
         {
             blackCard.amount = blackCard.amount - (item.cost/100);
-            Debug.Log("Sold! (you paid with black)");
             ActivateItemBuyed(item);
         }
         else
         {
-            Debug.Log("You dont have that money");
             _stringText = "You don't have enough cards.";
             StartCoroutine(ActivatePanel());
             //activar panel 
@@ -125,14 +120,12 @@ public class Shop : MonoBehaviour
                     shopData.resettingSold = true;
                     _stringText = "Sold!";
                     StartCoroutine(ActivatePanel());
-                    Debug.Log(shopData.resettingSold);
                     scoreData.xp += 5;
                 }
                 else
                 {
                     _stringText = "You have this item";
                     StartCoroutine(ActivatePanel());
-                    Debug.Log("You have this item");
                 }
                 break; 
                 
@@ -142,12 +135,10 @@ public class Shop : MonoBehaviour
                     shopData.healSold = true;
                     _stringText = "Sold!";
                     StartCoroutine(ActivatePanel());
-                    Debug.Log(shopData.healSold);
                     scoreData.xp += 5;
                 }
                 else
                 {
-                    Debug.Log("You have this item");
                     _stringText = "You have this item";
                     StartCoroutine(ActivatePanel());
                 }
@@ -158,12 +149,10 @@ public class Shop : MonoBehaviour
                     shopData.electroshockSold = true;
                     _stringText = "Sold!";
                     StartCoroutine(ActivatePanel());
-                    Debug.Log(shopData.electroshockSold);
                     scoreData.xp += 5;
                 }
                 else
                 {
-                    Debug.Log("You have this item");
                     _stringText = "You have this item";
                     StartCoroutine(ActivatePanel());
                 }
@@ -179,7 +168,6 @@ public class Shop : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("You have this item");
                     _stringText = "You have this item";
                     StartCoroutine(ActivatePanel());
                 }
@@ -195,7 +183,6 @@ public class Shop : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("You have this item");
                     _stringText = "You have this item";
                     StartCoroutine(ActivatePanel());
                 }
@@ -211,15 +198,11 @@ public class Shop : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("You have this item");
                     _stringText = "You have this item";
                     StartCoroutine(ActivatePanel());
                 }
                 break;
-            default:
-                Debug.Log("No anda");
             
-                break;
         }
     }
 

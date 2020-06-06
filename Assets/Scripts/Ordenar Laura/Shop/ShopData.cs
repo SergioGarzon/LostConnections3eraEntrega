@@ -34,7 +34,6 @@ public class ShopData : ScriptableObject
         deleteSold = SessionData.Data.deleteSold;
         controlzSold = SessionData.Data.controlzSold;
         SessionData.LoadData();
-        Debug.Log("primer valor"+resettingSold);
     }
 
     public void Upgrade() {

@@ -60,10 +60,6 @@ public class InventoryScript: MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-    }
-
 
     public void LoadCards()
     {
@@ -140,7 +136,6 @@ public class InventoryScript: MonoBehaviour
             else 
             {
                 this.imagenVerde.texture = this.textura2InglesVerde;
-                Debug.Log("segunda fto");
                 i--;
             }
             
@@ -156,7 +151,6 @@ public class InventoryScript: MonoBehaviour
             else
             {
                 this.imagenVerde.texture = this.textura2EspanolVerde;
-                Debug.Log("segunda fto");
                 i--;
             }
             

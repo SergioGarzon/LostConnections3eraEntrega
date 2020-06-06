@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class CollisionObjects : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class CollisionObjects : MonoBehaviour
     public ActivatePanelGeneral activatePanel;
     public TextPanelInformation txtPanelInformation;
     public LifePlayer lifePlayer;
-    public List<ParticleSystem> particlesCollider;
+    
 
     private int language;
     private bool control;
@@ -19,6 +20,8 @@ public class CollisionObjects : MonoBehaviour
     {
         activatePanel = GameObject.Find("Canvas/TextBoxManager").GetComponent<ActivatePanelGeneral>();
         language = PlayerPrefs.GetInt("LenguajeGuardado", 0);
+
+
         control = false;
     }
 
@@ -88,7 +91,9 @@ public class CollisionObjects : MonoBehaviour
                     activatePanel.ActivatePanel();
                 }                    
                 else
-                    SceneManager.LoadScene("BattleScene");                
+                {
+                    SceneManager.LoadScene("BattleScene");
+                }                    
                 break;
         }
 

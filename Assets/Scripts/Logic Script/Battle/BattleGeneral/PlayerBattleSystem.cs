@@ -64,7 +64,7 @@ public class PlayerBattleSystem : MonoBehaviour
     {
         if (gameObject.CompareTag("Player") && other.CompareTag("EnemiesGroup"))
         {
-            Debug.Log("EnemiesGroup Trigger Enter -->");
+            //Debug.Log("EnemiesGroup Trigger Enter -->");
 
             StartBattle(other.GetComponent<EnemyBattleSystem>());
         }
@@ -209,7 +209,6 @@ public class PlayerBattleSystem : MonoBehaviour
 
         lifePlayer.hpPlayerOne = hp;
 
-        Debug.Log("Energia del enemigo: " + hp);
 
         SetEnergySlider(hp);
     }

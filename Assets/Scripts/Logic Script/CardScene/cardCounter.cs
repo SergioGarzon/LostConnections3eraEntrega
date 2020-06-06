@@ -16,7 +16,10 @@ public class cardCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        string value = blackCard.amount * blackCard.value  + "\n" + goldenCard.amount * goldenCard.value;
+        float blackPoint = blackCard.amount * blackCard.value;
+        float goldenPoint = goldenCard.amount * goldenCard.value;
+
+        string value = blackPoint + "\n" + goldenPoint;
 
         blackCards.text = value;
     }

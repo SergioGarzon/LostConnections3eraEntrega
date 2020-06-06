@@ -225,7 +225,7 @@ public class AttacksInventory: MonoBehaviour
     void UpdateFlags()
     {
 
-        if (attack1=="Pixel" | attack2=="Pixel"| attack3=="Pixel")
+        if (attack1 == "Pixel" | attack2 == "Pixel" | attack3 == "Pixel")
         {
             pixelSelected = true;
         }
@@ -233,7 +233,7 @@ public class AttacksInventory: MonoBehaviour
         {
             pixelSelected = false;
         }
-        if (attack1=="Steal" | attack2=="Steal"| attack3=="Steal")
+        if (attack1 == "Steal" | attack2 == "Steal" | attack3 == "Steal")
         {
             stealSelected = true;
         }
@@ -241,7 +241,7 @@ public class AttacksInventory: MonoBehaviour
         {
             stealSelected = false;
         }
-        if (attack1=="Bug" | attack2=="Bug"| attack3=="Bug")
+        if (attack1 == "Bug" | attack2 == "Bug" | attack3 == "Bug")
         {
             bugSelected = true;
         }
@@ -249,7 +249,7 @@ public class AttacksInventory: MonoBehaviour
         {
             bugSelected = false;
         }
-        if (attack1=="Ctrl-Z" | attack2=="Ctrl-Z"| attack3=="Ctrl-Z")
+        if (attack1 == "Ctrl-Z" | attack2 == "Ctrl-Z" | attack3 == "Ctrl-Z")
         {
             controlZSelected = true;
         }
@@ -257,7 +257,7 @@ public class AttacksInventory: MonoBehaviour
         {
             controlZSelected = false;
         }
-        if (attack1=="Reset" | attack2=="Reset"| attack3=="Reset")
+        if (attack1 == "Reset" | attack2 == "Reset" | attack3 == "Reset")
         {
             resetSelected = true;
         }
@@ -265,15 +265,15 @@ public class AttacksInventory: MonoBehaviour
         {
             resetSelected = false;
         }
-        if (attack1=="Delete" | attack2=="Delete"| attack3=="Delete")
+        if (attack1 == "Delete" | attack2 == "Delete" | attack3 == "Delete")
         {
             deleteSelected = true;
         }
         else
         {
             deleteSelected = false;
-        } 
-        if (attack1=="Heal" | attack2=="Heal"| attack3=="Heal")
+        }
+        if (attack1 == "Heal" | attack2 == "Heal" | attack3 == "Heal")
         {
             healSelected = true;
         }
@@ -281,7 +281,7 @@ public class AttacksInventory: MonoBehaviour
         {
             healSelected = false;
         }
-        if (attack1=="Update" | attack2=="Update"| attack3=="Update")
+        if (attack1 == "Update" | attack2 == "Update" | attack3 == "Update")
         {
             updatingSelected = true;
         }
@@ -289,15 +289,15 @@ public class AttacksInventory: MonoBehaviour
         {
             updatingSelected = false;
         }
-        if (attack1=="Electroshock" | attack2=="Electroshock"| attack3=="Electroshock")
+        if (attack1 == "Electroshock" | attack2 == "Electroshock" | attack3 == "Electroshock")
         {
             electroshockSelected = true;
         }
         else
         {
-            electroshockSelected = false; 
-        } 
-        if (attack1=="Light" | attack2=="Light"| attack3=="Light")
+            electroshockSelected = false;
+        }
+        if (attack1 == "Light" | attack2 == "Light" | attack3 == "Light")
         {
             lightSelected = true;
         }
@@ -305,7 +305,7 @@ public class AttacksInventory: MonoBehaviour
         {
             lightSelected = false;
         }
-        if (attack1=="Shock" | attack2=="Shock"| attack3=="Shock")
+        if (attack1 == "Shock" | attack2 == "Shock" | attack3 == "Shock")
         {
             shockSelected = true;
         }
@@ -313,7 +313,7 @@ public class AttacksInventory: MonoBehaviour
         {
             shockSelected = false;
         }
-        if (attack1=="Electricty" | attack2=="Electricity"| attack3=="Electricity")
+        if (attack1 == "Electricty" | attack2 == "Electricity" | attack3 == "Electricity")
         {
             electricitySelected = true;
         }
@@ -321,23 +321,5 @@ public class AttacksInventory: MonoBehaviour
         {
             electricitySelected = false;
         }
-
-        Debug.Log("Ataque1"+ attack1);
-        Debug.Log("Ataque2"+ attack2);
-        Debug.Log("Ataque3"+ attack3);
-        Debug.Log("--------------------------------");
-        Debug.Log("Pixel" + pixelSelected);
-        Debug.Log("Steal" + stealSelected);
-        Debug.Log("Bug" + bugSelected);
-        Debug.Log("Ctrol z" + controlZSelected);
-        Debug.Log("Reset" + resetSelected);
-        Debug.Log("Delete" + deleteSelected);
-        Debug.Log("Heal" + healSelected);
-        Debug.Log("Steal" + stealSelected);
-        Debug.Log("Light" + lightSelected);
-        Debug.Log("Shock" + shockSelected);
-        Debug.Log("Electricity" + electricitySelected);
-        Debug.Log("Electroshock" + electroshockSelected);
-            
     }
 }

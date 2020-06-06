@@ -22300,7 +22300,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.1e-44, y: 0, z: 1, w: 5.147e-42}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -31432,8 +31432,8 @@ GameObject:
   m_Component:
   - component: {fileID: 933649449}
   - component: {fileID: 933649451}
-  - component: {fileID: 933649450}
   - component: {fileID: 933649452}
+  - component: {fileID: 933649450}
   m_Layer: 5
   m_Name: TextBoxManager
   m_TagString: Untagged
@@ -31469,12 +31469,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 933649448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5770f76eb9641bd4dbe9e462055a721e, type: 3}
+  m_Script: {fileID: 11500000, guid: cf74cdd383649dc469b5736f6cebed86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sldEnergyPlayerOne: {fileID: 959443376}
-  sldEnergyPlayerTwo: {fileID: 1051015629}
-  scoredata1: {fileID: 11400000, guid: fa9a29d7a518e304eb9efac4902034b2, type: 2}
+  lifeP: {fileID: 11400000, guid: cf08d5457328e734a85ede45d1de2c82, type: 2}
+  sldEnergyPO: {fileID: 1051015629}
+  sldManaPO: {fileID: 1716067688}
+  sldEnergyPT: {fileID: 959443376}
+  sldManaPT: {fileID: 2109169113}
 --- !u!114 &933649451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44224,7 +44226,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.073272705, y: -1.2400017}
+  m_AnchoredPosition: {x: -0.073272705, y: -1.2399998}
   m_SizeDelta: {x: 93.861, y: -6.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1257222979

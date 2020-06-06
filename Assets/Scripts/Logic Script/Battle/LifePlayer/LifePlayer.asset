@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9547f7ed53c0a0d44822946222ca23d7, type: 3}
   m_Name: LifePlayer
   m_EditorClassIdentifier: 
-  hpPlayerOne: 1
-  manaPlayerOne: 1
-  hpPlayerTwo: 0
-  manaPlayerTwo: 0
-  hpPlayerThree: 0
-  manaPlayerThree: 1
+  hpPlayerOne: 100
+  manaPlayerOne: 100
+  hpPlayerTwo: 100
+  manaPlayerTwo: 100
+  hpPlayerThree: 100
+  manaPlayerThree: 100

@@ -89,7 +89,6 @@ namespace Events {
 				listener.Invoke(evt);
 			}
 			else {
-				Debug.Log(evt + " has no listeners");
 			}
 		}
 

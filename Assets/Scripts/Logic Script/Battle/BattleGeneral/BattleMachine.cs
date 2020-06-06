@@ -58,19 +58,23 @@ public class BattleMachine : MonoBehaviour
             AllowPlayersMovement(false);
 
             enemy = _enemy;
-            panelUIBattle.SetEnergyEnemy(enemy.GetHP());
+
+            if (panelUIBattle != null)
+                panelUIBattle.SetEnergyEnemy(enemy.GetHP());
 
             currentSide = Side.Players;
 
-            panelUIBattle.SetScapeButton(this);
+            if (panelUIBattle != null)
+                panelUIBattle.SetScapeButton(this);
 
             Attack(characterIndexCount);
         }
+        /*
         else
         {
             //Despues quitar esto asi puedo poner bien todo
-            Debug.LogWarning("BattleState != None --> " + currentState);
-        }
+            //Debug.LogWarning("BattleState != None --> " + currentState);
+        }*/
     }
 
     public void AttackPlayerEnd(float dmg)
@@ -78,7 +82,8 @@ public class BattleMachine : MonoBehaviour
         enemy.SetDamage(dmg);
         CleanAttackOptions();
 
-        panelUIBattle.SetEnergyEnemy(enemy.GetHP());
+        if (panelUIBattle != null)
+            panelUIBattle.SetEnergyEnemy(enemy.GetHP());
     }
 
     public void AttackEnemyEnd(float dmg, PlayerBattleSystem player)
@@ -86,7 +91,7 @@ public class BattleMachine : MonoBehaviour
         player.SetDamage(dmg);
         CleanAttackOptions();
 
-        Debug.Log("Attack Enemy -->");
+        //Debug.Log("Attack Enemy -->");
     }
 
     public void AttackFXEnd()
@@ -141,12 +146,14 @@ public class BattleMachine : MonoBehaviour
         {
             if (currentSide == Side.Players)
             {
-                panelUIBattle.SetTextInformation("Attack Player: " + playerList[characterCount].name);
+                if (panelUIBattle != null)
+                    panelUIBattle.SetTextInformation("Attack Player: " + playerList[characterCount].name);
                 DisplayAttackOptions(playerList[characterCount], true);
             }
             else
             {
-                panelUIBattle.SetTextInformation("Attack Enemy: " + enemy.name);
+                if (panelUIBattle != null)
+                    panelUIBattle.SetTextInformation("Attack Enemy: " + enemy.name);
                 enemy.Attack(playerList[Random.Range(0, playerList.Count)].transform);
             }
 
@@ -156,14 +163,18 @@ public class BattleMachine : MonoBehaviour
 
     private void DisplayAttackOptions(PlayerBattleSystem player, bool display)
     {
-        panelUIBattle.Unactivate();
-        panelUIBattle.UnenableImage();
-        panelUIBattle.gameObject.SetActive(display);
-
-        if (player != null)
+        if (panelUIBattle != null)
         {
-            panelUIBattle.ShowAttackButtons(player, enemy.transform);
+            panelUIBattle.Unactivate();
+            panelUIBattle.UnenableImage();
+            panelUIBattle.gameObject.SetActive(display);
         }
+
+        if (panelUIBattle != null)
+            if (player != null)
+            {
+                panelUIBattle.ShowAttackButtons(player, enemy.transform);
+            }
     }
 
     private void AllowPlayersMovement(bool canMove)
@@ -184,7 +195,8 @@ public class BattleMachine : MonoBehaviour
 
     private void CleanAttackOptions()
     {
-        panelUIBattle.CleanAttackButtons();
+        if (panelUIBattle != null)
+            panelUIBattle.CleanAttackButtons();
     }
 
     private void CleanBattleComponents()
@@ -205,7 +217,8 @@ public class BattleMachine : MonoBehaviour
         AllowPlayersMovement(true);
 
         //Aqui puse esto
-        panelUIBattle.EnabledImage();
+        if (panelUIBattle != null)
+            panelUIBattle.EnabledImage();
 
         characterIndexCount = 0;
         currentState = BattleState.None;
@@ -236,17 +249,20 @@ public class BattleMachine : MonoBehaviour
 
     public void SetManaPanelBattleUI(float manaBattle)
     {
+        if(panelUIBattle != null)
         panelUIBattle.SetSliderMana(manaBattle);
     }
 
     public void SetEnergyEnemy(float energyEnemy)
     {
-        panelUIBattle.SetEnergyEnemy(energyEnemy);
+        if (panelUIBattle != null)
+            panelUIBattle.SetEnergyEnemy(energyEnemy);
     }
 
     public void SetEnergyPlayer(float energyPlayer)
     {
-        panelUIBattle.SetSliderEnergyGeneral(energyPlayer);
+        if (panelUIBattle != null)
+            panelUIBattle.SetSliderEnergyGeneral(energyPlayer);
     }
 
 }

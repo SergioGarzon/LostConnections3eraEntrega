@@ -70,13 +70,6 @@ public class DestroyCard : MonoBehaviour
                 case 6: PlayerPrefs.SetInt("TarjetaShop", 1); break;                    
             }
 
-
-
-            if(cardValue == 5)
-            {
-
-            }
-
         }
     }
 

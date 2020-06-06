@@ -17,8 +17,6 @@ public class CardsController : MonoBehaviour
     public void Load()
     {
         foreach (var amount in _cards) {
-            Debug.Log("Violet antes de cargar "+SessionData.Data.cardsAmount[0]);
-            Debug.Log("Antes load:"+SessionData.Data.resettingSold);
             amount.Load();
         }
         //fijarse en esto
@@ -28,20 +26,12 @@ public class CardsController : MonoBehaviour
 
         
 
-
-        Debug.Log("Violet "+SessionData.Data.cardsAmount[0]);
-        Debug.Log("despues load:"+SessionData.Data.resettingSold);
-
         SceneManager.LoadScene("SampleScene");
     }
     
     public void Save(int id) {
-        Debug.Log("Antes save:"+shopData.resettingSold);
-        Debug.Log("Violet antes de guardar "+SessionData.Data.cardsAmount[0]);
         _cards[id].Upgrade();
         shopData.Upgrade();
         scoreData.Upgrade();
-        Debug.Log("Violet "+SessionData.Data.cardsAmount[0]);
-        Debug.Log("despues Save:"+SessionData.Data.resettingSold);
     }
 }

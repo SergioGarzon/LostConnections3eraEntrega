@@ -131,8 +131,6 @@ public class PanelUIBattle : MonoBehaviour
     {
         for (int i = 0; i < scrollContent.childCount; i++)
         {
-            //Debug.Log(scrollContent.GetChild(i).name);
-
             Destroy(scrollContent.GetChild(i).gameObject);
         }
     }

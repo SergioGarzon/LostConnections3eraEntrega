@@ -52,17 +52,14 @@ public class DropDownController : MonoBehaviour
         if (m_Dropdown.itemText.text== "Bug")
         {
             bugSelected = true;
-            Debug.Log("Bug");
         }
         else if (m_Dropdown.itemText.text== "Pixel")
         {
             pixelSelected = true;
-            Debug.Log("Pixel");
         }
         else if (m_Dropdown.itemText.text == "Steal")
         {
             stealSelected = true;
-            Debug.Log("Steal");
         }
         else if (m_Dropdown.name=="Reset")
         {

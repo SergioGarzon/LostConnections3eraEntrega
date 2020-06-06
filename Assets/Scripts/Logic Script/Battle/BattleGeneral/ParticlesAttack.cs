@@ -23,7 +23,6 @@ public class ParticlesAttack : MonoBehaviour
 
     public void AttackPlayerPower(PlayerBattleSystem.PlayerPowers power, PlayerBattleSystem character, Transform targetPosition)
     {
-        Debug.Log("Attack Player Power: " + power);
 
         for (int i = 0; i < attackPlayersParticles.Count; i++)
         {
@@ -38,7 +37,7 @@ public class ParticlesAttack : MonoBehaviour
     }
     public void AttackEnemyPower(EnemyBattleSystem.EnemyPowers power, EnemyBattleSystem character, Transform targetPosition)
     {
-        Debug.Log("Attack Enemy Power: " + power);
+        
 
         for (int i = 0; i < attackEnemiesParticles.Count; i++)
         {
@@ -71,12 +70,12 @@ public class ParticlesAttack : MonoBehaviour
             }
             else
             {
-                Debug.LogError("currentSystem no es null, otro sistema de particulas esta instanciado");
+                //Debug.LogError("currentSystem no es null, otro sistema de particulas esta instanciado");
             }
         }
         else
         {
-            Debug.LogError("No se encontro el prefab de particulas en AttackPower()");
+            //Debug.LogError("No se encontro el prefab de particulas en AttackPower()");
         }
     }
 
@@ -84,8 +83,6 @@ public class ParticlesAttack : MonoBehaviour
     {
         if (currentSystem != null && currentSystem.isStopped)
         {
-            Debug.Log("Particle update - DESTROY");
-
             Destroy(currentSystem.gameObject);
             currentSystem = null;
 
