@@ -35,6 +35,8 @@ public class CollisionObjects : MonoBehaviour
             {
                 lifePlayer.hpPlayerOne = 100;
                 lifePlayer.manaPlayerOne = 100;
+
+                //Esto de abajo hay que sacarlo ya que es un solo player en la escena
                 lifePlayer.hpPlayerTwo = 100;
                 lifePlayer.manaPlayerTwo = 100;
                 lifePlayer.hpPlayerThree = 100;
@@ -92,6 +94,7 @@ public class CollisionObjects : MonoBehaviour
                 }                    
                 else
                 {
+                    SavePosition.cargarPosicionInicial = 2;
                     SceneManager.LoadScene("BattleScene");
                 }                    
                 break;

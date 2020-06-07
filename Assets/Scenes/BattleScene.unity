@@ -827,6 +827,7 @@ MonoBehaviour:
   playerList: []
   enemy: {fileID: 0}
   panelUIBattle: {fileID: 0}
+  nameScene: BattleScene
 --- !u!1 &389807379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,7 +1555,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 5.51013e-40, z: -3.11e-43, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 3e-45, z: 0, w: 6e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -3108,7 +3109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.081, y: 0}
   m_AnchorMax: {x: 0.26334268, y: 0.39742672}
-  m_AnchoredPosition: {x: 2.3999996, y: 3}
+  m_AnchoredPosition: {x: 2.399994, y: 3}
   m_SizeDelta: {x: 46.301, y: 23.259998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168378155

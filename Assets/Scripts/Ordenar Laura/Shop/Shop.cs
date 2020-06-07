@@ -87,7 +87,6 @@ public class Shop : MonoBehaviour
 
     private void OnButtonClick(ShopItem item)
     {
-        Debug.Log(item.name);
         
         if (item.cost < 100 & (item.cost/10)<=goldenCard.amount  & item.cost>=10)
         {
@@ -163,7 +162,6 @@ public class Shop : MonoBehaviour
                     shopData.deleteSold = true;
                     _stringText = "Sold!";
                     StartCoroutine(ActivatePanel());
-                    Debug.Log(shopData.deleteSold);
                     scoreData.xp += 5;
                 }
                 else
@@ -178,7 +176,6 @@ public class Shop : MonoBehaviour
                     shopData.controlzSold = true;
                     _stringText = "Sold!";
                     StartCoroutine(ActivatePanel());
-                    Debug.Log(shopData.controlzSold); 
                     scoreData.xp += 5;
                 }
                 else
@@ -193,7 +190,6 @@ public class Shop : MonoBehaviour
                     shopData.updateSold = true;
                     _stringText = "Sold!";
                     StartCoroutine(ActivatePanel());
-                    Debug.Log(shopData.updateSold); 
                     scoreData.xp += 5;
                 }
                 else

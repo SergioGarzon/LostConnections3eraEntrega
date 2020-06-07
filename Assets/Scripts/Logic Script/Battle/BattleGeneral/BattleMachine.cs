@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleMachine : MonoBehaviour
 {
@@ -24,10 +25,13 @@ public class BattleMachine : MonoBehaviour
 
     public PanelUIBattle panelUIBattle;
 
+    public string nameScene;
+
     private BattleState currentState;
     private Side currentSide;
 
     private int characterIndexCount;
+
 
     private void Awake()
     {
@@ -222,6 +226,12 @@ public class BattleMachine : MonoBehaviour
 
         characterIndexCount = 0;
         currentState = BattleState.None;
+
+        if(nameScene.Equals("BattleScene"))
+        {
+            SavePosition.cargarPosicionInicial = 2;
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 
     private bool IsEnemyDead()

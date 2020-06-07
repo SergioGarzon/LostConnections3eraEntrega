@@ -14,9 +14,6 @@ public class ValidatorNamePlayer : MonoBehaviour
     public Text txtInformation;
     public RawImage imagenPanel;
     
-    void Start()
-    {
-    }
 
     public void ValidarNombreIngresado()
     {

@@ -8,33 +8,37 @@ public class SavePosition : MonoBehaviour
 
     public GameObject objetoPlayer;
     public static int cargarPosicionInicial = 0;
-    private NavMeshAgent positionObject;
+    //private NavMeshAgent positionObject;   //Esto no hace falta ya que hay 1 player por momentos en la escena
     public Camera camaraPosition;
-
+    
     void Start()
     {
         objetoPlayer = GameObject.Find("ObjectsWorldScene/ObjectPlayers").transform.GetChild(0).gameObject;
-
         CargarPosition();
+    }
+
+    private void Update()
+    {
+        if (SavePosition.cargarPosicionInicial != 0)        
+            GuardarPosition();        
     }
 
 
     private void CargarPosition()
     {
-
-        if (SavePosition.cargarPosicionInicial == 1)
+        switch(SavePosition.cargarPosicionInicial)
         {
-            objetoPlayer.transform.position = new Vector3(PlayerPrefs.GetFloat("x"),
-            PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));
-
-
-            SavePosition.cargarPosicionInicial = 2;
-
+            case 1:
+                objetoPlayer.transform.position = new Vector3(PlayerPrefs.GetFloat("x"),
+                PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));
+                break;
+            case 2:
+                objetoPlayer.transform.position = new Vector3(PlayerPrefs.GetFloat("x") - 30,
+                PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z") - 30);
+                break;
         }
 
-
-
-
+        SavePosition.cargarPosicionInicial = 0;
     }
 
     public void GuardarPosition()
@@ -43,6 +47,7 @@ public class SavePosition : MonoBehaviour
         PlayerPrefs.SetFloat("y", objetoPlayer.transform.position.y);
         PlayerPrefs.SetFloat("z", objetoPlayer.transform.position.z);
 
+        SavePosition.cargarPosicionInicial = 0;
     }
 
 }
