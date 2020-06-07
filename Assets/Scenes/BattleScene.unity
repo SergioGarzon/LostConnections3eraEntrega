@@ -760,6 +760,7 @@ GameObject:
   - component: {fileID: 355955858}
   - component: {fileID: 355955859}
   - component: {fileID: 355955860}
+  - component: {fileID: 355955861}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -828,6 +829,23 @@ MonoBehaviour:
   enemy: {fileID: 0}
   panelUIBattle: {fileID: 0}
   nameScene: BattleScene
+--- !u!114 &355955861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355955856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704da414c9d8de14bbe1e76992af91e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPlayersParticles: []
+  attackEnemiesParticles: []
+  currentSystem: {fileID: 0}
+  player: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!1 &389807379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1573,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 3e-45, z: 0, w: 6e-45}
+  m_BoundingSphereOverride: {x: 4.54e-43, y: 3.9343e-41, z: 4.78e-43, w: 0.00028039608}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0

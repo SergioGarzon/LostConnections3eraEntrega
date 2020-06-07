@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BattleMachine : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class BattleMachine : MonoBehaviour
     private Side currentSide;
 
     private int characterIndexCount;
+    private bool buttonScape;
 
 
     private void Awake()
@@ -44,6 +46,7 @@ public class BattleMachine : MonoBehaviour
 
         characterIndexCount = 0;
 
+        buttonScape = false;
         //DEBUG - ONLY Test
         //Attack(0);
     }
@@ -212,13 +215,15 @@ public class BattleMachine : MonoBehaviour
             enemy = null;
         }
 
+
         //TODO - Cerrar UI Battle
         CleanAttackOptions();
         DisplayAttackOptions(null, false);
 
         //PLAYERS
         //player[n].PlayerEndBattle();
-        AllowPlayersMovement(true);
+        if (nameScene.Equals("SampleScene"))
+            AllowPlayersMovement(true);
 
         //Aqui puse esto
         if (panelUIBattle != null)
@@ -227,9 +232,10 @@ public class BattleMachine : MonoBehaviour
         characterIndexCount = 0;
         currentState = BattleState.None;
 
-        if(nameScene.Equals("BattleScene"))
+        if (nameScene.Equals("BattleScene") && enemy == null && buttonScape)
         {
-            SavePosition.cargarPosicionInicial = 2;
+            buttonScape = false;
+            SavePosition.cargarPosicionInicial = 2;           
             SceneManager.LoadScene("SampleScene");
         }
     }
@@ -259,8 +265,8 @@ public class BattleMachine : MonoBehaviour
 
     public void SetManaPanelBattleUI(float manaBattle)
     {
-        if(panelUIBattle != null)
-        panelUIBattle.SetSliderMana(manaBattle);
+        if (panelUIBattle != null)
+            panelUIBattle.SetSliderMana(manaBattle);
     }
 
     public void SetEnergyEnemy(float energyEnemy)
@@ -273,6 +279,11 @@ public class BattleMachine : MonoBehaviour
     {
         if (panelUIBattle != null)
             panelUIBattle.SetSliderEnergyGeneral(energyPlayer);
+    }
+
+    public void SetButtonScape()
+    {
+        buttonScape = true;
     }
 
 }

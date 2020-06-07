@@ -33,8 +33,8 @@ public class SavePosition : MonoBehaviour
                 PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));
                 break;
             case 2:
-                objetoPlayer.transform.position = new Vector3(PlayerPrefs.GetFloat("x") - 30,
-                PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z") - 30);
+                objetoPlayer.transform.position = new Vector3(PlayerPrefs.GetFloat("x") - 40,
+                PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z") - 40);
                 break;
         }
 

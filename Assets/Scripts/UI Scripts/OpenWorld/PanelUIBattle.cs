@@ -175,6 +175,7 @@ public class PanelUIBattle : MonoBehaviour
 
     private void ClickButton(BattleMachine battleSystem)
     {
+        battleSystem.SetButtonScape();
         battleSystem.BattleEnd();
     }
 
