@@ -10,7 +10,6 @@ public class CollisionObjects : MonoBehaviour
     public ActivatePanelGeneral activatePanel;
     public TextPanelInformation txtPanelInformation;
     public LifePlayer lifePlayer;
-    
 
     private int language;
     private bool control;
@@ -80,7 +79,9 @@ public class CollisionObjects : MonoBehaviour
                     activatePanel.ActivatePanel();
                 }
                 else
+                {
                     Destroy(other.gameObject);
+                }                    
                 break;
             case "CollisionWorld": Value(5); activatePanel.ActivatePanel(); break;
             case "ShopLevelArc2": Value(6); activatePanel.ActivatePanel(); break;

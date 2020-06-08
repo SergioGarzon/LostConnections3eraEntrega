@@ -28,8 +28,7 @@ MonoBehaviour:
   activatePanel: {fileID: 0}
   txtPanelInformation: {fileID: 11400000, guid: 5b7f72846c979104188a860018d383c2,
     type: 2}
-  lifePlayer: {fileID: 0}
-  particlesCollider: []
+  lifePlayer: {fileID: 11400000, guid: cf08d5457328e734a85ede45d1de2c82, type: 2}
 --- !u!114 &6795672793221237635
 MonoBehaviour:
   m_ObjectHideFlags: 0
