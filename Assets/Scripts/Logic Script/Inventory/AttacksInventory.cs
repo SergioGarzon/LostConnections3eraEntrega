@@ -39,7 +39,11 @@ public class AttacksInventory: MonoBehaviour
     public static string attack2;
     public static string attack3;
 
+
+    //Ver esto de aca los saca a los ataques
     [Header("Flags")] 
+
+    //Ataques de Charlie
     public static bool pixelSelected;
     public static bool stealSelected;
     public static bool bugSelected;
@@ -47,6 +51,8 @@ public class AttacksInventory: MonoBehaviour
     public static bool resetSelected;
     public static bool deleteSelected;
     
+
+    //Ataques de Atif
     public static bool healSelected;
     public static bool updatingSelected;
     public static bool electroshockSelected;
@@ -65,6 +71,9 @@ public class AttacksInventory: MonoBehaviour
         attack3 = selectedItem[2].itemName;
         UpdateFlags();
     }
+
+
+    //Fijate si podes evitar esto
     public void Update()
     {
         if (isCharlie)
@@ -188,17 +197,17 @@ public class AttacksInventory: MonoBehaviour
             UpdatingData(boton1seleccionado,boton2seleccionado);
             UpdateFlags();
         }
-        Debug.Log(item.itemName);
+        //Debug.Log(item.itemName);
         
          }
 
     void OnButtonSelectedAttackClick(AttackItem item, GameObject gO)
     {
-        Debug.Log(item.id);
+        //Debug.Log(item.id);
         selectedGrid = item.id;
         gridIsChoosed = true;
         boton1seleccionado = gO;
-        Debug.Log(gO);
+        //Debug.Log(gO);
     }
 
     void UpdatingData(GameObject boton1, GameObject boton2)

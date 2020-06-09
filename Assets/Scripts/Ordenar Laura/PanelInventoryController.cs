@@ -24,7 +24,7 @@ public class PanelInventoryController : MonoBehaviour
         else
         {
             ShowAtifAttacks();
-            Debug.Log("Player no recibido");
+            //Debug.Log("Player no recibido");
         }
     }
     

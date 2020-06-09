@@ -10,22 +10,22 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     [Header("List of cards to buy")]   //Esto es un texto que se coloca arriba, una etiqueta en el editor
-    public InventoryItem blackCard;   
+    public InventoryItem blackCard;
     public InventoryItem goldenCard;
-    
+
 
     [Header("List of the items sold")] //
-    [SerializeField]private ShopItem[] shopItems;
+    [SerializeField] private ShopItem[] shopItems;
 
-    [Header("References")] 
+    [Header("References")]
     [SerializeField] private Transform shopContainer;
-    [SerializeField]private GameObject shopItemPrefab;
-    
+    [SerializeField] private GameObject shopItemPrefab;
+
     public ShopData shopData;
-    
+
     public ScoreData scoreData;
 
-    [Header("UI")] 
+    [Header("UI")]
     public GameObject CharlieShop;
     public GameObject AtifShop;
 
@@ -55,7 +55,7 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         PopulateShop();
-        dialogText = dialogPanelNPC.GetComponentInChildren<Text>(); 
+        dialogText = dialogPanelNPC.GetComponentInChildren<Text>();
     }
 
     private void PopulateShop()
@@ -65,11 +65,11 @@ public class Shop : MonoBehaviour
             ShopItem si = shopItems[i];
             GameObject itemObject = Instantiate(shopItemPrefab, shopContainer);
 
-            itemObject.transform.GetChild(0).GetComponent<Image>().sprite= si.sprite;
-            
+            itemObject.transform.GetChild(0).GetComponent<Image>().sprite = si.sprite;
+
             itemObject.transform.GetChild(1).GetComponent<Text>().text = si.itemName;
-            
-            itemObject.GetComponent<Button>().onClick.AddListener(()=>OnButtonClick(si));
+
+            itemObject.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(si));
 
         }
     }
@@ -87,20 +87,25 @@ public class Shop : MonoBehaviour
 
     private void OnButtonClick(ShopItem item)
     {
-        
-        if (item.cost < 100 & (item.cost/10)<=goldenCard.amount  & item.cost>=10)
+
+        if (item.cost < 100 & (item.cost / 10) <= goldenCard.amount & item.cost >= 10)
         {
-            goldenCard.amount = goldenCard.amount - (item.cost/10);
+            goldenCard.amount = goldenCard.amount - (item.cost / 10);
             ActivateItemBuyed(item);
         }
-        else if ( item.cost>=100 & (item.cost/100)<=blackCard.amount)
+        else if (item.cost >= 100 & (item.cost / 100) <= blackCard.amount)
         {
-            blackCard.amount = blackCard.amount - (item.cost/100);
+            blackCard.amount = blackCard.amount - (item.cost / 100);
             ActivateItemBuyed(item);
         }
         else
         {
-            _stringText = "You don't have enough cards.";
+            if (PlayerPrefs.GetInt("LenguajeGuardado", 0) == 0)
+                _stringText = "You don't have enough cards.";
+            else
+                _stringText = "No tiene suficiente cartas!";
+
+
             StartCoroutine(ActivatePanel());
             //activar panel 
         }
@@ -117,28 +122,26 @@ public class Shop : MonoBehaviour
                 if (!shopData.resettingSold)
                 {
                     shopData.resettingSold = true;
-                    _stringText = "Sold!";
+                    SetLanguageText();
                     StartCoroutine(ActivatePanel());
-                    scoreData.xp += 5;
                 }
                 else
                 {
-                    _stringText = "You have this item";
+                    SetItemsText();
                     StartCoroutine(ActivatePanel());
                 }
-                break; 
-                
+                break;
+
             case "Heal":
                 if (!shopData.healSold)
                 {
                     shopData.healSold = true;
-                    _stringText = "Sold!";
+                    SetLanguageText();
                     StartCoroutine(ActivatePanel());
-                    scoreData.xp += 5;
                 }
                 else
                 {
-                    _stringText = "You have this item";
+                    SetItemsText();
                     StartCoroutine(ActivatePanel());
                 }
                 break;
@@ -146,13 +149,12 @@ public class Shop : MonoBehaviour
                 if (!shopData.electroshockSold)
                 {
                     shopData.electroshockSold = true;
-                    _stringText = "Sold!";
+                    SetLanguageText();
                     StartCoroutine(ActivatePanel());
-                    scoreData.xp += 5;
                 }
                 else
                 {
-                    _stringText = "You have this item";
+                    SetItemsText();
                     StartCoroutine(ActivatePanel());
                 }
                 break;
@@ -160,13 +162,12 @@ public class Shop : MonoBehaviour
                 if (!shopData.deleteSold)
                 {
                     shopData.deleteSold = true;
-                    _stringText = "Sold!";
+                    SetLanguageText();
                     StartCoroutine(ActivatePanel());
-                    scoreData.xp += 5;
                 }
                 else
                 {
-                    _stringText = "You have this item";
+                    SetItemsText();
                     StartCoroutine(ActivatePanel());
                 }
                 break;
@@ -174,13 +175,12 @@ public class Shop : MonoBehaviour
                 if (!shopData.controlzSold)
                 {
                     shopData.controlzSold = true;
-                    _stringText = "Sold!";
+                    SetLanguageText();
                     StartCoroutine(ActivatePanel());
-                    scoreData.xp += 5;
                 }
                 else
                 {
-                    _stringText = "You have this item";
+                    SetItemsText();
                     StartCoroutine(ActivatePanel());
                 }
                 break;
@@ -188,17 +188,16 @@ public class Shop : MonoBehaviour
                 if (!shopData.updateSold)
                 {
                     shopData.updateSold = true;
-                    _stringText = "Sold!";
+                    SetLanguageText();
                     StartCoroutine(ActivatePanel());
-                    scoreData.xp += 5;
                 }
                 else
                 {
-                    _stringText = "You have this item";
+                    SetItemsText();
                     StartCoroutine(ActivatePanel());
                 }
                 break;
-            
+
         }
     }
 
@@ -209,4 +208,22 @@ public class Shop : MonoBehaviour
         yield return new WaitForSeconds(2);
         dialogPanelNPC.SetActive(false);
     }
+
+
+    private void SetLanguageText()
+    {
+        if (PlayerPrefs.GetInt("LenguajeGuardado", 0) == 0)
+            _stringText = "Sold!";
+        else
+            _stringText = "Vendido!";
+    }
+
+    private void SetItemsText()
+    {
+        if (PlayerPrefs.GetInt("LenguajeGuardado", 0) == 0)
+            _stringText = "You have this item";
+        else
+            _stringText = "¡Ya tenes el item!";
+    }
+
 }

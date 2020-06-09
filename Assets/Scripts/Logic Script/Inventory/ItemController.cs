@@ -15,13 +15,7 @@ public class ItemController : MonoBehaviour
     //public string name;
 
     public Text amount;
-
-    //public string amountText;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    
     public void Load(InventoryItem inventoryItem)
     {
         image.sprite = inventoryItem.sprite;
