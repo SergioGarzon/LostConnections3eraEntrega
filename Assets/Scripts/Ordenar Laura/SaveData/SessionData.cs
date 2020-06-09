@@ -77,13 +77,14 @@ public class GameDataSave {
 	public bool electroshockSold;
 	public bool deleteSold;
 	public bool controlzSold;
-	public bool updateSold; 
+	public bool updateSold;
+	public bool superHitSold;
+	public bool canyonSold;
+	public bool scannerSold;
 
 	public GameDataSave()
 	{
-		lifeHacker = 200;
-		cardsAmount[0] = 0;
-		resettingSold = true;
+		
 	}
 
 	public void SaveData() {

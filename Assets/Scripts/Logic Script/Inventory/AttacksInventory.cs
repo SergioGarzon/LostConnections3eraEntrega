@@ -23,7 +23,10 @@ public class AttacksInventory: MonoBehaviour
     public AttackItem electroshock;
     public AttackItem heal;
     public AttackItem updating;
-    public bool isCharlie;
+    public AttackItem superHit;
+    public AttackItem canyon;
+    public AttackItem scanner;
+    public int isCharlie;
 
     [SerializeField]private GameObject cardItemPrefab;
 
@@ -60,6 +63,13 @@ public class AttacksInventory: MonoBehaviour
     public static bool shockSelected;
     public static bool electricitySelected;
     
+    public static bool superhitSelected;
+    public static bool canyonSelected;
+    public static bool scannerSelected;
+    public static bool directattackSelected;
+    public static bool ironfirstSelected;
+    public static bool rechargeSelected;
+    
     
 
     private void Start()
@@ -76,7 +86,7 @@ public class AttacksInventory: MonoBehaviour
     //Fijate si podes evitar esto
     public void Update()
     {
-        if (isCharlie)
+        if (isCharlie == 0)
         {
             if (shopData.controlzSold)
             {
@@ -105,7 +115,7 @@ public class AttacksInventory: MonoBehaviour
                 itemObject.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(Delete, itemObject));
             }  
         }
-        else
+        else if ( isCharlie == 1)
         {
             if (shopData.electroshockSold)
             {
@@ -122,7 +132,7 @@ public class AttacksInventory: MonoBehaviour
                 GameObject itemObject = Instantiate(cardItemPrefab, inventoryContainer); 
                 itemObject.transform.GetChild(0).GetComponent<Image>().sprite= updating.sprite;
                 updateNameinventary=itemObject.transform.GetChild(1).GetComponent<Text>().text = updating.itemName;
-                itemObject.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(Reset, itemObject));
+                itemObject.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(updating, itemObject));
             }
 
             if (shopData.healSold)
@@ -132,6 +142,35 @@ public class AttacksInventory: MonoBehaviour
                 itemObject.transform.GetChild(0).GetComponent<Image>().sprite= heal.sprite;
                 updateNameinventary=itemObject.transform.GetChild(1).GetComponent<Text>().text = heal.itemName;
                 itemObject.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(heal, itemObject));
+            }
+        }
+        else if (isCharlie == 3)
+        {
+            if (shopData.superHitSold)
+            {
+                inventoryItem.Append(superHit);
+                GameObject itemObject = Instantiate(cardItemPrefab, inventoryContainer); 
+                itemObject.transform.GetChild(0).GetComponent<Image>().sprite= superHit.sprite;
+                updateNameinventary=itemObject.transform.GetChild(1).GetComponent<Text>().text = superHit.itemName;
+                itemObject.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(superHit, itemObject));
+            }
+
+            if (shopData.canyonSold)
+            {
+                inventoryItem.Append(canyon);
+                GameObject itemObject = Instantiate(cardItemPrefab, inventoryContainer); 
+                itemObject.transform.GetChild(0).GetComponent<Image>().sprite= canyon.sprite;
+                updateNameinventary=itemObject.transform.GetChild(1).GetComponent<Text>().text = canyon.itemName;
+                itemObject.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(canyon, itemObject));
+            }
+
+            if (shopData.healSold)
+            {
+                inventoryItem.Append(scanner);
+                GameObject itemObject = Instantiate(cardItemPrefab, inventoryContainer); 
+                itemObject.transform.GetChild(0).GetComponent<Image>().sprite= scanner.sprite;
+                updateNameinventary=itemObject.transform.GetChild(1).GetComponent<Text>().text = scanner.itemName;
+                itemObject.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(scanner, itemObject));
             }
         }
     }
@@ -198,16 +237,34 @@ public class AttacksInventory: MonoBehaviour
             UpdateFlags();
         }
         //Debug.Log(item.itemName);
-        
-         }
+    }
+
+    bool ValidateAttacks()
+    {
+        bool[] list = new []{shopData.canyonSold, shopData.superHitSold, shopData.scannerSold, shopData.deleteSold, 
+            shopData.electroshockSold, shopData.healSold, shopData.controlzSold, shopData.resettingSold, shopData.updateSold};
+        foreach (var attack in list)
+        {
+            if (attack)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     void OnButtonSelectedAttackClick(AttackItem item, GameObject gO)
     {
-        //Debug.Log(item.id);
-        selectedGrid = item.id;
-        gridIsChoosed = true;
-        boton1seleccionado = gO;
-        //Debug.Log(gO);
+        bool sold = ValidateAttacks();
+        if (sold)
+        {
+            //Debug.Log(item.id);
+            selectedGrid = item.id;
+            gridIsChoosed = true;
+            boton1seleccionado = gO;
+            //Debug.Log(gO); 
+        }
+        
     }
 
     void UpdatingData(GameObject boton1, GameObject boton2)
@@ -329,6 +386,54 @@ public class AttacksInventory: MonoBehaviour
         else
         {
             electricitySelected = false;
+        }
+        if (attack1 == "SuperHit" | attack2 == "SuperHit" | attack3 == "SuperHit")
+        {
+            superhitSelected = true;
+        }
+        else
+        {
+            superhitSelected = false;
+        }
+        if (attack1 == "Canyon" | attack2 == "Canyon" | attack3 == "Canyon")
+        {
+            canyonSelected = true;
+        }
+        else
+        {
+            canyonSelected = false;
+        }
+        if (attack1 == "Scanner" | attack2 == "Scanner" | attack3 == "Scanner")
+        {
+            scannerSelected = true;
+        }
+        else
+        {
+            scannerSelected = false;
+        }
+        if (attack1 == "Recharge" | attack2 == "Recharge" | attack3 == "Recharge")
+        {
+            rechargeSelected = true;
+        }
+        else
+        {
+            rechargeSelected = false;
+        }
+        if (attack1 == "IronFirst" | attack2 == "IronFirst" | attack3 == "IronFirst")
+        {
+            ironfirstSelected= true;
+        }
+        else
+        {
+            ironfirstSelected = false;
+        }
+        if (attack1 == "DirectAttack" | attack2 == "DirectAttack" | attack3 == "DirectAttack")
+        {
+            directattackSelected = true;
+        }
+        else
+        {
+            directattackSelected = false;
         }
     }
 }

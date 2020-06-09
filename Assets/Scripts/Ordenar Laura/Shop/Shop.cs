@@ -28,6 +28,7 @@ public class Shop : MonoBehaviour
     [Header("UI")]
     public GameObject CharlieShop;
     public GameObject AtifShop;
+    public GameObject DanteShop;
 
     private InventoryItem _inventoryItem;
     public GameObject dialogPanelNPC;
@@ -37,7 +38,7 @@ public class Shop : MonoBehaviour
     private void Awake()
     {
         int player = PlayerPrefs.GetInt("ObjetoElegido", 0);
-
+        //ver bien los numeros Sergio
         if (player == 0)
         {
             ShowAtifAttacks();
@@ -46,9 +47,9 @@ public class Shop : MonoBehaviour
         {
             ShowCharlieAttacks();
         }
-        else
+        else if (player == 2)
         {
-            ShowAtifAttacks();
+            ShowDanteAttacks();
         }
     }
 
@@ -77,14 +78,21 @@ public class Shop : MonoBehaviour
     {
         CharlieShop.SetActive(false);
         AtifShop.SetActive(true);
+        DanteShop.SetActive(false);
     }
 
     public void ShowCharlieAttacks()
     {
         CharlieShop.SetActive(true);
         AtifShop.SetActive(false);
+        DanteShop.SetActive(false);
     }
-
+    public void ShowDanteAttacks()
+    {
+        DanteShop.SetActive(true);
+        AtifShop.SetActive(false);
+        CharlieShop.SetActive(false);
+    }
     private void OnButtonClick(ShopItem item)
     {
 
@@ -188,6 +196,45 @@ public class Shop : MonoBehaviour
                 if (!shopData.updateSold)
                 {
                     shopData.updateSold = true;
+                    SetLanguageText();
+                    StartCoroutine(ActivatePanel());
+                }
+                else
+                {
+                    SetItemsText();
+                    StartCoroutine(ActivatePanel());
+                }
+                break;
+            case "SuperHit":
+                if (!shopData.updateSold)
+                {
+                    shopData.superHitSold = true;
+                    SetLanguageText();
+                    StartCoroutine(ActivatePanel());
+                }
+                else
+                {
+                    SetItemsText();
+                    StartCoroutine(ActivatePanel());
+                }
+                break;
+            case "Canyon":
+                if (!shopData.updateSold)
+                {
+                    shopData.canyonSold = true;
+                    SetLanguageText();
+                    StartCoroutine(ActivatePanel());
+                }
+                else
+                {
+                    SetItemsText();
+                    StartCoroutine(ActivatePanel());
+                }
+                break;
+            case "Scanner":
+                if (!shopData.scannerSold)
+                {
+                    shopData.scannerSold = true;
                     SetLanguageText();
                     StartCoroutine(ActivatePanel());
                 }

@@ -21,22 +21,20 @@
         <e p="Scripts" t="Include">
           <e p="Logic Script" t="Include">
             <e p="Battle" t="Include">
-              <e p="AccessBattlePanal.cs" t="Include" />
               <e p="BattleGeneral" t="Include">
                 <e p="BattleMachine.cs" t="Include" />
                 <e p="EnemyBattleSystem.cs" t="Include" />
                 <e p="ParticlesAttack.cs" t="Include" />
                 <e p="PlayerBattleSystem.cs" t="Include" />
+                <e p="VirusCreation.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
-                <e p="Enums.cs" t="Include" />
                 <e p="EventController.cs" t="Include" />
-                <e p="Fight.cs" t="Include" />
                 <e p="GameEvents.cs" t="Include" />
-                <e p="InputData.cs" t="Include" />
-                <e p="NewPlayableAsset.cs" t="Include" />
-                <e p="RandomState.cs" t="Include" />
                 <e p="ScoreData.cs" t="Include" />
+              </e>
+              <e p="LifePlayer" t="Include">
+                <e p="LifePlayer.cs" t="Include" />
               </e>
             </e>
             <e p="CardScene" t="Include">
@@ -45,16 +43,12 @@
               <e p="DestroyCard.cs" t="Include" />
             </e>
             <e p="Inventory" t="Include">
-              <e p="AddToInventory.cs" t="Include" />
               <e p="AttackItem.cs" t="Include" />
               <e p="AttacksInventory.cs" t="Include" />
-              <e p="DragDrop.cs" t="Include" />
-              <e p="DropDownController.cs" t="Include" />
               <e p="InventoryItem.cs" t="Include" />
               <e p="InventoryScript.cs" t="Include" />
               <e p="Item.cs" t="Include" />
               <e p="ItemController.cs" t="Include" />
-              <e p="ItemSlotDrop.cs" t="Include" />
               <e p="OpenCards.cs" t="Include" />
             </e>
             <e p="MovementPersonajes" t="Include">
@@ -94,7 +88,6 @@
             <e p="Saving" t="Include">
               <e p="CardsController.cs" t="Include" />
               <e p="References.cs" t="Include" />
-              <e p="ShopController.cs" t="Include" />
             </e>
             <e p="Shop" t="Include">
               <e p="CloseShop.cs" t="Include" />
@@ -102,13 +95,6 @@
               <e p="ShopData.cs" t="Include" />
               <e p="ShopItem.cs" t="Include" />
             </e>
-            <e p="UI" t="Include">
-              <e p="GameplayTime.cs" t="Include" />
-              <e p="GamePointsBar.cs" t="Include" />
-              <e p="ScoreBarScript.cs" t="Include" />
-              <e p="ShootingPointsBar.cs" t="Include" />
-            </e>
-            <e p="xpText.cs" t="Include" />
           </e>
           <e p="UI Scripts" t="Include">
             <e p="Audios" t="Include">
@@ -122,17 +108,14 @@
             <e p="General" t="Include">
               <e p="ActionsButton.cs" t="Include" />
               <e p="ChangeImageLanguage.cs" t="Include" />
-              <e p="RandomParticle.cs" t="Include" />
               <e p="SeteoDatos.cs" t="Include" />
             </e>
             <e p="OpenWorld" t="Include">
               <e p="ActivatePanelGeneral.cs" t="Include" />
-              <e p="ActivatePanelUIBattle.cs" t="Include" />
               <e p="DesactivarUnPanel.cs" t="Include" />
               <e p="PanelUIBattle.cs" t="Include" />
-              <e p="SliderEnergy.cs" t="Include" />
               <e p="TextBoxManager.cs" t="Include" />
-              <e p="UpdateEnergyBar.cs" t="Include" />
+              <e p="UpdateEnergySlider.cs" t="Include" />
             </e>
             <e p="Start Scene" t="Include">
               <e p="Credits" t="Include">
