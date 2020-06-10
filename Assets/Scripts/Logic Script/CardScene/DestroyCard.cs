@@ -12,8 +12,9 @@ public class DestroyCard : MonoBehaviour
     public Texture spanishTexture;
     public Texture englishTexture;
     public RawImage imageTexture;
-    //public InventoryItem Card;
-    //private InventoryScript _inventoryScript;
+    public InventoryItem Card;
+    private InventoryScript _inventoryScript;
+
     public GameObject inventary;
     public ParticleSystem particlesCard;
 
@@ -22,7 +23,7 @@ public class DestroyCard : MonoBehaviour
 
     private void Start()
     {
-        // _inventoryScript = inventary.GetComponent<InventoryScript>();
+        _inventoryScript = inventary.GetComponent<InventoryScript>();
         camPlayer = Camera.main.GetComponent<CameraPlayer>();
     }
 
@@ -50,15 +51,10 @@ public class DestroyCard : MonoBehaviour
             panel.gameObject.SetActive(true);
 
 
+            Card.amount += 1;  //Esto era el contador de tarjetas, verificar si lo puse bien
 
-
-            /*
-            if (this.valorTarjeta == 8)
-                Card.amount += 1;
-            if (this.valorTarjeta == 7)
-                Card.amount += 1;
             _inventoryScript.LoadCards();
-            */
+            
 
             particlesCard.gameObject.SetActive(false);
             Destroy(this.gameObject);
